@@ -26,7 +26,7 @@ Official submission and open-source computational repository for the **Rare Dise
 * **Invited Lecturer of Medical Semiology** (*Profesor Invitado de Semiología Médica*), Department of Internal Medicine, ULA.  
 * **Location**: Mérida, Venezuela  
 * **ORCID**: [0000-0003-3839-3703](https://orcid.org/0000-0003-3839-3703)  
-* **Direct Contact**: `jedaojeda@gmail.com`  
+* **Direct Contact**: `dr.ojedainternista@gmail.com`  
 
 > **The Researcher's Motivation**:  
 > *"Despite my formal background and daily hospital practice as a specialist in internal medicine, I have always been deeply passionate about emerging technologies, advanced computing, and tackling complex intellectual challenges. Genetics has consistently been one of my favorite domains outside conventional bedside care—focused firmly on research, discovery, and uncovering fundamental biological mechanisms. I decided to take on this global hackathon as a personal mission to measure my capabilities, push my boundaries, and demonstrate how physician-led reasoning integrated with frontier artificial intelligence can solve rare-disease challenges that traditional pipelines miss."*  
