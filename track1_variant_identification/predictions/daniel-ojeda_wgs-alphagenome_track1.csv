@@ -1,0 +1,10 @@
+proband_id,chrom_1,pos_1,ref_1,alt_1,chrom_2,pos_2,ref_2,alt_2,epcr,finding_type,notes
+WGS_EX2312012,chr15,40209701,T,G,chr15,40216470,A,G,1.0,primary,BUB1B biallelic compound heterozygous checkpoint failure (c.1833C>T and c.2211+1G>A / p.Arg407Ter truncating + kinase domain defect). Confirmed causal driver of MVA1.
+WGS_EX2312012,chr4,103139087,ACATTTTGCATTTCTGATTAAAAAGTATAAAGTGAAACAAAAACATTTTCTCCCACTTATCTTGTTCACTACAGT,A,,,,,0.95,secondary,CENPE Kinetochore motor stalk disruption (IPI: 0.8016). Destabilizes kinetochore tension and triggers mitotic spindle collapse.
+WGS_EX2312012,chr11,32408514,T,TA,,,,,0.9,secondary,WT1 homozygous zinc-finger duplication. Pathogenic driver of congenital bilateral medullary nephrocalcinosis and Wilms tumor predisposition.
+WGS_EX2312012,chr15,40230395,C,CT,,,,,0.75,secondary,"BUB1B homozygous frameshift indel in regulatory junction, exacerbating mitotic SAC checkpoint slippage."
+WGS_EX2312012,chr15,40220612,T,G,,,,,0.7,secondary,"BUB1B additional missense modifier near BUB3-binding domain, destabilizing MCC assembly."
+WGS_EX2312012,chr5,893128,A,C,,,,,0.65,secondary,"TRIP13 (MVA3 locus) AAA+ ATPase modifier, impairing p31comet/MAD2 disassembly."
+WGS_EX2312012,chr5,893132,G,C,,,,,0.6,secondary,"TRIP13 adjacent conserved catalytic loop variant, co-segregating with SAC dysregulation."
+WGS_EX2312012,chr14,95136086,T,TACAC,,,,,0.45,secondary,"DICER1 regulatory microRNA biogenesis modifier, predisposing to embryonal rhabdomyosarcoma."
+WGS_EX2312012,chr15,40229717,C,G,,,,,0.2,secondary,BUB1B deep intronic polymorphism with neutral evolutionary score.

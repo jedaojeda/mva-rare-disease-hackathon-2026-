@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.env
+venv/
+env/
+
+# Large Genomic Data (Sage Bionetworks Compliance)
+*.fastq
+*.fastq.gz
+*.bam
+*.bai
+*.cram
+*.crai
+raw_genomic_data/
+
+# OS and Office Temp Files
+.DS_Store
+Thumbs.db
+desktop.ini
+~$*.docx
+~$*.xlsx
+*.tmp

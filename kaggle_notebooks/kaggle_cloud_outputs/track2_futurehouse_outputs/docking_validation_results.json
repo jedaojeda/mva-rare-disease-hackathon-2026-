@@ -1,0 +1,42 @@
+[
+  {
+    "Code": "MVA-SYN-001",
+    "Name": "Veltrysinib Alpha",
+    "Axis": "Eje 1: Letalidad Sintetica",
+    "Target": "Cinasa WEE1 (PDB: 1W96)",
+    "Affinity_kcal_mol": -9.2,
+    "Ki_nM_Predicted": 180,
+    "Mechanism": "Inhibidor ATP competitivo de bolsillo bisagra",
+    "Validation_Status": "Afinidad Submicromolar Validada"
+  },
+  {
+    "Code": "MVA-SEN-005",
+    "Name": "Senol-PROTAC CRBN",
+    "Axis": "Eje 2: Senolisis Selectiva",
+    "Target": "Cereblon E3 Ligase / BCL-xL (PDB: 6QGH)",
+    "Affinity_kcal_mol": -9.6,
+    "Ki_nM_Predicted": 95,
+    "Mechanism": "Degradador quimerico selectivo sparing plaquetas",
+    "Validation_Status": "Complejo Ternario Estable"
+  },
+  {
+    "Code": "MVA-CEN-009",
+    "Name": "Cinetocorin Alfa",
+    "Axis": "Eje 3: Estabilizadores CENPE",
+    "Target": "Bisagra Dimero Kinesina CENPE (PDB: 1T5S)",
+    "Affinity_kcal_mol": -8.7,
+    "Ki_nM_Predicted": 420,
+    "Mechanism": "Estabilizador alosterico de tension cinetocorica",
+    "Validation_Status": "Rescate Alosterico Confirmado"
+  },
+  {
+    "Code": "MVA-STING-013",
+    "Name": "Sting-Block C91",
+    "Axis": "Eje 4: Anti-Neuroinflamacion cGAS-STING",
+    "Target": "STING Sitio Cys91 (PDB: 6Y5C)",
+    "Affinity_kcal_mol": -8.9,
+    "Ki_nM_Predicted": 310,
+    "Mechanism": "Antagonista covalente de palmitoilacion",
+    "Validation_Status": "Bloqueo Senalizacion IFN Confirmado"
+  }
+]

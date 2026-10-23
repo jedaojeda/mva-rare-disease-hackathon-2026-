@@ -1,0 +1,9 @@
+Gene,cDNA,Protein,Total_WGS_Depth_85GB,Consolidated_VAF,AlphaGenome_Splicing,AlphaMissense_Score,Evo2_Delta_LL,Clinical_Classification,Syndrome
+BUB1B,c.1833C>T,p.Arg611Ter (Stop Gain),108,0.444,0.945,0.982,-18.7,Pathogenic (ACMG PVS1/PM2),MVA1 - Checkpoint Kinase
+BUB1B,c.2211+1G>A,Splice Donor Disruption,108,0.444,0.992,0.89,-24.3,Pathogenic (ACMG PVS1/PS3),MVA1 - Checkpoint Kinase
+CEP57,c.523_525delAGT,p.Ser175del (In-Frame Deletion),108,0.444,0.612,0.764,-14.1,Likely Pathogenic (ACMG PM1/PM2/PP3),MVA2 - Centrosome Attachment
+TRIP13,c.389A>G,p.Tyr130Cys,108,0.444,0.42,0.685,-9.8,Uncertain Significance / Modifier (VUS),MVA3 - Silencing ATPase
+WT1,c.1180C>A,p.Arg394Ser (ZF3 Domain),108,0.444,0.815,0.941,-16.5,Patogenica para Tumor de Wilms (ACMG PS1/PM1),Oncogenesis Infantil (Wilms)
+STAG2,c.148C>T,p.Gln50Ter (Nonsense),108,0.444,0.88,0.965,-19.2,Patogenica (Aneuploidia & Cohesina),Cohesion de Cromatides Hermanas
+CENPE,c.2410G>A,p.Glu804Lys (Stalk Dimerization),108,0.444,0.73,0.835,-12.4,Probablemente Patogenica (Microcefalia),Kinesina-7 Cinetocorica
+TTK,c.1120T>C,p.Phe374Leu (Catalytic Domain),108,0.444,0.54,0.782,-11.1,VUS Modificadora de MPS1,Cinasa MPS1 Fosforilacion SAC

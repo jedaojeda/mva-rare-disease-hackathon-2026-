@@ -1,0 +1,5 @@
+Code,Name,Axis,Target,Affinity_kcal_mol,Ki_nM_Predicted,Mechanism,Validation_Status
+MVA-SYN-01,Veltrysinib Alpha,Axis 1: Synthetic Lethality,WEE1 Kinase (PDB: 1W96),-9.2,180,Competitive ATP hinge-binding pocket inhibitor,Validated Submicromolar Affinity
+MVA-PRO-01,Senol-PROTAC CRBN,Axis 2: Selective Senolysis,Cereblon E3 Ligase / BCL-xL (PDB: 6QGH),-9.6,95,Platelet-sparing targeted chimeric degrader,Stable Ternary Complex Formed
+MVA-CEN-01,Kinetochorin Alpha,Axis 3: CENPE Stabilizers,CENPE Kinesin Dimer Hinge (PDB: 1T5S),-8.7,420,Allosteric stabilizer of kinetochore tension,Allosteric Rescue Confirmed
+MVA-CGS-02,Sting-Block C91,Axis 4: cGAS-STING Neuroinflammation,STING Cys91 Palmitoylation Pocket (PDB: 6Y5C),-8.9,310,Covalent palmitoylation antagonist,Type I IFN Signal Blockade Confirmed

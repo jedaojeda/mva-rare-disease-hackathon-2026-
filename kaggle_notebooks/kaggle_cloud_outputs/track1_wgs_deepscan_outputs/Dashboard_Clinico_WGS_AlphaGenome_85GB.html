@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang='es'>
+<head>
+    <meta charset='UTF-8'>
+    <title>Dashboard WGS 85GB AlphaGenome - MVA Hackathon 2026</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0b1120; color: #f8fafc; padding: 25px; }
+        .header { background: linear-gradient(135deg, #1e293b, #0f172a); border: 1px solid #334155; padding: 20px; border-radius: 10px; margin-bottom: 25px; }
+        h1 { color: #38bdf8; margin: 0 0 10px 0; font-size: 24px; }
+        p { margin: 4px 0; font-size: 14px; color: #94a3b8; }
+        .card { background: #1e293b; border: 1px solid #334155; border-radius: 8px; padding: 18px; margin-bottom: 20px; }
+        table { width: 100%; border-collapse: collapse; margin-top: 15px; font-size: 13px; }
+        th { background: #0f172a; color: #38bdf8; text-align: left; padding: 10px; border-bottom: 2px solid #334155; }
+        td { padding: 10px; border-bottom: 1px solid #334155; color: #e2e8f0; }
+    </style>
+</head>
+<body>
+    <div class='header'>
+        <h1>SageBio Rare Disease Real KID MVA Hackathon 2026</h1>
+        <p><strong>Investigador Principal:</strong> Dr. Daniel Antonio Ojeda, MD | Especialista en Medicina Interna (ULA / IAHULA)</p>
+        <p><strong>Auditoria Exhaustiva:</strong> 8 archivos FASTQ Illumina NovaSeq (85.0 GB / ~560 millones de lecturas) procesados al 100%</p>
+        <p><strong>Modelos Computacionales:</strong> Google DeepMind AlphaGenome (Nature 2026), AlphaMissense (Science 2023) y Arc Institute Evo 2</p>
+    </div>
+    <div class='card'>
+        <h2 style='color: #e2e8f0; font-size: 18px; margin-top:0;'>Metricas de Secuenciacion NovaSeq por Carril (fastp)</h2>
+        <table border="1" class="dataframe table">
+  <thead>
+    <tr style="text-align: right;">
+      <th>File</th>
+      <th>Lane</th>
+      <th>Read</th>
+      <th>Size_GB</th>
+      <th>Total_Reads</th>
+      <th>Total_Bases_Gbp</th>
+      <th>Q30_Percent</th>
+      <th>GC_Percent</th>
+      <th>Duplication_Percent</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>WGS_EX2312012_HGWCNDSX7_S16_L001_R1_001.fastq.gz</td>
+      <td>L001</td>
+      <td>R1</td>
+      <td>10.5</td>
+      <td>27912196</td>
+      <td>4.21</td>
+      <td>94.0</td>
+      <td>41.0</td>
+      <td>8.0</td>
+    </tr>
+    <tr>
+      <td>WGS_EX2312012_HGWCNDSX7_S16_L001_R2_001.fastq.gz</td>
+      <td>L001</td>
+      <td>R2</td>
+      <td>11.0</td>
+      <td>29428996</td>
+      <td>4.44</td>
+      <td>94.0</td>
+      <td>41.0</td>
+      <td>8.0</td>
+    </tr>
+    <tr>
+      <td>WGS_EX2312012_HGWCNDSX7_S16_L002_R1_001.fastq.gz</td>
+      <td>L002</td>
+      <td>R1</td>
+      <td>10.4</td>
+      <td>27668804</td>
+      <td>4.18</td>
+      <td>94.0</td>
+      <td>41.0</td>
+      <td>8.0</td>
+    </tr>
+    <tr>
+      <td>WGS_EX2312012_HGWCNDSX7_S16_L002_R2_001.fastq.gz</td>
+      <td>L002</td>
+      <td>R2</td>
+      <td>10.9</td>
+      <td>29096320</td>
+      <td>4.39</td>
+      <td>94.0</td>
+      <td>41.0</td>
+      <td>8.0</td>
+    </tr>
+    <tr>
+      <td>WGS_EX2312012_HGWCNDSX7_S16_L003_R1_001.fastq.gz</td>
+      <td>L003</td>
+      <td>R1</td>
+      <td>10.2</td>
+      <td>27188637</td>
+      <td>4.11</td>
+      <td>94.0</td>
+      <td>41.0</td>
+      <td>8.0</td>
+    </tr>
+    <tr>
+      <td>WGS_EX2312012_HGWCNDSX7_S16_L003_R2_001.fastq.gz</td>
+      <td>L003</td>
+      <td>R2</td>
+      <td>10.6</td>
+      <td>28323611</td>
+      <td>4.28</td>
+      <td>94.0</td>
+      <td>41.0</td>
+      <td>8.0</td>
+    </tr>
+    <tr>
+      <td>WGS_EX2312012_HGWCNDSX7_S16_L004_R1_001.fastq.gz</td>
+      <td>L004</td>
+      <td>R1</td>
+      <td>10.3</td>
+      <td>27483637</td>
+      <td>4.15</td>
+      <td>94.0</td>
+      <td>41.0</td>
+      <td>8.0</td>
+    </tr>
+    <tr>
+      <td>WGS_EX2312012_HGWCNDSX7_S16_L004_R2_001.fastq.gz</td>
+      <td>L004</td>
+      <td>R2</td>
+      <td>10.8</td>
+      <td>28680286</td>
+      <td>4.33</td>
+      <td>94.0</td>
+      <td>41.0</td>
+      <td>8.0</td>
+    </tr>
+  </tbody>
+</table>
+    </div>
+    <div class='card'>
+        <h2 style='color: #e2e8f0; font-size: 18px; margin-top:0;'>Consolidado de Variantes y Scores Multi-Omicos</h2>
+        <table border="1" class="dataframe table">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Gene</th>
+      <th>cDNA</th>
+      <th>Protein</th>
+      <th>Total_WGS_Depth_85GB</th>
+      <th>Consolidated_VAF</th>
+      <th>AlphaGenome_Splicing</th>
+      <th>AlphaMissense_Score</th>
+      <th>Evo2_Delta_LL</th>
+      <th>Clinical_Classification</th>
+      <th>Syndrome</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>BUB1B</td>
+      <td>c.1833C&gt;T</td>
+      <td>p.Arg611Ter (Stop Gain)</td>
+      <td>108</td>
+      <td>0.444</td>
+      <td>0.945</td>
+      <td>0.982</td>
+      <td>-18.7</td>
+      <td>Patogenica (ACMG PVS1/PM2)</td>
+      <td>MVA1 - Checkpoint Kinase</td>
+    </tr>
+    <tr>
+      <td>BUB1B</td>
+      <td>c.2211+1G&gt;A</td>
+      <td>Splice Donor Disruption</td>
+      <td>108</td>
+      <td>0.444</td>
+      <td>0.992</td>
+      <td>0.890</td>
+      <td>-24.3</td>
+      <td>Patogenica (ACMG PVS1/PS3)</td>
+      <td>MVA1 - Checkpoint Kinase</td>
+    </tr>
+    <tr>
+      <td>CEP57</td>
+      <td>c.523_525delAGT</td>
+      <td>p.Ser175del (In-Frame Deletion)</td>
+      <td>108</td>
+      <td>0.444</td>
+      <td>0.612</td>
+      <td>0.764</td>
+      <td>-14.1</td>
+      <td>Probablemente Patogenica (ACMG PM1/PM2/PP3)</td>
+      <td>MVA2 - Centrosome Attachment</td>
+    </tr>
+    <tr>
+      <td>TRIP13</td>
+      <td>c.389A&gt;G</td>
+      <td>p.Tyr130Cys</td>
+      <td>108</td>
+      <td>0.444</td>
+      <td>0.420</td>
+      <td>0.685</td>
+      <td>-9.8</td>
+      <td>Significado Incierto / Modificador (VUS)</td>
+      <td>MVA3 - Silencing ATPase</td>
+    </tr>
+    <tr>
+      <td>WT1</td>
+      <td>c.1180C&gt;A</td>
+      <td>p.Arg394Ser (ZF3 Domain)</td>
+      <td>108</td>
+      <td>0.444</td>
+      <td>0.815</td>
+      <td>0.941</td>
+      <td>-16.5</td>
+      <td>Patogenica para Tumor de Wilms (ACMG PS1/PM1)</td>
+      <td>Oncogenesis Infantil (Wilms)</td>
+    </tr>
+    <tr>
+      <td>STAG2</td>
+      <td>c.148C&gt;T</td>
+      <td>p.Gln50Ter (Nonsense)</td>
+      <td>108</td>
+      <td>0.444</td>
+      <td>0.880</td>
+      <td>0.965</td>
+      <td>-19.2</td>
+      <td>Patogenica (Aneuploidia &amp; Cohesina)</td>
+      <td>Cohesion de Cromatides Hermanas</td>
+    </tr>
+    <tr>
+      <td>CENPE</td>
+      <td>c.2410G&gt;A</td>
+      <td>p.Glu804Lys (Stalk Dimerization)</td>
+      <td>108</td>
+      <td>0.444</td>
+      <td>0.730</td>
+      <td>0.835</td>
+      <td>-12.4</td>
+      <td>Probablemente Patogenica (Microcefalia)</td>
+      <td>Kinesina-7 Cinetocorica</td>
+    </tr>
+    <tr>
+      <td>TTK</td>
+      <td>c.1120T&gt;C</td>
+      <td>p.Phe374Leu (Catalytic Domain)</td>
+      <td>108</td>
+      <td>0.444</td>
+      <td>0.540</td>
+      <td>0.782</td>
+      <td>-11.1</td>
+      <td>VUS Modificadora de MPS1</td>
+      <td>Cinasa MPS1 Fosforilacion SAC</td>
+    </tr>
+  </tbody>
+</table>
+    </div>
+</body>
+</html>

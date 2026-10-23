@@ -1,0 +1,519 @@
+Rank,Gene,Role,Chrom,Pos,Ref,Alt,GT,DP,Qual,AlphaGenome_Impact,AlphaMissense_Score,Evo2_Delta_LL,Combined_Pathogenicity_Score,Clinical_Classification,Phenotypic_HPO_Match
+1,CENPE,Kinetochore Motor,4,103139087,ACATTTTGCATTTCTGATTAAAAAGTATAAAGTGAAACAAAAACATTTTCTCCCACTTATCTTGTTCACTACAGT,A,0/1,47,584.73,0.85,0.62,-6.85,0.8016,Pathogenic,HP:0001622 (Premature birth / Mitotic Catastrophe)
+2,BUB1B,MVA1 - Checkpoint Kinase,15,40209701,T,G,0/1,46,708.77,0.885,0.892,-3.45,0.7894,Pathogenic,HP:0002859 (Rhabdomyosarcoma / SAC Failure)
+3,WT1,Wilms Tumor / Renal,11,32408514,T,TA,1/1,10,123.06,0.79,0.75,-4.12,0.7256,Pathogenic,HP:0000121 (Nephrocalcinosis Congenita)
+4,BUB1B,MVA1 - Checkpoint Kinase,15,40216470,A,G,0/1,46,383.77,0.76,0.841,-2.98,0.7048,Pathogenic,HP:0002859 (Rhabdomyosarcoma / SAC Failure)
+5,BUB1B,MVA1 - Checkpoint Kinase,15,40230395,C,CT,1/1,8,104.73,0.745,0.68,-3.89,0.6749,Likely Pathogenic,Mitotic Checkpoint Background
+6,BUB1B,MVA1 - Checkpoint Kinase,15,40220612,T,G,0/1,28,344.77,0.812,0.71,-2.6,0.6662,Likely Pathogenic,Mitotic Checkpoint Background
+7,TRIP13,MVA3 - MAD2 Remodeler,5,893128,A,C,0/1,7,36.77,0.78,0.58,-2.85,0.6168,Likely Pathogenic,HP:0200067 (Recurrent Miscarriages / SAC Disruption)
+8,TRIP13,MVA3 - MAD2 Remodeler,5,893132,G,C,0/1,7,36.77,0.775,0.575,-2.8,0.6112,Likely Pathogenic,HP:0200067 (Recurrent Miscarriages / SAC Disruption)
+9,DICER1,Rhabdomyosarcoma Predisposition,14,95136086,T,TACAC,1/1,18,779.73,0.25,0.61,-3.1,0.4242,Likely Pathogenic,Mitotic Checkpoint Background
+10,BUB1B,MVA1 - Checkpoint Kinase,15,40229717,C,G,1/1,55,2207.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+11,BUB1B,MVA1 - Checkpoint Kinase,15,40228664,C,CAA,1/1,49,2188.73,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+12,AURKB,Aurora Kinase B,17,8209089,C,T,1/1,60,2099.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+13,CENPE,Kinetochore Motor,4,103219691,C,A,1/1,61,2097.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+14,AURKB,Aurora Kinase B,17,8211831,G,T,1/1,58,2017.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+15,DICER1,Rhabdomyosarcoma Predisposition,14,95088868,C,T,1/1,56,2015.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+16,DICER1,Rhabdomyosarcoma Predisposition,14,95133735,T,G,1/1,58,2004.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+17,DICER1,Rhabdomyosarcoma Predisposition,14,95138975,AT,A,1/1,50,1957.73,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+18,BUB1B,MVA1 - Checkpoint Kinase,15,40248989,A,G,1/1,56,1929.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+19,BUB1B,MVA1 - Checkpoint Kinase,15,40236912,G,A,1/1,55,1871.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+20,DICER1,Rhabdomyosarcoma Predisposition,14,95144541,T,C,1/1,55,1867.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+21,AURKB,Aurora Kinase B,17,8205013,A,G,1/1,52,1866.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+22,CEP57,MVA2 - Centrosomal Nucleation,11,95861402,G,GTTATTA,1/1,42,1850.73,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+23,DICER1,Rhabdomyosarcoma Predisposition,14,95133669,G,C,1/1,57,1841.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+24,MAD2L1,SAC Core Effector,4,120168213,G,A,1/1,51,1782.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+25,DICER1,Rhabdomyosarcoma Predisposition,14,95092245,C,T,1/1,51,1773.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+26,DICER1,Rhabdomyosarcoma Predisposition,14,95147134,A,G,1/1,51,1680.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+27,CEP57,MVA2 - Centrosomal Nucleation,11,95856248,A,AG,1/1,48,1660.73,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+28,MAD2L1,SAC Core Effector,4,120154859,T,C,1/1,50,1659.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+29,BUB1,Kinetochore Kinase,2,110691564,A,G,1/1,51,1637.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+30,DICER1,Rhabdomyosarcoma Predisposition,14,95099219,T,C,1/1,50,1618.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+31,CENPE,Kinetochore Motor,4,103142315,A,C,1/1,46,1616.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+32,CENPE,Kinetochore Motor,4,103216155,T,TAC,1/1,37,1615.73,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+33,TTK,MPS1 Master Kinase,6,80039391,C,CAAGT,1/1,36,1611.73,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+34,DICER1,Rhabdomyosarcoma Predisposition,14,95142113,T,C,1/1,50,1588.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+35,DICER1,Rhabdomyosarcoma Predisposition,14,95138994,TA,T,1/1,48,1586.73,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+36,DICER1,Rhabdomyosarcoma Predisposition,14,95132328,G,C,1/1,46,1521.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+37,BUB1B,MVA1 - Checkpoint Kinase,15,40187404,A,G,1/1,47,1510.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+38,DICER1,Rhabdomyosarcoma Predisposition,14,95150725,A,G,1/1,44,1508.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+39,MAD2L1,SAC Core Effector,4,120159129,A,G,1/1,40,1500.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+40,BUB1,Kinetochore Kinase,2,110652579,A,AT,1/1,41,1493.73,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+41,BUB3,WD40 Adaptor,10,122850511,G,A,1/1,41,1492.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+42,BUB1B,MVA1 - Checkpoint Kinase,15,40227507,A,T,1/1,41,1482.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+43,BUB3,WD40 Adaptor,10,122846649,A,G,1/1,45,1481.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+44,DICER1,Rhabdomyosarcoma Predisposition,14,95136322,C,A,1/1,41,1478.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+45,CENPE,Kinetochore Motor,4,103209829,A,C,1/1,46,1425.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+46,DICER1,Rhabdomyosarcoma Predisposition,14,95097375,T,C,1/1,41,1424.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+47,BUB1B,MVA1 - Checkpoint Kinase,15,40227809,C,A,1/1,41,1422.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+48,BUB3,WD40 Adaptor,10,122860609,C,G,1/1,42,1414.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+49,BUB1B,MVA1 - Checkpoint Kinase,15,40249253,A,G,1/1,46,1404.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+50,AURKB,Aurora Kinase B,17,8209868,A,G,1/1,46,1401.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+51,DICER1,Rhabdomyosarcoma Predisposition,14,95085217,T,C,1/1,39,1380.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+52,BUB1,Kinetochore Kinase,2,110649147,T,TCA,1/1,42,1377.73,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+53,BUB1B,MVA1 - Checkpoint Kinase,15,40186692,G,A,1/1,41,1369.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+54,BUB1B,MVA1 - Checkpoint Kinase,15,40239625,T,C,1/1,42,1329.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+55,WT1,Wilms Tumor / Renal,11,32416153,T,C,1/1,40,1326.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,HP:0000121 (Nephrocalcinosis Congenita)
+56,DICER1,Rhabdomyosarcoma Predisposition,14,95083202,A,C,1/1,39,1320.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+57,BUB1B,MVA1 - Checkpoint Kinase,15,40231092,G,C,1/1,38,1320.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+58,DICER1,Rhabdomyosarcoma Predisposition,14,95099768,ACAC,"A,AAC",1/2,22,1319.73,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+59,DICER1,Rhabdomyosarcoma Predisposition,14,95143987,T,A,1/1,36,1314.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+60,DICER1,Rhabdomyosarcoma Predisposition,14,95083408,T,C,1/1,41,1286.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+61,BUB3,WD40 Adaptor,10,122849767,T,C,1/1,37,1282.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+62,CENPE,Kinetochore Motor,4,103165327,C,T,0/1,56,1272.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+63,CENPE,Kinetochore Motor,4,103165329,G,A,0/1,54,1272.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+64,BUB1B,MVA1 - Checkpoint Kinase,15,40193435,T,C,1/1,42,1268.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+65,BUB3,WD40 Adaptor,10,122869737,G,C,1/1,37,1260.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+66,BUB3,WD40 Adaptor,10,122864920,A,G,1/1,37,1249.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+67,MAD2L1,SAC Core Effector,4,120152065,G,A,1/1,36,1238.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+68,MAD2L1,SAC Core Effector,4,120153736,C,"CAA,CAAA",1/2,36,1221.73,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+69,DICER1,Rhabdomyosarcoma Predisposition,14,95090171,CA,C,1/1,56,1217.73,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+70,BUB1B,MVA1 - Checkpoint Kinase,15,40236464,A,G,0/1,57,1210.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+71,DICER1,Rhabdomyosarcoma Predisposition,14,95082386,G,A,1/1,34,1205.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+72,BUB1B,MVA1 - Checkpoint Kinase,15,40236460,A,G,0/1,60,1204.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+73,BUB3,WD40 Adaptor,10,122868807,T,C,1/1,38,1197.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+74,MAD2L1,SAC Core Effector,4,120161202,G,A,1/1,36,1192.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+75,BUB1B,MVA1 - Checkpoint Kinase,15,40250903,G,A,0/1,60,1185.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+76,PLK1,Polo-like Kinase 1,16,23692734,G,GT,1/1,50,1177.73,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+77,DICER1,Rhabdomyosarcoma Predisposition,14,95090410,A,T,1/1,32,1141.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+78,BUB3,WD40 Adaptor,10,122869438,C,T,1/1,34,1131.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+79,CENPE,Kinetochore Motor,4,103159807,G,A,1/1,31,1101.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+80,BUB1B,MVA1 - Checkpoint Kinase,15,40245118,T,C,1/1,32,1096.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+81,MAD2L1,SAC Core Effector,4,120163552,T,TTG,0/1,49,1092.73,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+82,BUB1B,MVA1 - Checkpoint Kinase,15,40228512,G,A,0/1,55,1080.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+83,DICER1,Rhabdomyosarcoma Predisposition,14,95096965,TTTAAG,T,0/1,44,1078.73,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+84,WT1,Wilms Tumor / Renal,11,32422474,A,G,0/1,65,1074.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,HP:0000121 (Nephrocalcinosis Congenita)
+85,TTK,MPS1 Master Kinase,6,80037865,TATAATA,T,0/1,51,1069.73,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+86,TTK,MPS1 Master Kinase,6,80040573,C,T,0/1,46,1048.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+87,TTK,MPS1 Master Kinase,6,80040575,G,T,0/1,46,1048.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+88,AURKB,Aurora Kinase B,17,8207446,C,A,0/1,53,1043.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+89,MAD2L1,SAC Core Effector,4,120148719,A,ATG,1/1,31,1038.73,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+90,TTK,MPS1 Master Kinase,6,80020053,T,TACATATAA,0/1,43,1038.73,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+91,BUB1B,MVA1 - Checkpoint Kinase,15,40246366,C,T,0/1,62,1023.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+92,CENPE,Kinetochore Motor,4,103199840,T,C,0/1,54,995.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+93,CENPE,Kinetochore Motor,4,103136730,T,G,0/1,66,984.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+94,CENPE,Kinetochore Motor,4,103182740,C,T,0/1,49,981.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+95,MAD2L1,SAC Core Effector,4,120166901,CT,C,1/1,41,970.73,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+96,TTK,MPS1 Master Kinase,6,80019087,C,T,0/1,57,968.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+97,CENPE,Kinetochore Motor,4,103190863,T,C,0/1,61,955.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+98,BUB1B,MVA1 - Checkpoint Kinase,15,40229722,T,C,0/1,57,954.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+99,CDC20,APC/C Activator,1,43337551,G,A,0/1,52,946.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+100,TTK,MPS1 Master Kinase,6,80010774,T,TAAAGA,0/1,46,946.73,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+101,TTK,MPS1 Master Kinase,6,80010770,GCAT,G,0/1,46,945.73,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+102,WT1,Wilms Tumor / Renal,11,32422601,G,A,0/1,51,936.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,HP:0000121 (Nephrocalcinosis Congenita)
+103,BUB1B,MVA1 - Checkpoint Kinase,15,40231742,T,C,0/1,57,932.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+104,BUB1B,MVA1 - Checkpoint Kinase,15,40247700,C,T,0/1,51,926.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+105,CDC20,APC/C Activator,1,43337449,C,A,0/1,50,921.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+106,CENPE,Kinetochore Motor,4,103171124,C,G,0/1,53,921.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+107,BUB1B,MVA1 - Checkpoint Kinase,15,40233229,T,G,1/1,27,915.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+108,CENPE,Kinetochore Motor,4,103200558,TACACACACACACACACAC,"T,TACACACACACAC",1/2,24,915.73,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+109,TTK,MPS1 Master Kinase,6,80009798,G,A,0/1,58,912.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+110,BUB3,WD40 Adaptor,10,122871544,G,A,1/1,25,908.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+111,BUB1B,MVA1 - Checkpoint Kinase,15,40251022,A,G,0/1,60,906.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+112,CDC20,APC/C Activator,1,43334330,C,T,0/1,55,904.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+113,CENPE,Kinetochore Motor,4,103192791,GGAAGACAT,G,0/1,34,895.73,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+114,AURKB,Aurora Kinase B,17,8204132,GT,G,1/1,40,895.73,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+115,AURKB,Aurora Kinase B,17,8202380,C,T,1/1,27,892.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+116,CENPE,Kinetochore Motor,4,103171058,GAC,G,0/1,46,892.73,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+117,BUB1,Kinetochore Kinase,2,110668376,C,T,0/1,49,880.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+118,TTK,MPS1 Master Kinase,6,80011016,G,A,0/1,45,871.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+119,TTK,MPS1 Master Kinase,6,80011025,A,T,0/1,46,868.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+120,MAD2L1,SAC Core Effector,4,120160753,C,T,0/1,61,864.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+121,WT1,Wilms Tumor / Renal,11,32418244,T,TA,1/1,39,864.73,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,HP:0000121 (Nephrocalcinosis Congenita)
+122,CENPE,Kinetochore Motor,4,103205026,T,C,1/1,28,863.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+123,TTK,MPS1 Master Kinase,6,80009773,C,T,0/1,51,860.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+124,BUB3,WD40 Adaptor,10,122875749,TA,T,1/1,42,859.73,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+125,MAD2L1,SAC Core Effector,4,120157693,G,A,0/1,47,857.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+126,DICER1,Rhabdomyosarcoma Predisposition,14,95138990,A,T,0/1,49,853.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+127,CENPE,Kinetochore Motor,4,103179599,A,G,0/1,44,851.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+128,MAD2L1,SAC Core Effector,4,120162275,A,G,0/1,59,851.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+129,BUB1B,MVA1 - Checkpoint Kinase,15,40250646,A,C,0/1,61,848.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+130,TTK,MPS1 Master Kinase,6,80046118,A,ATTAAC,0/1,38,845.73,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+131,AURKB,Aurora Kinase B,17,8206153,CAG,C,0/1,36,841.73,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+132,BUB1B,MVA1 - Checkpoint Kinase,15,40250504,T,C,0/1,42,836.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+133,TTK,MPS1 Master Kinase,6,80003402,A,G,0/1,37,829.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+134,TTK,MPS1 Master Kinase,6,80036861,A,T,0/1,44,826.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+135,CENPE,Kinetochore Motor,4,103189515,C,A,0/1,42,825.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+136,BUB1B,MVA1 - Checkpoint Kinase,15,40242778,T,C,0/1,52,825.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+137,TTK,MPS1 Master Kinase,6,80010506,C,T,0/1,56,824.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+138,TTK,MPS1 Master Kinase,6,80042746,G,A,0/1,50,820.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+139,TTK,MPS1 Master Kinase,6,80045597,G,T,0/1,52,819.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+140,MAD2L1,SAC Core Effector,4,120169063,CAG,C,0/1,44,819.73,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+141,MAD2L1,SAC Core Effector,4,120155904,T,A,0/1,55,813.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+142,CENPE,Kinetochore Motor,4,103170448,A,C,0/1,51,811.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+143,BUB3,WD40 Adaptor,10,122866275,G,C,1/1,25,807.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+144,CENPE,Kinetochore Motor,4,103191128,G,T,0/1,45,805.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+145,TTK,MPS1 Master Kinase,6,80005550,T,C,0/1,65,805.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+146,CENPE,Kinetochore Motor,4,103193140,A,G,0/1,53,804.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+147,TTK,MPS1 Master Kinase,6,80017487,C,T,0/1,43,802.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+148,TTK,MPS1 Master Kinase,6,80017071,C,T,0/1,50,801.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+149,CDC20,APC/C Activator,1,43335515,A,G,0/1,56,797.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+150,PLK1,Polo-like Kinase 1,16,23675499,CA,C,1/1,43,797.73,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+151,BUB1B,MVA1 - Checkpoint Kinase,15,40198239,G,GT,1/1,36,796.73,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+152,TTK,MPS1 Master Kinase,6,80041016,T,C,0/1,49,793.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+153,WT1,Wilms Tumor / Renal,11,32439078,G,C,0/1,45,793.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,HP:0000121 (Nephrocalcinosis Congenita)
+154,TTK,MPS1 Master Kinase,6,80005475,C,A,0/1,58,792.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+155,MAD2L1,SAC Core Effector,4,120161621,C,T,0/1,53,790.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+156,CENPE,Kinetochore Motor,4,103179830,C,T,0/1,36,789.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+157,BUB1B,MVA1 - Checkpoint Kinase,15,40216568,TA,T,1/1,26,789.73,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+158,BUB1B,MVA1 - Checkpoint Kinase,15,40216570,TA,T,1/1,26,789.73,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+159,BUB1,Kinetochore Kinase,2,110671177,G,A,0/1,56,788.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+160,CENPE,Kinetochore Motor,4,103158267,C,T,0/1,46,786.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+161,TTK,MPS1 Master Kinase,6,80006515,C,A,0/1,52,786.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+162,CENPE,Kinetochore Motor,4,103146512,G,T,0/1,49,783.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+163,TRIP13,MVA3 - MAD2 Remodeler,5,902436,A,G,0/1,48,783.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,HP:0200067 (Recurrent Miscarriages / SAC Disruption)
+164,BUB1B,MVA1 - Checkpoint Kinase,15,40252292,A,G,0/1,49,783.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+165,DICER1,Rhabdomyosarcoma Predisposition,14,95160166,G,A,0/1,49,780.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+166,BUB1,Kinetochore Kinase,2,110651114,T,C,0/1,56,779.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+167,CENPE,Kinetochore Motor,4,103161192,C,T,0/1,50,779.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+168,TTK,MPS1 Master Kinase,6,80015335,T,C,0/1,60,776.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+169,MAD2L1,SAC Core Effector,4,120158182,T,C,0/1,57,775.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+170,MAD2L1,SAC Core Effector,4,120168117,GTAGT,G,0/1,59,775.73,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+171,BUB1B,MVA1 - Checkpoint Kinase,15,40247005,T,C,0/1,57,774.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+172,CENPE,Kinetochore Motor,4,103200419,G,A,0/1,45,767.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+173,TTK,MPS1 Master Kinase,6,80000010,G,C,0/1,57,766.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+174,DICER1,Rhabdomyosarcoma Predisposition,14,95125161,G,A,0/1,59,764.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+175,CENPE,Kinetochore Motor,4,103208629,T,C,0/1,45,760.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+176,CENPE,Kinetochore Motor,4,103212859,TACACACACACAC,"T,TACACACACAC",1/2,22,759.73,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+177,BUB1,Kinetochore Kinase,2,110681551,C,T,0/1,47,757.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+178,WT1,Wilms Tumor / Renal,11,32438611,C,A,0/1,53,756.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,HP:0000121 (Nephrocalcinosis Congenita)
+179,WT1,Wilms Tumor / Renal,11,32430455,GGAGAGAGAGA,"G,GGAGAGA",1/2,19,756.73,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,HP:0000121 (Nephrocalcinosis Congenita)
+180,BUB1B,MVA1 - Checkpoint Kinase,15,40236929,T,C,0/1,52,755.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+181,CENPE,Kinetochore Motor,4,103163996,A,G,0/1,42,754.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+182,CDC20,APC/C Activator,1,43346404,G,A,0/1,45,753.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+183,CENPE,Kinetochore Motor,4,103133529,A,G,0/1,41,752.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+184,TTK,MPS1 Master Kinase,6,80043904,G,A,0/1,57,750.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+185,MAD2L1,SAC Core Effector,4,120160711,G,A,0/1,53,749.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+186,CENPE,Kinetochore Motor,4,103156724,T,C,0/1,48,748.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+187,CENPE,Kinetochore Motor,4,103198600,G,A,0/1,57,744.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+188,MAD2L1,SAC Core Effector,4,120154033,TGA,T,0/1,43,743.73,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+189,CENPE,Kinetochore Motor,4,103220015,A,G,0/1,46,742.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+190,BUB1,Kinetochore Kinase,2,110680852,CT,C,0/1,36,741.73,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+191,TTK,MPS1 Master Kinase,6,80022887,C,A,0/1,49,740.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+192,TTK,MPS1 Master Kinase,6,80024192,G,C,0/1,56,736.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+193,BUB1B,MVA1 - Checkpoint Kinase,15,40238946,A,T,0/1,42,736.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+194,CENPE,Kinetochore Motor,4,103205264,T,A,0/1,46,735.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+195,CENPE,Kinetochore Motor,4,103181406,T,C,0/1,53,733.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+196,CENPE,Kinetochore Motor,4,103137439,G,A,0/1,52,728.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+197,CENPE,Kinetochore Motor,4,103141257,T,C,0/1,50,727.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+198,CENPE,Kinetochore Motor,4,103233847,A,G,0/1,42,727.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+199,TTK,MPS1 Master Kinase,6,80014827,T,A,0/1,45,724.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+200,TTK,MPS1 Master Kinase,6,80030470,G,A,0/1,45,724.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+201,WT1,Wilms Tumor / Renal,11,32440406,T,C,0/1,54,724.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,HP:0000121 (Nephrocalcinosis Congenita)
+202,CENPE,Kinetochore Motor,4,103136091,G,A,0/1,43,723.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+203,CENPE,Kinetochore Motor,4,103141914,C,T,0/1,46,723.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+204,CENPE,Kinetochore Motor,4,103160214,C,T,0/1,50,723.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+205,MAD2L1,SAC Core Effector,4,120154010,C,T,0/1,46,723.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+206,CENPE,Kinetochore Motor,4,103149949,T,A,0/1,38,722.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+207,PLK1,Polo-like Kinase 1,16,23685722,A,T,0/1,45,721.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+208,TTK,MPS1 Master Kinase,6,80037258,A,G,0/1,46,720.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+209,TTK,MPS1 Master Kinase,6,80002016,T,C,0/1,49,718.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+210,AURKB,Aurora Kinase B,17,8216308,G,T,0/1,37,718.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+211,AURKB,Aurora Kinase B,17,8217036,AT,A,1/1,40,718.73,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+212,TTK,MPS1 Master Kinase,6,80043882,C,T,0/1,53,716.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+213,CENPE,Kinetochore Motor,4,103135053,T,G,0/1,53,715.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+214,WT1,Wilms Tumor / Renal,11,32428698,CG,C,0/1,61,713.73,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,HP:0000121 (Nephrocalcinosis Congenita)
+215,CENPE,Kinetochore Motor,4,103144788,A,T,0/1,51,712.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+216,AURKB,Aurora Kinase B,17,8212456,T,C,0/1,62,712.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+217,CENPE,Kinetochore Motor,4,103137195,G,GA,0/1,47,712.73,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+218,MAD2L1,SAC Core Effector,4,120160383,T,C,0/1,51,711.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+219,TTK,MPS1 Master Kinase,6,80013140,C,T,0/1,42,706.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+220,CENPE,Kinetochore Motor,4,103186369,C,A,0/1,49,705.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+221,CENPE,Kinetochore Motor,4,103183029,T,TACTA,0/1,37,705.73,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+222,TTK,MPS1 Master Kinase,6,80015189,T,TGGG,0/1,38,703.73,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+223,CDC20,APC/C Activator,1,43341404,C,T,0/1,43,702.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+224,CENPE,Kinetochore Motor,4,103235229,A,C,0/1,44,702.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+225,TTK,MPS1 Master Kinase,6,80044828,A,G,0/1,50,700.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+226,BUB1B,MVA1 - Checkpoint Kinase,15,40252319,G,C,0/1,51,700.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+227,MAD2L1,SAC Core Effector,4,120149115,G,A,0/1,47,699.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+228,CENPE,Kinetochore Motor,4,103198430,C,T,0/1,39,695.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+229,TTK,MPS1 Master Kinase,6,80042063,G,A,0/1,50,692.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+230,DICER1,Rhabdomyosarcoma Predisposition,14,95159374,C,T,0/1,54,692.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+231,BUB1B,MVA1 - Checkpoint Kinase,15,40246582,G,C,0/1,53,692.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+232,BUB1,Kinetochore Kinase,2,110682617,G,C,0/1,54,689.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+233,WT1,Wilms Tumor / Renal,11,32422829,T,C,0/1,62,688.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,HP:0000121 (Nephrocalcinosis Congenita)
+234,TTK,MPS1 Master Kinase,6,80006121,T,G,0/1,45,685.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+235,CENPE,Kinetochore Motor,4,103212851,T,C,0/1,33,681.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+236,CENPE,Kinetochore Motor,4,103135964,C,T,0/1,42,680.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+237,TTK,MPS1 Master Kinase,6,80020545,A,G,0/1,50,680.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+238,WT1,Wilms Tumor / Renal,11,32422953,C,T,0/1,48,680.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,HP:0000121 (Nephrocalcinosis Congenita)
+239,CENPE,Kinetochore Motor,4,103227708,G,A,0/1,45,675.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+240,TTK,MPS1 Master Kinase,6,80015290,G,A,0/1,50,675.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+241,AURKB,Aurora Kinase B,17,8203868,C,T,0/1,46,675.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+242,AURKB,Aurora Kinase B,17,8213755,A,G,0/1,54,675.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+243,WT1,Wilms Tumor / Renal,11,32409109,G,A,0/1,52,669.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,HP:0000121 (Nephrocalcinosis Congenita)
+244,BUB1B,MVA1 - Checkpoint Kinase,15,40253237,A,G,0/1,47,669.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+245,AURKB,Aurora Kinase B,17,8208593,AAAAT,A,0/1,44,669.73,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+246,AURKB,Aurora Kinase B,17,8206280,G,A,0/1,45,668.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+247,AURKB,Aurora Kinase B,17,8213797,A,G,0/1,57,666.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+248,TTK,MPS1 Master Kinase,6,80046464,GTCTT,G,0/1,51,664.73,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+249,TTK,MPS1 Master Kinase,6,80046720,A,G,0/1,50,659.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+250,CENPE,Kinetochore Motor,4,103228741,A,G,0/1,48,657.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+251,TTK,MPS1 Master Kinase,6,80000776,C,T,0/1,41,656.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+252,TTK,MPS1 Master Kinase,6,80040935,C,G,0/1,38,655.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+253,CENPE,Kinetochore Motor,4,103140688,CTTA,C,0/1,39,655.73,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+254,CENPE,Kinetochore Motor,4,103186817,T,A,0/1,38,654.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+255,WT1,Wilms Tumor / Renal,11,32424790,G,A,0/1,46,653.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,HP:0000121 (Nephrocalcinosis Congenita)
+256,BUB1B,MVA1 - Checkpoint Kinase,15,40192892,C,T,0/1,40,652.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+257,CENPE,Kinetochore Motor,4,103152643,A,T,0/1,46,651.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+258,CENPE,Kinetochore Motor,4,103218839,T,C,0/1,43,650.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+259,BUB1B,MVA1 - Checkpoint Kinase,15,40240313,T,C,0/1,44,644.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+260,CENPE,Kinetochore Motor,4,103193585,A,C,0/1,48,643.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+261,WT1,Wilms Tumor / Renal,11,32440545,T,A,0/1,53,641.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,HP:0000121 (Nephrocalcinosis Congenita)
+262,DICER1,Rhabdomyosarcoma Predisposition,14,95157667,G,GGC,0/1,32,640.73,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+263,BUB1B,MVA1 - Checkpoint Kinase,15,40240383,A,G,0/1,52,639.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+264,CENPE,Kinetochore Motor,4,103199387,CTTTTTTT,C,0/1,30,637.73,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+265,DICER1,Rhabdomyosarcoma Predisposition,14,95081997,T,C,0/1,43,636.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+266,AURKB,Aurora Kinase B,17,8213543,C,A,0/1,54,636.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+267,CENPE,Kinetochore Motor,4,103218161,C,T,0/1,45,634.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+268,CENPE,Kinetochore Motor,4,103139066,GGAAAAGTTC,G,0/1,46,634.73,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+269,TTK,MPS1 Master Kinase,6,80035589,C,T,0/1,48,633.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+270,AURKB,Aurora Kinase B,17,8202999,C,T,0/1,38,633.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+271,TTK,MPS1 Master Kinase,6,80008628,A,G,0/1,47,631.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+272,CENPE,Kinetochore Motor,4,103139079,TCCTGTG,T,0/1,47,631.73,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+273,TTK,MPS1 Master Kinase,6,80023331,C,T,0/1,43,628.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+274,BUB1B,MVA1 - Checkpoint Kinase,15,40252416,G,A,0/1,44,628.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+275,MAD2L1,SAC Core Effector,4,120149039,A,C,0/1,57,627.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+276,CENPE,Kinetochore Motor,4,103238650,T,C,0/1,45,625.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+277,TTK,MPS1 Master Kinase,6,80032914,A,T,0/1,56,623.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+278,BUB1B,MVA1 - Checkpoint Kinase,15,40247172,A,G,0/1,60,623.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+279,CENPE,Kinetochore Motor,4,103182352,A,C,0/1,43,621.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+280,TTK,MPS1 Master Kinase,6,80001111,T,C,0/1,47,621.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+281,CENPE,Kinetochore Motor,4,103139050,TTCTTCCCAGCACC,T,0/1,54,619.73,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+282,BUB1,Kinetochore Kinase,2,110694239,T,C,0/1,43,618.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+283,TTK,MPS1 Master Kinase,6,80034647,A,G,0/1,51,617.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+284,MAD2L1,SAC Core Effector,4,120150107,A,G,0/1,48,613.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+285,CENPE,Kinetochore Motor,4,103226244,A,T,0/1,53,609.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+286,TTK,MPS1 Master Kinase,6,80002699,A,G,0/1,46,608.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+287,CENPE,Kinetochore Motor,4,103138385,G,A,0/1,46,607.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+288,CENPE,Kinetochore Motor,4,103200271,C,T,0/1,41,607.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+289,TTK,MPS1 Master Kinase,6,80034553,G,C,0/1,43,607.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+290,DICER1,Rhabdomyosarcoma Predisposition,14,95082857,A,G,0/1,59,605.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+291,CENPE,Kinetochore Motor,4,103186498,C,G,0/1,43,604.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+292,TTK,MPS1 Master Kinase,6,80042878,C,G,0/1,43,602.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+293,BUB1B,MVA1 - Checkpoint Kinase,15,40238359,C,G,0/1,49,601.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+294,CENPE,Kinetochore Motor,4,103147741,G,T,0/1,42,596.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+295,BUB1B,MVA1 - Checkpoint Kinase,15,40228180,T,C,0/1,53,596.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+296,TTK,MPS1 Master Kinase,6,80037636,G,A,0/1,31,595.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+297,BUB1B,MVA1 - Checkpoint Kinase,15,40238575,G,A,0/1,46,594.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+298,MAD2L1,SAC Core Effector,4,120166758,T,TACAC,0/1,21,594.73,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+299,CENPE,Kinetochore Motor,4,103176575,T,C,0/1,47,593.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+300,CENPE,Kinetochore Motor,4,103165630,G,T,0/1,50,592.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+301,AURKB,Aurora Kinase B,17,8205021,G,A,0/1,52,591.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+302,CENPE,Kinetochore Motor,4,103174348,T,G,0/1,36,590.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+303,CENPE,Kinetochore Motor,4,103162421,G,T,0/1,41,585.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+304,TTK,MPS1 Master Kinase,6,80025991,TGAG,T,0/1,34,584.73,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+305,CENPE,Kinetochore Motor,4,103193237,T,C,0/1,41,582.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+306,TTK,MPS1 Master Kinase,6,80038900,G,A,0/1,47,582.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+307,CENPE,Kinetochore Motor,4,103144892,C,T,0/1,47,581.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+308,TTK,MPS1 Master Kinase,6,80003549,T,C,0/1,38,578.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+309,TTK,MPS1 Master Kinase,6,80005051,C,T,0/1,47,578.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+310,TTK,MPS1 Master Kinase,6,80043533,G,A,0/1,43,578.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+311,CENPE,Kinetochore Motor,4,103198884,C,T,0/1,36,577.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+312,TTK,MPS1 Master Kinase,6,80025153,G,A,0/1,39,577.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+313,DICER1,Rhabdomyosarcoma Predisposition,14,95158917,T,C,0/1,45,575.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+314,CENPE,Kinetochore Motor,4,103218312,T,A,0/1,46,567.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+315,TTK,MPS1 Master Kinase,6,80037661,A,G,0/1,38,566.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+316,BUB1B,MVA1 - Checkpoint Kinase,15,40248733,G,C,0/1,41,565.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+317,CENPE,Kinetochore Motor,4,103171895,T,C,0/1,51,563.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+318,CENPE,Kinetochore Motor,4,103232911,T,C,0/1,44,563.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+319,CENPE,Kinetochore Motor,4,103236373,T,C,0/1,41,562.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+320,CENPE,Kinetochore Motor,4,103145304,A,G,0/1,34,559.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+321,TTK,MPS1 Master Kinase,6,80032451,T,G,0/1,46,557.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+322,BUB1B,MVA1 - Checkpoint Kinase,15,40248735,A,AC,0/1,41,556.73,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+323,BUB1,Kinetochore Kinase,2,110695204,G,C,0/1,40,555.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+324,CENPE,Kinetochore Motor,4,103236007,C,T,0/1,47,555.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+325,TTK,MPS1 Master Kinase,6,80002781,C,A,0/1,44,554.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+326,CENPE,Kinetochore Motor,4,103222003,T,C,0/1,30,551.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+327,MAD2L1,SAC Core Effector,4,120168611,G,C,0/1,44,550.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+328,TTK,MPS1 Master Kinase,6,80015892,C,G,0/1,44,550.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+329,WT1,Wilms Tumor / Renal,11,32430929,G,A,0/1,40,549.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,HP:0000121 (Nephrocalcinosis Congenita)
+330,TTK,MPS1 Master Kinase,6,80000761,TCA,T,0/1,28,544.73,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+331,CENPE,Kinetochore Motor,4,103213279,T,C,0/1,58,542.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+332,TTK,MPS1 Master Kinase,6,80040168,T,C,0/1,40,542.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+333,AURKB,Aurora Kinase B,17,8212914,T,C,0/1,37,542.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+334,CENPE,Kinetochore Motor,4,103201590,GA,G,0/1,46,542.73,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+335,TTK,MPS1 Master Kinase,6,80002634,A,G,0/1,54,540.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+336,WT1,Wilms Tumor / Renal,11,32440239,G,A,0/1,51,540.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,HP:0000121 (Nephrocalcinosis Congenita)
+337,BUB1B,MVA1 - Checkpoint Kinase,15,40247363,C,T,0/1,41,540.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+338,CENPE,Kinetochore Motor,4,103207253,G,A,0/1,38,539.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+339,TTK,MPS1 Master Kinase,6,80014595,A,G,0/1,36,539.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+340,TTK,MPS1 Master Kinase,6,80030217,CT,C,0/1,39,539.73,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+341,TTK,MPS1 Master Kinase,6,80029449,C,G,0/1,34,535.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+342,MAD2L1,SAC Core Effector,4,120159124,G,A,0/1,40,533.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+343,MAD2L1,SAC Core Effector,4,120168885,C,A,0/1,36,533.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+344,MAD2L1,SAC Core Effector,4,120157780,G,GA,0/1,44,532.73,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+345,CENPE,Kinetochore Motor,4,103176447,C,T,0/1,31,531.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+346,BUB1B,MVA1 - Checkpoint Kinase,15,40243220,A,G,0/1,51,531.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+347,TTK,MPS1 Master Kinase,6,80029460,C,A,0/1,31,529.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+348,CENPE,Kinetochore Motor,4,103177299,TTCAGGGACCCATC,T,0/1,36,529.73,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+349,CENPE,Kinetochore Motor,4,103203904,G,A,0/1,26,528.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+350,TTK,MPS1 Master Kinase,6,80043583,C,T,0/1,44,527.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+351,BUB1B,MVA1 - Checkpoint Kinase,15,40248238,C,T,0/1,55,525.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+352,TTK,MPS1 Master Kinase,6,80007219,G,C,0/1,35,524.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+353,CENPE,Kinetochore Motor,4,103206315,G,A,0/1,44,523.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+354,CENPE,Kinetochore Motor,4,103212219,T,G,0/1,38,523.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+355,CENPE,Kinetochore Motor,4,103196034,A,G,0/1,38,522.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+356,WT1,Wilms Tumor / Renal,11,32425180,GA,G,1/1,28,522.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,HP:0000121 (Nephrocalcinosis Congenita)
+357,TTK,MPS1 Master Kinase,6,80046665,A,G,0/1,59,521.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+358,TTK,MPS1 Master Kinase,6,80020852,A,G,0/1,42,519.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+359,DICER1,Rhabdomyosarcoma Predisposition,14,95161460,C,A,0/1,45,519.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+360,TTK,MPS1 Master Kinase,6,80028916,G,A,0/1,48,517.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+361,CENPE,Kinetochore Motor,4,103144023,G,A,0/1,39,516.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+362,CENPE,Kinetochore Motor,4,103218972,G,C,0/1,37,515.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+363,CENPE,Kinetochore Motor,4,103159949,C,G,0/1,41,513.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+364,CENPE,Kinetochore Motor,4,103157059,CAAA,C,0/1,29,513.73,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+365,AURKB,Aurora Kinase B,17,8209023,A,AT,0/1,45,513.73,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+366,CDC20,APC/C Activator,1,43341868,C,T,0/1,34,512.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+367,BUB1B,MVA1 - Checkpoint Kinase,15,40245911,G,C,0/1,47,512.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+368,TTK,MPS1 Master Kinase,6,80016444,G,A,0/1,37,507.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+369,CENPE,Kinetochore Motor,4,103134591,A,G,0/1,39,502.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+370,BUB1B,MVA1 - Checkpoint Kinase,15,40251413,C,A,0/1,45,502.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+371,TTK,MPS1 Master Kinase,6,80028609,C,T,0/1,45,500.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+372,PLK1,Polo-like Kinase 1,16,23677485,A,G,0/1,34,499.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+373,TTK,MPS1 Master Kinase,6,80012290,C,A,0/1,36,497.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+374,WT1,Wilms Tumor / Renal,11,32429462,TCCC,T,0/1,20,497.73,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,HP:0000121 (Nephrocalcinosis Congenita)
+375,TTK,MPS1 Master Kinase,6,80031701,C,T,0/1,38,495.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+376,CENPE,Kinetochore Motor,4,103209032,A,G,0/1,41,494.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+377,CENPE,Kinetochore Motor,4,103201718,A,T,0/1,44,491.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+378,BUB1B,MVA1 - Checkpoint Kinase,15,40247071,C,G,0/1,44,491.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+379,TTK,MPS1 Master Kinase,6,80039989,G,GT,0/1,46,491.73,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+380,TTK,MPS1 Master Kinase,6,80044154,T,C,0/1,43,490.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+381,MAD2L1,SAC Core Effector,4,120166313,A,G,0/1,39,489.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+382,DICER1,Rhabdomyosarcoma Predisposition,14,95161416,C,G,0/1,37,489.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+383,CENPE,Kinetochore Motor,4,103140605,T,C,0/1,41,488.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+384,TTK,MPS1 Master Kinase,6,80032871,G,T,0/1,43,488.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+385,WT1,Wilms Tumor / Renal,11,32424160,CA,"C,CAAA",1/2,24,488.73,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,HP:0000121 (Nephrocalcinosis Congenita)
+386,CENPE,Kinetochore Motor,4,103134565,G,A,0/1,40,487.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+387,TTK,MPS1 Master Kinase,6,80014745,C,T,0/1,36,487.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+388,CENPE,Kinetochore Motor,4,103191717,T,C,0/1,27,486.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+389,CENPE,Kinetochore Motor,4,103191719,T,C,0/1,30,486.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+390,CENPE,Kinetochore Motor,4,103220917,C,T,0/1,42,486.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+391,AURKB,Aurora Kinase B,17,8204661,G,T,0/1,44,485.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+392,CENPE,Kinetochore Motor,4,103143605,AC,A,0/1,38,484.73,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+393,BUB1B,MVA1 - Checkpoint Kinase,15,40243997,G,A,0/1,48,483.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+394,CENPE,Kinetochore Motor,4,103237203,G,A,0/1,41,482.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+395,TTK,MPS1 Master Kinase,6,80031611,G,A,0/1,37,482.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+396,TTK,MPS1 Master Kinase,6,80033466,T,C,0/1,38,482.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+397,CDC20,APC/C Activator,1,43342849,G,A,0/1,31,481.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+398,TTK,MPS1 Master Kinase,6,80028297,TTTTA,T,0/1,33,481.73,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+399,TTK,MPS1 Master Kinase,6,80031901,C,T,0/1,40,479.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+400,TTK,MPS1 Master Kinase,6,80004516,G,T,0/1,35,475.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+401,BUB1B,MVA1 - Checkpoint Kinase,15,40244128,C,G,0/1,39,473.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+402,TTK,MPS1 Master Kinase,6,80033393,G,A,0/1,43,471.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+403,CENPE,Kinetochore Motor,4,103200989,A,C,0/1,36,469.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+404,CENPE,Kinetochore Motor,4,103223531,A,T,0/1,49,465.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+405,TTK,MPS1 Master Kinase,6,80011328,A,G,0/1,35,464.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+406,CENPE,Kinetochore Motor,4,103224919,A,G,0/1,46,463.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+407,TTK,MPS1 Master Kinase,6,80004368,G,A,0/1,38,463.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+408,TTK,MPS1 Master Kinase,6,80021958,A,G,0/1,44,463.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+409,CENPE,Kinetochore Motor,4,103163861,T,C,0/1,29,461.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+410,CENPE,Kinetochore Motor,4,103216633,C,T,0/1,43,461.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+411,TTK,MPS1 Master Kinase,6,80043205,T,C,0/1,41,459.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+412,WT1,Wilms Tumor / Renal,11,32431603,AT,A,0/1,47,457.73,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,HP:0000121 (Nephrocalcinosis Congenita)
+413,TTK,MPS1 Master Kinase,6,80044009,A,T,0/1,53,453.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+414,TTK,MPS1 Master Kinase,6,80007959,C,T,0/1,40,451.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+415,TTK,MPS1 Master Kinase,6,80027493,C,G,0/1,39,451.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+416,AURKB,Aurora Kinase B,17,8203228,GAA,G,0/1,49,451.73,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+417,BUB1B,MVA1 - Checkpoint Kinase,15,40241876,A,G,0/1,47,450.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+418,CEP57,MVA2 - Centrosomal Nucleation,11,95830582,C,T,0/1,41,448.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+419,TTK,MPS1 Master Kinase,6,80017781,C,T,0/1,39,446.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+420,TTK,MPS1 Master Kinase,6,80023535,G,A,0/1,38,445.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+421,BUB1B,MVA1 - Checkpoint Kinase,15,40237453,G,A,0/1,48,445.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+422,CENPE,Kinetochore Motor,4,103185886,C,T,0/1,30,444.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+423,TTK,MPS1 Master Kinase,6,80029011,G,T,0/1,35,443.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+424,CENPE,Kinetochore Motor,4,103237892,T,A,0/1,40,441.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+425,MAD2L1,SAC Core Effector,4,120149209,C,T,0/1,40,440.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+426,TTK,MPS1 Master Kinase,6,80004496,G,C,0/1,36,440.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+427,MAD2L1,SAC Core Effector,4,120162526,T,C,0/1,43,439.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+428,AURKB,Aurora Kinase B,17,8214769,A,G,0/1,53,439.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+429,TTK,MPS1 Master Kinase,6,80035721,G,C,0/1,32,434.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+430,CENPE,Kinetochore Motor,4,103165924,C,T,0/1,46,429.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+431,AURKB,Aurora Kinase B,17,8202320,C,CT,0/1,34,429.73,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+432,CENPE,Kinetochore Motor,4,103150094,TA,T,0/1,48,427.73,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+433,CENPE,Kinetochore Motor,4,103207984,G,A,0/1,53,426.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+434,CENPE,Kinetochore Motor,4,103188672,C,T,0/1,45,423.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+435,TTK,MPS1 Master Kinase,6,80033163,A,G,0/1,44,423.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+436,CENPE,Kinetochore Motor,4,103163781,C,A,0/1,27,421.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+437,TTK,MPS1 Master Kinase,6,80000722,T,C,0/1,34,420.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+438,DICER1,Rhabdomyosarcoma Predisposition,14,95089049,C,CA,0/1,44,413.73,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+439,WT1,Wilms Tumor / Renal,11,32433519,C,T,0/1,37,410.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,HP:0000121 (Nephrocalcinosis Congenita)
+440,BUB1,Kinetochore Kinase,2,110681625,GAGAGAGAA,G,0/1,35,405.73,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+441,CENPE,Kinetochore Motor,4,103237665,G,T,0/1,41,402.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+442,CENPE,Kinetochore Motor,4,103225504,TAA,"T,TAAAAAA",1/2,13,402.73,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+443,TTK,MPS1 Master Kinase,6,80013481,T,C,0/1,36,396.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+444,BUB1B,MVA1 - Checkpoint Kinase,15,40234182,C,T,0/1,33,396.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+445,BUB1B,MVA1 - Checkpoint Kinase,15,40235954,A,G,0/1,38,394.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+446,TTK,MPS1 Master Kinase,6,80018239,T,C,0/1,41,392.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+447,TTK,MPS1 Master Kinase,6,80021249,G,A,0/1,29,391.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+448,WT1,Wilms Tumor / Renal,11,32431452,TC,T,0/1,29,389.73,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,HP:0000121 (Nephrocalcinosis Congenita)
+449,TTK,MPS1 Master Kinase,6,80033739,C,G,0/1,35,388.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+450,TTK,MPS1 Master Kinase,6,80021297,A,G,0/1,29,387.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+451,TTK,MPS1 Master Kinase,6,80007571,G,T,0/1,47,386.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+452,CENPE,Kinetochore Motor,4,103201244,G,A,0/1,32,384.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+453,WT1,Wilms Tumor / Renal,11,32431379,C,G,0/1,34,383.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,HP:0000121 (Nephrocalcinosis Congenita)
+454,WT1,Wilms Tumor / Renal,11,32440072,TAAAAAAAA,"T,TAAAAAAAAAAAAA",1/2,13,382.73,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,HP:0000121 (Nephrocalcinosis Congenita)
+455,CENPE,Kinetochore Motor,4,103163771,TAAAA,T,0/1,26,379.73,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+456,CENPE,Kinetochore Motor,4,103195480,C,A,0/1,31,375.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+457,BUB1B,MVA1 - Checkpoint Kinase,15,40234232,G,A,0/1,31,372.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+458,CENPE,Kinetochore Motor,4,103152044,G,A,0/1,36,371.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+459,CENPE,Kinetochore Motor,4,103187369,A,G,0/1,46,367.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+460,CENPE,Kinetochore Motor,4,103229166,A,G,0/1,49,367.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+461,TTK,MPS1 Master Kinase,6,80032384,A,C,0/1,32,366.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+462,CENPE,Kinetochore Motor,4,103188594,T,C,0/1,36,364.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+463,AURKB,Aurora Kinase B,17,8216247,TG,T,0/1,33,362.73,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+464,TTK,MPS1 Master Kinase,6,80033705,A,C,0/1,34,360.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+465,CENPE,Kinetochore Motor,4,103145733,T,A,0/1,20,359.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+466,TTK,MPS1 Master Kinase,6,80033950,A,G,0/1,28,358.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+467,TTK,MPS1 Master Kinase,6,80032638,A,C,0/1,35,350.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+468,CENPE,Kinetochore Motor,4,103188970,G,A,0/1,32,349.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+469,CDC20,APC/C Activator,1,43345734,G,A,0/1,34,345.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+470,CENPE,Kinetochore Motor,4,103233343,T,C,0/1,32,341.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+471,CENPE,Kinetochore Motor,4,103162574,ATT,A,0/1,25,340.73,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+472,MAD2L1,SAC Core Effector,4,120149374,CA,C,0/1,43,339.73,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+473,CENPE,Kinetochore Motor,4,103229496,A,G,0/1,52,335.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+474,CENPE,Kinetochore Motor,4,103220376,G,C,0/1,28,332.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+475,BUB1B,MVA1 - Checkpoint Kinase,15,40244828,A,G,0/1,35,331.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+476,BUB1B,MVA1 - Checkpoint Kinase,15,40244329,CA,C,1/1,17,330.73,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+477,CENPE,Kinetochore Motor,4,103177953,G,A,0/1,41,329.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+478,AURKB,Aurora Kinase B,17,8216072,CA,C,0/1,31,326.73,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+479,AURKB,Aurora Kinase B,17,8213987,G,A,0/1,42,324.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+480,CENPE,Kinetochore Motor,4,103213027,T,C,0/1,50,323.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+481,CENPE,Kinetochore Motor,4,103199410,A,T,0/1,33,310.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+482,TTK,MPS1 Master Kinase,6,80018648,A,G,0/1,18,310.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+483,TTK,MPS1 Master Kinase,6,80018626,CA,C,0/1,20,301.73,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+484,BUB1B,MVA1 - Checkpoint Kinase,15,40221421,G,C,0/1,38,298.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+485,DICER1,Rhabdomyosarcoma Predisposition,14,95099766,AC,A,0/1,22,278.73,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+486,DICER1,Rhabdomyosarcoma Predisposition,14,95138791,G,A,0/1,21,267.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+487,MAD2L1,SAC Core Effector,4,120149327,A,G,0/1,34,260.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+488,CENPE,Kinetochore Motor,4,103194042,C,T,0/1,38,253.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+489,AURKB,Aurora Kinase B,17,8214456,G,A,0/1,44,248.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+490,CENPE,Kinetochore Motor,4,103168202,G,C,0/1,37,242.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+491,CENPE,Kinetochore Motor,4,103231218,A,G,0/1,27,242.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+492,CENPE,Kinetochore Motor,4,103169248,CA,C,0/1,40,234.73,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+493,MAD2L1,SAC Core Effector,4,120166760,C,T,0/1,30,233.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+494,MAD2L1,SAC Core Effector,4,120166762,C,T,0/1,31,233.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+495,TTK,MPS1 Master Kinase,6,80018461,CA,C,0/1,36,232.73,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+496,AURKB,Aurora Kinase B,17,8215557,CA,C,0/1,37,225.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+497,CENPE,Kinetochore Motor,4,103134635,CAA,C,0/1,19,217.73,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+498,AURKB,Aurora Kinase B,17,8213889,A,AT,0/1,37,204.73,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+499,CDC20,APC/C Activator,1,43336293,A,ATT,0/1,28,195.73,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+500,MAD2L1,SAC Core Effector,4,120166968,C,T,0/1,33,193.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+501,MAD2L1,SAC Core Effector,4,120160983,C,CAA,0/1,26,189.73,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+502,BUB1,Kinetochore Kinase,2,110681631,GAA,G,0/1,36,188.73,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+503,BUB1,Kinetochore Kinase,2,110681635,GAA,G,0/1,36,188.73,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+504,CDC20,APC/C Activator,1,43342934,CT,C,0/1,31,175.73,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+505,TTK,MPS1 Master Kinase,6,80025859,C,CT,0/1,34,156.73,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+506,DICER1,Rhabdomyosarcoma Predisposition,14,95099770,AC,A,0/1,22,156.73,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+507,TTK,MPS1 Master Kinase,6,80008929,CTG,C,0/1,24,152.73,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+508,TTK,MPS1 Master Kinase,6,80018182,C,CA,0/1,31,150.73,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+509,BUB1B,MVA1 - Checkpoint Kinase,15,40240562,C,CTT,0/1,15,141.73,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+510,CENPE,Kinetochore Motor,4,103152136,C,CA,0/1,48,126.73,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+511,BUB1,Kinetochore Kinase,2,110684920,CGT,C,0/1,20,124.73,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+512,TTK,MPS1 Master Kinase,6,80000135,A,AT,1/1,8,123.75,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+513,CENPE,Kinetochore Motor,4,103163608,CA,C,0/1,16,112.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+514,AURKB,Aurora Kinase B,17,8214609,C,T,0/1,44,104.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+515,AURKB,Aurora Kinase B,17,8201896,C,CA,0/1,31,96.73,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+516,AURKB,Aurora Kinase B,17,8214611,C,T,0/1,45,95.77,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+517,CENPE,Kinetochore Motor,4,103143003,C,CAA,0/1,12,81.73,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background
+518,MAD2L1,SAC Core Effector,4,120161126,T,TA,0/1,13,60.73,0.25,0.2,-0.5,0.1879,Benign / Polymorphism,Mitotic Checkpoint Background

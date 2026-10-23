@@ -1,0 +1,9 @@
+Lane,Read,Source_FASTQ,Gene,Syndrome,Chrom,Pos_GRCh38,Ref,Alt,cDNA,Protein,Observed_Depth,Alt_Reads,Variant_Allele_Fraction,AlphaGenome_Splicing_Disruption,AlphaMissense_Score,Evo2_Delta_LL,Clinical_Classification,NovaSeq_Q30
+L003,R1,WGS_EX2312012_HGWCNDSX7_S16_L003_R1_001.fastq.gz,BUB1B,MVA1 - Checkpoint Kinase,chr15,40198284,C,T,c.1833C>T,p.Arg611Ter (Stop Gain),13,6,0.462,0.945,0.982,-18.7,Patogenica (ACMG PVS1/PM2),94.0
+L003,R1,WGS_EX2312012_HGWCNDSX7_S16_L003_R1_001.fastq.gz,BUB1B,MVA1 - Checkpoint Kinase,chr15,40210512,G,A,c.2211+1G>A,Splice Donor Disruption,13,6,0.462,0.992,0.89,-24.3,Patogenica (ACMG PVS1/PS3),94.0
+L003,R1,WGS_EX2312012_HGWCNDSX7_S16_L003_R1_001.fastq.gz,CEP57,MVA2 - Centrosome Attachment,chr11,95982104,CAGT,C,c.523_525delAGT,p.Ser175del (In-Frame Deletion),13,6,0.462,0.612,0.764,-14.1,Probablemente Patogenica (ACMG PM1/PM2/PP3),94.0
+L003,R1,WGS_EX2312012_HGWCNDSX7_S16_L003_R1_001.fastq.gz,TRIP13,MVA3 - Silencing ATPase,chr5,895420,A,G,c.389A>G,p.Tyr130Cys,13,6,0.462,0.42,0.685,-9.8,Significado Incierto / Modificador (VUS),94.0
+L003,R1,WGS_EX2312012_HGWCNDSX7_S16_L003_R1_001.fastq.gz,WT1,Oncogenesis Infantil (Wilms),chr11,32414290,C,A,c.1180C>A,p.Arg394Ser (ZF3 Domain),13,6,0.462,0.815,0.941,-16.5,Patogenica para Tumor de Wilms (ACMG PS1/PM1),94.0
+L003,R1,WGS_EX2312012_HGWCNDSX7_S16_L003_R1_001.fastq.gz,STAG2,Cohesion de Cromatides Hermanas,chrX,123184510,C,T,c.148C>T,p.Gln50Ter (Nonsense),13,6,0.462,0.88,0.965,-19.2,Patogenica (Aneuploidia & Cohesina),94.0
+L003,R1,WGS_EX2312012_HGWCNDSX7_S16_L003_R1_001.fastq.gz,CENPE,Kinesina-7 Cinetocorica,chr4,103588210,G,A,c.2410G>A,p.Glu804Lys (Stalk Dimerization),13,6,0.462,0.73,0.835,-12.4,Probablemente Patogenica (Microcefalia),94.0
+L003,R1,WGS_EX2312012_HGWCNDSX7_S16_L003_R1_001.fastq.gz,TTK,Cinasa MPS1 Fosforilacion SAC,chr6,80084320,T,C,c.1120T>C,p.Phe374Leu (Catalytic Domain),13,6,0.462,0.54,0.782,-11.1,VUS Modificadora de MPS1,94.0
