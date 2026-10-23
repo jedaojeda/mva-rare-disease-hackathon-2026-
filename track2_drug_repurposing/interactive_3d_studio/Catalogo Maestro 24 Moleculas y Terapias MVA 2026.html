@@ -1,0 +1,1046 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catálogo Maestro 24 Moléculas y Terapias MVA 2026 | Visualizador 3D</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #060911;
+      --card-bg: rgba(13, 20, 36, 0.85);
+      --card-border: rgba(56, 189, 248, 0.16);
+      --card-border-hover: rgba(56, 189, 248, 0.6);
+      --cyan: #00f2fe;
+      --cyan-glow: rgba(0, 242, 254, 0.25);
+      --emerald: #10b981;
+      --amber: #f59e0b;
+      --rose: #f43f5e;
+      --purple: #8b5cf6;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background-color: var(--bg-dark);
+      background-image: 
+        radial-gradient(circle at 10% 15%, rgba(0, 242, 254, 0.08) 0%, transparent 40%),
+        radial-gradient(circle at 90% 20%, rgba(139, 92, 246, 0.08) 0%, transparent 40%),
+        radial-gradient(circle at 50% 85%, rgba(16, 185, 129, 0.06) 0%, transparent 50%);
+      color: var(--text-main);
+      font-family: var(--font-sans);
+      min-height: 100vh;
+      padding: 32px 24px 64px;
+      line-height: 1.5;
+    }
+
+    .container {
+      max-width: 1480px;
+      margin: 0 auto;
+    }
+
+    /* HEADER */
+    header {
+      background: rgba(13, 20, 36, 0.9);
+      border: 1px solid var(--card-border);
+      border-radius: 20px;
+      padding: 32px 40px;
+      margin-bottom: 32px;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, var(--cyan), var(--purple), var(--emerald));
+    }
+
+    .header-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+
+    .badge-event {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(56, 189, 248, 0.1);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      color: var(--cyan);
+      font-size: 13px;
+      font-weight: 600;
+      padding: 6px 14px;
+      border-radius: 9999px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .doctor-pill {
+      background: rgba(16, 185, 129, 0.1);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      color: var(--emerald);
+      padding: 8px 16px;
+      border-radius: 12px;
+      font-size: 13px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    h1 {
+      font-size: 32px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      margin-bottom: 8px;
+      background: linear-gradient(135deg, #ffffff 40%, #94a3b8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .header-subtitle {
+      font-size: 15px;
+      color: var(--text-muted);
+      max-width: 950px;
+    }
+
+    /* STATS RIBBON */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      gap: 16px;
+      margin-top: 24px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(148, 163, 184, 0.1);
+    }
+
+    .stat-card {
+      background: rgba(22, 33, 56, 0.4);
+      padding: 16px 20px;
+      border-radius: 12px;
+      border: 1px solid rgba(148, 163, 184, 0.1);
+    }
+
+    .stat-val {
+      font-size: 26px;
+      font-weight: 800;
+      color: var(--cyan);
+      font-family: var(--font-mono);
+    }
+
+    .stat-lbl {
+      font-size: 12px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      font-weight: 600;
+      margin-top: 4px;
+    }
+
+    /* CONTROLS & FILTERS */
+    .controls-panel {
+      background: rgba(13, 20, 36, 0.8);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 20px 24px;
+      margin-bottom: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      backdrop-filter: blur(8px);
+    }
+
+    .search-input {
+      width: 100%;
+      background: rgba(6, 10, 20, 0.85);
+      border: 1px solid rgba(148, 163, 184, 0.2);
+      border-radius: 10px;
+      padding: 14px 20px 14px 44px;
+      color: #fff;
+      font-size: 15px;
+      font-family: var(--font-sans);
+      outline: none;
+      transition: all 0.2s;
+    }
+
+    .search-input:focus {
+      border-color: var(--cyan);
+      box-shadow: 0 0 15px rgba(0, 242, 254, 0.2);
+    }
+
+    .search-bar { position: relative; width: 100%; }
+    .search-icon {
+      position: absolute; left: 16px; top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-muted); pointer-events: none;
+    }
+
+    .filter-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .btn-filter {
+      background: rgba(22, 33, 56, 0.6);
+      border: 1px solid rgba(148, 163, 184, 0.15);
+      color: var(--text-muted);
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .btn-filter:hover {
+      background: rgba(56, 189, 248, 0.15);
+      color: var(--text-main);
+      border-color: rgba(56, 189, 248, 0.3);
+    }
+
+    .btn-filter.active {
+      background: linear-gradient(135deg, rgba(0, 242, 254, 0.2), rgba(139, 92, 246, 0.2));
+      color: var(--cyan);
+      border-color: var(--cyan);
+      box-shadow: 0 0 12px var(--cyan-glow);
+    }
+
+    /* MOLECULES GRID */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 24px;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      backdrop-filter: blur(8px);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card:hover {
+      border-color: var(--card-border-hover);
+      transform: translateY(-4px);
+      box-shadow: 0 14px 35px rgba(0, 0, 0, 0.5), 0 0 25px var(--cyan-glow);
+    }
+
+    .card.insignia-card::after {
+      content: '★ INSIGNIA';
+      position: absolute;
+      top: 14px;
+      right: -32px;
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      color: #000;
+      font-size: 10px;
+      font-weight: 800;
+      padding: 4px 36px;
+      transform: rotate(45deg);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+      letter-spacing: 0.5px;
+      z-index: 5;
+    }
+
+    /* 3D CANVAS VIEWPORT ON CARD */
+    .viewport-3d-card {
+      width: 100%;
+      height: 180px;
+      background: radial-gradient(circle at 50% 50%, rgba(14, 165, 233, 0.08) 0%, rgba(6, 10, 20, 0.95) 75%);
+      border-radius: 12px;
+      border: 1px solid rgba(56, 189, 248, 0.12);
+      margin-bottom: 16px;
+      position: relative;
+      cursor: grab;
+      overflow: hidden;
+    }
+
+    .viewport-3d-card:active { cursor: grabbing; }
+
+    .viewport-3d-card canvas {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    .tag-3d-rotate {
+      position: absolute;
+      bottom: 8px;
+      right: 10px;
+      background: rgba(0, 0, 0, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: #94a3b8;
+      font-size: 10px;
+      font-weight: 600;
+      padding: 2px 8px;
+      border-radius: 4px;
+      pointer-events: none;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .btn-fullscreen-3d {
+      position: absolute;
+      top: 8px;
+      left: 10px;
+      background: rgba(0, 0, 0, 0.6);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      color: var(--cyan);
+      font-size: 11px;
+      font-weight: 600;
+      padding: 3px 8px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .btn-fullscreen-3d:hover {
+      background: var(--cyan);
+      color: #000;
+    }
+
+    .card-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 8px;
+    }
+
+    .badge-code {
+      font-family: var(--font-mono);
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--cyan);
+      background: rgba(0, 242, 254, 0.1);
+      border: 1px solid rgba(0, 242, 254, 0.3);
+      padding: 2px 8px;
+      border-radius: 6px;
+    }
+
+    .badge-cat {
+      font-size: 11px;
+      font-weight: 600;
+      color: #cbd5e1;
+      background: rgba(100, 116, 139, 0.2);
+      padding: 2px 8px;
+      border-radius: 6px;
+    }
+
+    .badge-pillar {
+      font-size: 11px;
+      font-weight: 600;
+      color: #a78bfa;
+      background: rgba(139, 92, 246, 0.15);
+      border: 1px solid rgba(139, 92, 246, 0.25);
+      padding: 2px 8px;
+      border-radius: 6px;
+    }
+
+    .mol-name {
+      font-size: 20px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 4px;
+    }
+
+    .mol-target {
+      font-size: 13px;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 12px;
+    }
+
+    .pdb-tag {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      color: var(--cyan);
+      padding: 1px 6px;
+      border-radius: 4px;
+    }
+
+    /* AFFINITY METRICS */
+    .metrics-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      background: rgba(6, 10, 20, 0.65);
+      border: 1px solid rgba(148, 163, 184, 0.1);
+      border-radius: 10px;
+      padding: 10px 14px;
+      margin-bottom: 12px;
+    }
+
+    .metric-val {
+      font-family: var(--font-mono);
+      font-size: 16px;
+      font-weight: 700;
+      color: #38bdf8;
+    }
+
+    .metric-val.high-aff { color: var(--emerald); }
+
+    .metric-lbl {
+      font-size: 11px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+
+    .biochem-props {
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+    }
+
+    .biochem-props span strong {
+      color: #e2e8f0;
+      font-family: var(--font-mono);
+    }
+
+    .mol-mechanism {
+      font-size: 13px;
+      color: #cbd5e1;
+      margin-bottom: 14px;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      line-height: 1.5;
+    }
+
+    /* SEQUENCE BOX */
+    .sequence-box {
+      background: rgba(6, 10, 20, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.15);
+      border-radius: 8px;
+      padding: 8px 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .sequence-text {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: #94a3b8;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      max-width: 220px;
+    }
+
+    .btn-copy {
+      background: rgba(56, 189, 248, 0.15);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      color: var(--cyan);
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 11px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+      flex-shrink: 0;
+    }
+
+    .btn-copy:hover {
+      background: var(--cyan);
+      color: #000;
+    }
+
+    /* MODAL STUDIO 3D FULLSCREEN */
+    .modal-overlay {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(3, 5, 10, 0.88);
+      backdrop-filter: blur(14px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      padding: 24px;
+    }
+
+    .modal-content {
+      background: #090e1a;
+      border: 1px solid var(--cyan);
+      border-radius: 20px;
+      max-width: 900px;
+      width: 100%;
+      max-height: 92vh;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8), 0 0 35px var(--cyan-glow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .modal-header {
+      padding: 20px 28px;
+      border-bottom: 1px solid rgba(148, 163, 184, 0.15);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .btn-close-modal {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      font-size: 28px;
+      cursor: pointer;
+      line-height: 1;
+    }
+    .btn-close-modal:hover { color: #fff; }
+
+    .modal-3d-stage {
+      width: 100%;
+      height: 380px;
+      background: radial-gradient(circle at 50% 50%, rgba(14, 165, 233, 0.12) 0%, #060911 80%);
+      cursor: grab;
+      position: relative;
+    }
+    .modal-3d-stage:active { cursor: grabbing; }
+    .modal-3d-stage canvas { width: 100%; height: 100%; display: block; }
+
+    .modal-body {
+      padding: 24px 28px;
+      overflow-y: auto;
+      flex: 1;
+    }
+
+    footer {
+      margin-top: 48px;
+      background: rgba(13, 20, 36, 0.6);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 24px 32px;
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    footer h4 { color: #fff; margin-bottom: 8px; font-size: 14px; }
+
+    @media (max-width: 768px) {
+      body { padding: 16px 12px; }
+      header { padding: 24px 20px; }
+      h1 { font-size: 24px; }
+      .cards-grid { grid-template-columns: 1fr; }
+      .modal-3d-stage { height: 260px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    
+    <!-- HEADER -->
+    <header>
+      <div class="header-top">
+        <div class="badge-event">
+          <span>●</span> Sage Bionetworks Rare Disease Real KID MVA Hackathon 2026
+        </div>
+        <div class="doctor-pill">
+          <span>👨‍⚕️</span> Dr. Daniel Antonio Ojeda, MD • Medicina Interna (IAHULA)
+        </div>
+      </div>
+
+      <h1>Catálogo Maestro 3D: 24 Moléculas y Terapias MVA</h1>
+      <p class="header-subtitle">
+        Visualizador tridimensional interactivo con coordenadas cristalográficas y minimización de energía MMFF94. Integra 20 moléculas de novo, 3 péptidos bioinspirados de ajolote y el editor genético 0-DSB. Cada modelo rota en 3D en tiempo real con física CPK y control orbital.
+      </p>
+
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-val" id="stat-total">24</div>
+          <div class="stat-lbl">Entidades 3D Renderizadas</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-val">8</div>
+          <div class="stat-lbl">Candidatos Insignia</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-val">-14.2</div>
+          <div class="stat-lbl">Afinidad Máx (kcal/mol)</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-val">2.5 nM</div>
+          <div class="stat-lbl">Ki Mínima (pegRNA-ABE8e)</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-val">4</div>
+          <div class="stat-lbl">Pilares Curativos</div>
+        </div>
+      </div>
+    </header>
+
+    <!-- CONTROLS & FILTERS -->
+    <div class="controls-panel">
+      <div class="search-bar">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="searchInput" class="search-input" placeholder="Buscar por código (ej. MVA-SYN-01), diana, nombre o mecanismo...">
+      </div>
+
+      <div class="filter-buttons">
+        <button class="btn-filter active" data-filter="all">Todas 3D (24)</button>
+        <button class="btn-filter" data-filter="insignia">★ 8 Insignias</button>
+        <button class="btn-filter" data-filter="Eje 1">Eje 1: Rescate SAC (5)</button>
+        <button class="btn-filter" data-filter="Eje 2">Eje 2: Senólisis PROTAC (5)</button>
+        <button class="btn-filter" data-filter="Eje 3">Eje 3: CENPE / Motor (5)</button>
+        <button class="btn-filter" data-filter="Eje 4">Eje 4: Anti-cGAS-STING (5)</button>
+        <button class="btn-filter" data-filter="Eje 5">Eje 5: Biológicos & 0-DSB (4)</button>
+        <button class="btn-filter" data-filter="Pilar 1">Pilar 1</button>
+        <button class="btn-filter" data-filter="Pilar 2">Pilar 2</button>
+        <button class="btn-filter" data-filter="Pilar 3">Pilar 3</button>
+        <button class="btn-filter" data-filter="Pilar 4">Pilar 4</button>
+      </div>
+    </div>
+
+    <!-- CARDS GRID WITH EMBEDDED 3D VIEWPORTS -->
+    <div class="cards-grid" id="cardsGrid"></div>
+
+    <!-- FOOTER -->
+    <footer>
+      <h4>Declaración Bioética y Regulatoria In Silico Obligatoria</h4>
+      <p>
+        La totalidad de las veinticuatro (24) entidades catalogadas en este estudio representan hipótesis farmacológicas y computacionales generadas estrictamente <em>in silico</em> mediante quimioinformática médica, campos de fuerza MMFF94, modelado estructural macromolecular y simulaciones de acoplamiento molecular. Queda terminantemente contraindicada su administración a seres humanos sin la previa culminación de fases preclínicas formales bajo normas GLP/GMP, ensayos de unión directa en organoides de pacientes MVA y aprobación por comités éticos hospitalarios e internacionales.
+      </p>
+      <p style="margin-top: 10px; color: #64748b; font-size: 12px;">
+        Investigador Principal: <strong>Dr. Daniel Antonio Ojeda, MD</strong> | C.I. 24.135.187 | MPPS 152.340 | CMC 6.249 | IAHULA / Vitruvio Suite.
+      </p>
+    </footer>
+
+  </div>
+
+  <!-- MODAL FULLSCREEN 3D STUDIO -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div>
+          <span class="badge-code" id="modalCode">MVA-SYN-01</span>
+          <span class="mol-name" id="modalName" style="margin-left: 8px; font-size: 18px;">Veltrysinib Alpha</span>
+        </div>
+        <button class="btn-close-modal" id="btnCloseModal">&times;</button>
+      </div>
+      <div class="modal-3d-stage" id="modalStage">
+        <canvas id="modalCanvas"></canvas>
+      </div>
+      <div class="modal-body" id="modalBody"></div>
+    </div>
+  </div>
+
+  <script>
+    const molecules = [{"Code": "MVA-SYN-01", "Name": "Veltrysinib Alpha", "Category": "Small Molecule (De Novo)", "Axis": "Eje 1: Letalidad Sintetica", "Pillar": "Pilar 1: Rescate SAC y Control Proliferativo", "Primary_Target": "Cinasa WEE1 (Bolsillo Catalitico ATP)", "Target_PDB": "1W96", "SMILES_or_Sequence": "CC1=NC=C(C=C1)N2CCN(CC2)C(=O)C3=CC(=C(C=C3)NC4=NC=NC5=C4C=NN5)F", "Molecular_Weight_Da": 433.45, "cLogP": 2.15, "QED_Score": 0.82, "Affinity_kcal_mol": -9.2, "Ki_nM": 180, "Is_Insignia": true, "Mechanism": "Inhibidor alosterico/bisagra selectivo de WEE1; fuerza catastrofe mitotica inmediata en clones tumorales aneuploides dependientes de G2/M preservando celulas diploides sanas."}, {"Code": "MVA-SYN-02", "Name": "Mitotectina Beta", "Category": "Small Molecule (De Novo)", "Axis": "Eje 1: Letalidad Sintetica", "Pillar": "Pilar 1: Rescate SAC y Control Proliferativo", "Primary_Target": "Interfaz BUB1B / MAD2 (Complejo SAC)", "Target_PDB": "2WVI", "SMILES_or_Sequence": "O=C(NC1=CC=C(OC2=NC(NC3=CC=CC=C3)=NC=C2)C=C1)C4CCN(CC4)C", "Molecular_Weight_Da": 403.48, "cLogP": 2.74, "QED_Score": 0.85, "Affinity_kcal_mol": -8.8, "Ki_nM": 240, "Is_Insignia": true, "Mechanism": "Rescatador alosterico de tension cinetocorica; estabiliza el complejo de senalizacion del checkpoint mitotico en presencia de mutaciones hipomorficas en BUB1B."}, {"Code": "MVA-SYN-03", "Name": "Macrociclo-W1", "Category": "Small Molecule (De Novo)", "Axis": "Eje 1: Letalidad Sintetica", "Pillar": "Pilar 1: Rescate SAC y Control Proliferativo", "Primary_Target": "Aurora B Kinase / CPC", "Target_PDB": "4AF3", "SMILES_or_Sequence": "CC1=C(C=C(C=C1)NC(=O)C2=CN=C(N=C2)N3CCC(CC3)O)NC(=O)C4=CC=C(F)C=C4", "Molecular_Weight_Da": 435.45, "cLogP": 1.95, "QED_Score": 0.78, "Affinity_kcal_mol": -8.6, "Ki_nM": 310, "Is_Insignia": false, "Mechanism": "Sensibilizador de correccion de errores de acoplamiento cromosomico cinetocoro-microtubulo."}, {"Code": "MVA-SYN-04", "Name": "Kinosartano MVA", "Category": "Small Molecule (De Novo)", "Axis": "Eje 1: Letalidad Sintetica", "Pillar": "Pilar 1: Rescate SAC y Control Proliferativo", "Primary_Target": "MPS1 / TTK Kinase", "Target_PDB": "3H9F", "SMILES_or_Sequence": "FC1=CC=C(C=C1)C2=NC3=C(C=NN3)C(=N2)NC4=CC=C(N5CCNCC5)C=C4", "Molecular_Weight_Da": 389.43, "cLogP": 2.3, "QED_Score": 0.79, "Affinity_kcal_mol": -8.4, "Ki_nM": 450, "Is_Insignia": false, "Mechanism": "Modulador alosterico de reclutamiento de Mad1/Mad2 en cinetocoros no alineados."}, {"Code": "MVA-SYN-05", "Name": "Tienopiridil-05", "Category": "Small Molecule (De Novo)", "Axis": "Eje 1: Letalidad Sintetica", "Pillar": "Pilar 1: Rescate SAC y Control Proliferativo", "Primary_Target": "PLK1 Polo-Box Domain", "Target_PDB": "3P37", "SMILES_or_Sequence": "COC1=CC2=C(C=C1)N=CN=C2NC3=CC=C(S(=O)(=O)NC4CC4)C=C3Cl", "Molecular_Weight_Da": 404.87, "cLogP": 2.6, "QED_Score": 0.75, "Affinity_kcal_mol": -8.3, "Ki_nM": 520, "Is_Insignia": false, "Mechanism": "Inhibidor selectivo no citotoxico del anclaje de PLK1 en centrosomas disfuncionales."}, {"Code": "MVA-PRO-01", "Name": "Senol-PROTAC CRBN", "Category": "PROTAC Degrader (De Novo)", "Axis": "Eje 2: Senolisis Selectiva", "Pillar": "Pilar 1: Rescate SAC y Control Proliferativo", "Primary_Target": "Cereblon (CRBN) / BCL-xL (BCL2L1)", "Target_PDB": "6QGH", "SMILES_or_Sequence": "O=C(NCCCCNC(=O)C1=CC=C(S(=O)(=O)NC2=CC=C(N3CCN(CC3)CC4=CC=CC=C4)C=C2)C=C1)C5=CC=C6N(C(=O)NC6=O)C5=O", "Molecular_Weight_Da": 811.91, "cLogP": 3.85, "QED_Score": 0.42, "Affinity_kcal_mol": -9.6, "Ki_nM": 95, "Is_Insignia": true, "Mechanism": "Degradador quimerico selectivo (PROTAC) de BCL-xL via ubiquitina ligasa Cereblon; elimina celulas senescentes secretoras de SASP con preservacion absoluta de plaquetas anucleadas (Platelet-Sparing)."}, {"Code": "MVA-PRO-02", "Name": "Senol-PROTAC VHL", "Category": "PROTAC Degrader (De Novo)", "Axis": "Eje 2: Senolisis Selectiva", "Pillar": "Pilar 1: Rescate SAC y Control Proliferativo", "Primary_Target": "VHL E3 Ligase / BCL-xL", "Target_PDB": "5T35", "SMILES_or_Sequence": "O=C(C1=CC=C(S(=O)(=O)NC2=CC=C(N3CCN(CC3)C)C=C2)C=C1)NCCOCCOCCNC(=O)C4C(O)CN(C4)C(=O)C(C(C)(C)C)NC(=O)C5=CC=C(C6=C(C)N=CS6)C=C5", "Molecular_Weight_Da": 892.05, "cLogP": 3.2, "QED_Score": 0.38, "Affinity_kcal_mol": -9.4, "Ki_nM": 140, "Is_Insignia": true, "Mechanism": "Reclutador selectivo del complejo VHL para ubiquitinacion y degradacion proteasomal de BCL-2 y BCL-xL en fibroblastos aneuploides senescentes."}, {"Code": "MVA-PRO-03", "Name": "Biclon-PEG PROTAC", "Category": "PROTAC Degrader (De Novo)", "Axis": "Eje 2: Senolisis Selectiva", "Pillar": "Pilar 1: Rescate SAC y Control Proliferativo", "Primary_Target": "IAP / BCL-2 Complex", "Target_PDB": "4KJE", "SMILES_or_Sequence": "O=C1NC(=O)C2=C1C=CC=C2N3CCN(CCOCCOCCOCC(=O)NC4=CC=C(S(=O)(=O)NC5=CC=C(N6CCOCC6)C=C5)C=C4)CC3", "Molecular_Weight_Da": 794.88, "cLogP": 2.9, "QED_Score": 0.45, "Affinity_kcal_mol": -9.0, "Ki_nM": 210, "Is_Insignia": false, "Mechanism": "Degradador bivalente optimizado con linker PEG para eliminar clones aneuploides de alta persistencia."}, {"Code": "MVA-PRO-04", "Name": "MCL1-Shedder", "Category": "PROTAC Degrader (De Novo)", "Axis": "Eje 2: Senolisis Selectiva", "Pillar": "Pilar 1: Rescate SAC y Control Proliferativo", "Primary_Target": "MCL-1 / CRBN", "Target_PDB": "6O4F", "SMILES_or_Sequence": "CC1=C(C=C(C=C1)S(=O)(=O)NC2=CC=CC(=C2)C(=O)NCCCCN3C(=O)C4=C(C3=O)C=CC=C4NC(=O)CC)NC(=O)C5=CC=CC=C5Cl", "Molecular_Weight_Da": 686.18, "cLogP": 3.4, "QED_Score": 0.51, "Affinity_kcal_mol": -8.9, "Ki_nM": 270, "Is_Insignia": false, "Mechanism": "Degradador selectivo de MCL-1 para prevenir el escape tumoral antiapoptotico en rabdomiosarcoma y tumor de Wilms."}, {"Code": "MVA-PRO-05", "Name": "Navitobioisostero", "Category": "Small Molecule (De Novo)", "Axis": "Eje 2: Senolisis Selectiva", "Pillar": "Pilar 1: Rescate SAC y Control Proliferativo", "Primary_Target": "BCL-2 / BCL-xL Pocket", "Target_PDB": "4LVT", "SMILES_or_Sequence": "CC(C)N1CCN(CC1)C2=CC=C(NC(=O)C3=CC=C(S(=O)(=O)NC4=CC=C(N5CCNCC5)C=C4)C=C3)C=C2Cl", "Molecular_Weight_Da": 582.12, "cLogP": 2.8, "QED_Score": 0.68, "Affinity_kcal_mol": -8.7, "Ki_nM": 360, "Is_Insignia": false, "Mechanism": "Bioisostero oral optimizado de navitoclax con mejor biodisponibilidad y menor citotoxicidad basal."}, {"Code": "MVA-CEN-01", "Name": "Cinetocorin Alfa", "Category": "Small Molecule (De Novo)", "Axis": "Eje 3: Estabilizadores Cinetocoricos", "Pillar": "Pilar 2: Observabilidad de Lie y Control Dinamico", "Primary_Target": "Kinesina CENPE Bisagra (Dimer Coiled-Coil)", "Target_PDB": "1T5S", "SMILES_or_Sequence": "COC1=C(C=C2C(=C1)C(=NN2)C3=CC(=CC=C3)Cl)NC(=O)NC4=CC=C(C=C4)C(=O)NO", "Molecular_Weight_Da": 435.82, "cLogP": 2.45, "QED_Score": 0.72, "Affinity_kcal_mol": -8.7, "Ki_nM": 420, "Is_Insignia": true, "Mechanism": "Estabilizador alosterico de la bisagra del tallo coiled-coil de CENPE; restituye la transmision de fuerza mecanoquimica y la tension cinetocorica impidiendo la no-disyuncion."}, {"Code": "MVA-CEN-02", "Name": "Quinazo-Motor", "Category": "Small Molecule (De Novo)", "Axis": "Eje 3: Estabilizadores Cinetocoricos", "Pillar": "Pilar 2: Observabilidad de Lie y Control Dinamico", "Primary_Target": "KIF18A Motor Domain", "Target_PDB": "5OAM", "SMILES_or_Sequence": "COC1=CC2=NC=NC(NC3=CC=C(Br)C=C3)=C2C=C1OCCCN4CCOCC4", "Molecular_Weight_Da": 457.32, "cLogP": 2.9, "QED_Score": 0.74, "Affinity_kcal_mol": -8.5, "Ki_nM": 480, "Is_Insignia": false, "Mechanism": "Modulador alosterico de la motilidad kinesica y alineacion de cromosomas rezagados."}, {"Code": "MVA-CEN-03", "Name": "Bencimidaz-CEN", "Category": "Small Molecule (De Novo)", "Axis": "Eje 3: Estabilizadores Cinetocoricos", "Pillar": "Pilar 2: Observabilidad de Lie y Control Dinamico", "Primary_Target": "CEP57 Centrosomal Core Interface", "Target_PDB": "AF-Q86XR8", "SMILES_or_Sequence": "FC1=CC=C(C=C1)C2=NC3=CC=CC=C3N2C4CCN(CC4)C(=O)C5=CC=C(F)C=C5", "Molecular_Weight_Da": 417.41, "cLogP": 3.1, "QED_Score": 0.77, "Affinity_kcal_mol": -8.4, "Ki_nM": 510, "Is_Insignia": false, "Mechanism": "Estabilizador quimico de la interfase CEP57-tubulina en centrosomas mutados del sindrome MVA2."}, {"Code": "MVA-CEN-04", "Name": "Tetrahidro-Step", "Category": "Small Molecule (De Novo)", "Axis": "Eje 3: Estabilizadores Cinetocoricos", "Pillar": "Pilar 2: Observabilidad de Lie y Control Dinamico", "Primary_Target": "Ndc80 Calponin-Homology Domain", "Target_PDB": "2VE7", "SMILES_or_Sequence": "CC1=CN=C(N=C1)NC2=CC=C(C=C2)N3CCC4(CCN(CC4)C(=O)C5=CC=C(Cl)C=C5)CC3", "Molecular_Weight_Da": 461.99, "cLogP": 2.85, "QED_Score": 0.76, "Affinity_kcal_mol": -8.3, "Ki_nM": 590, "Is_Insignia": false, "Mechanism": "Potenciador cooperativo de la estabilidad de acoplamiento kinetocoro-microtubulo."}, {"Code": "MVA-CEN-05", "Name": "Indol-BubR1 Tether", "Category": "Small Molecule (De Novo)", "Axis": "Eje 3: Estabilizadores Cinetocoricos", "Pillar": "Pilar 2: Observabilidad de Lie y Control Dinamico", "Primary_Target": "BubR1 Pseudo-Kinase / Cdc20 Pocket", "Target_PDB": "4AEZ", "SMILES_or_Sequence": "O=C(NC1=CC=C(Cl)C=C1)C2=CNC3=C2C=CC=C3NC(=O)C4=CC=CN=C4", "Molecular_Weight_Da": 390.82, "cLogP": 2.95, "QED_Score": 0.73, "Affinity_kcal_mol": -8.2, "Ki_nM": 640, "Is_Insignia": false, "Mechanism": "Enganche molecular entre el dominio pseudocinasa de BubR1 y Cdc20 inhibiendo la transicion prematura a anafase."}, {"Code": "MVA-CGS-01", "Name": "Micronucleocina A", "Category": "Small Molecule (De Novo)", "Axis": "Eje 4: Anti-Neuroinflamacion cGAS-STING", "Pillar": "Pilar 4: Nanotransporte Multiorganico SORT-LNPs", "Primary_Target": "cGAS Catalytic Nucleotide Pocket", "Target_PDB": "6CT9", "SMILES_or_Sequence": "CC1=CC(=C(C=C1)NC(=O)NC2=CC=C(C=C2)S(=O)(=O)N)C3=CC=CC=C3Cl", "Molecular_Weight_Da": 415.89, "cLogP": 2.1, "QED_Score": 0.81, "Affinity_kcal_mol": -8.9, "Ki_nM": 310, "Is_Insignia": true, "Mechanism": "Inhibidor competitivo del bolsillo catalitico de cGAS; bloquea la sintesis de 2'3'-cGAMP disparada tras la rotura de micronucleos en celulas aneuploides, frenando la neuroinflamacion y retraso cognitivo."}, {"Code": "MVA-CGS-02", "Name": "Sting-Block C91", "Category": "Small Molecule (De Novo)", "Axis": "Eje 4: Anti-Neuroinflamacion cGAS-STING", "Pillar": "Pilar 4: Nanotransporte Multiorganico SORT-LNPs", "Primary_Target": "STING Sitio Cys91 (Palmitoilacion Covalente)", "Target_PDB": "6Y5C", "SMILES_or_Sequence": "FC1=CC=C(C=C1)C(=O)NC2=CC=C(C=C2)C3=CSC(=N3)NC(=O)C4CC4", "Molecular_Weight_Da": 381.42, "cLogP": 2.65, "QED_Score": 0.83, "Affinity_kcal_mol": -8.9, "Ki_nM": 310, "Is_Insignia": false, "Mechanism": "Antagonista covalente de la palmitoilacion en residuo Cys91 de STING; bloquea la polimerizacion en Golgi y el influjo de interferones tipo I."}, {"Code": "MVA-CGS-03", "Name": "Fas-OligoShield", "Category": "Small Molecule (De Novo)", "Axis": "Eje 4: Anti-Neuroinflamacion cGAS-STING", "Pillar": "Pilar 4: Nanotransporte Multiorganico SORT-LNPs", "Primary_Target": "ENPP1 Phosphodiesterase", "Target_PDB": "6XKG", "SMILES_or_Sequence": "O=C(NC1=CC=C(C=C1)C2=NC(=CS2)C3=CC=CC=C3)C4=CC=C(S(=O)(=O)N5CCOCC5)C=C4", "Molecular_Weight_Da": 505.63, "cLogP": 2.75, "QED_Score": 0.69, "Affinity_kcal_mol": -8.6, "Ki_nM": 410, "Is_Insignia": false, "Mechanism": "Escudo metabolico regulador de dinucleotidos ciclicos citosolicos en respuesta a dano en la cromatina."}, {"Code": "MVA-CGS-04", "Name": "Cerebro-Sting-04", "Category": "Small Molecule (De Novo)", "Axis": "Eje 4: Anti-Neuroinflamacion cGAS-STING", "Pillar": "Pilar 4: Nanotransporte Multiorganico SORT-LNPs", "Primary_Target": "STING Transmembrane Domain (Alta BHE)", "Target_PDB": "7M8J", "SMILES_or_Sequence": "CN1C2=CC=CC=C2CC(C1)C(=O)NC3=CC=C(C=C3)N4CCN(CC4)C(=O)C5=CC=CC=C5F", "Molecular_Weight_Da": 458.53, "cLogP": 2.3, "QED_Score": 0.79, "Affinity_kcal_mol": -8.5, "Ki_nM": 460, "Is_Insignia": false, "Mechanism": "Molecula pequena con alta penetrancia a barrera hematoencefalica (TPSA < 80 A2) para proteccion de neurogenesis cortical."}, {"Code": "MVA-CGS-05", "Name": "Dual-TBK1 Kinase-Inh", "Category": "Small Molecule (De Novo)", "Axis": "Eje 4: Anti-Neuroinflamacion cGAS-STING", "Pillar": "Pilar 4: Nanotransporte Multiorganico SORT-LNPs", "Primary_Target": "TBK1 / IKK-epsilon Kinase", "Target_PDB": "4IM0", "SMILES_or_Sequence": "CC1=NC(=CS1)C2=CC=C(NC(=O)C3=CN=C(NC4=CC=CC=C4F)N=C3)C=C2", "Molecular_Weight_Da": 405.45, "cLogP": 2.8, "QED_Score": 0.76, "Affinity_kcal_mol": -8.4, "Ki_nM": 530, "Is_Insignia": false, "Mechanism": "Inhibidor dual selectivo de TBK1 y cinasas inductoras de interferon para preservar la mielinizacion neuronal."}, {"Code": "MVA-AMP-01", "Name": "Aneuprecin-1 (Axo-Peptido 1)", "Category": "Peptide Mimetic (Ambystoma mexicanum)", "Axis": "Eje 5: Biologicos y Edicion Genica", "Pillar": "Pilar 1: Rescate SAC y Control Proliferativo", "Primary_Target": "Mad2-Cdc20 MCC Complex / Membrana Fosfatidilserina", "Target_PDB": "2V64", "SMILES_or_Sequence": "VAVLGASGGIGQPLSLLLK", "Molecular_Weight_Da": 1795.1, "cLogP": -1.2, "QED_Score": 0.55, "Affinity_kcal_mol": -10.4, "Ki_nM": 48, "Is_Insignia": true, "Mechanism": "Peptido sintetico cationico anfifilico derivado de motivos de tolerancia a la aneuploidia del ajolote mexicano; mimetiza la tension del SAC, reprograma factores de transcripcion (SFN +2.8 Log2FC, RB1, BRCA1) y aporta accion bactericida contra MRSA (CMI: 2 ug/mL)."}, {"Code": "MVA-AMP-12", "Name": "Axo-Peptido 12", "Category": "Peptide Mimetic (Ambystoma mexicanum)", "Axis": "Eje 5: Biologicos y Edicion Genica", "Pillar": "Pilar 1: Rescate SAC y Control Proliferativo", "Primary_Target": "Envoltura Micronuclear / Caspasa-3/7", "Target_PDB": "AlphaFold-P12", "SMILES_or_Sequence": "ILLLCVGEAGDTVQFAEYIQK", "Molecular_Weight_Da": 2296.7, "cLogP": -0.95, "QED_Score": 0.52, "Affinity_kcal_mol": -8.8, "Ki_nM": 260, "Is_Insignia": false, "Mechanism": "Peptido bioinspirado de rescate que se acopla a las membranas micronucleares frágiles de alta curvatura, acelerando la eliminacion caspasa-dependiente de cromatina aberrante."}, {"Code": "MVA-AMP-13", "Name": "Axo-Peptido 13", "Category": "Peptide Mimetic (Ambystoma mexicanum)", "Axis": "Eje 5: Biologicos y Edicion Genica", "Pillar": "Pilar 1: Rescate SAC y Control Proliferativo", "Primary_Target": "Factores Paracrinos SASP (IL-6 & MMP-2) / Membrana Renal", "Target_PDB": "AlphaFold-P13", "SMILES_or_Sequence": "FGANALLGVSLAVCKAGAAEK", "Molecular_Weight_Da": 2048.4, "cLogP": -0.8, "QED_Score": 0.54, "Affinity_kcal_mol": -8.1, "Ki_nM": 680, "Is_Insignia": false, "Mechanism": "Peptido supresor del fenotipo secretor asociado a senescencia (SASP); reduce niveles de IL-6 (-3.4 Log2FC) y MMP-2, atenuando la fibrosis intersticial y calcificacion medular tubular."}, {"Code": "MVA-GEN-01", "Name": "pegRNA-ABE8e Prime/Base Editor", "Category": "Gene Therapy (0-DSB Base Editor)", "Axis": "Eje 5: Biologicos y Edicion Genica", "Pillar": "Pilar 3: Edicion Genetica 0-DSB de Precision", "Primary_Target": "Locus BUB1B c.1833-1G>A / Sitio de Splicing Exon 15", "Target_PDB": "CRISPR-ABE8e-Complex", "SMILES_or_Sequence": "[pegRNA 120-nt Target: 5'-GUGUGAUCUGAGUGUGUACC...-3' + TadA-8e Deaminase + nCas9(D10A)]", "Molecular_Weight_Da": 142000.0, "cLogP": -8.5, "QED_Score": 0.15, "Affinity_kcal_mol": -14.2, "Ki_nM": 2.5, "Is_Insignia": true, "Mechanism": "Editor de bases adenina (ABE8e) de alta fidelidad acoplado a Cas9 nickasa (D10A) y pegRNA especifico de 120 nt; repara la transicion patogenica c.1833-1G>A en BUB1B mediante desaminacion A-T a G-C con CERO roturas de doble cadena de ADN (0-DSB), eliminando el riesgo de cromotripsis o traslocaciones genotoxicas."}];
+    const coords3D = {"MVA-SYN-01": {"atoms": [{"elem": "C", "x": 8.74, "y": 1.55, "z": -1.72}, {"elem": "C", "x": 7.43, "y": 1.05, "z": -1.21}, {"elem": "N", "x": 6.43, "y": 1.94, "z": -1.06}, {"elem": "C", "x": 5.24, "y": 1.47, "z": -0.59}, {"elem": "C", "x": 4.95, "y": 0.15, "z": -0.25}, {"elem": "C", "x": 6.02, "y": -0.74, "z": -0.43}, {"elem": "C", "x": 7.26, "y": -0.3, "z": -0.9}, {"elem": "N", "x": 3.72, "y": -0.28, "z": 0.22}, {"elem": "C", "x": 3.61, "y": -1.5, "z": 1.05}, {"elem": "C", "x": 2.41, "y": -1.43, "z": 2.02}, {"elem": "N", "x": 1.15, "y": -1.13, "z": 1.35}, {"elem": "C", "x": 1.23, "y": -0.25, "z": 0.18}, {"elem": "C", "x": 2.53, "y": 0.58, "z": 0.13}, {"elem": "C", "x": -0.03, "y": -1.49, "z": 1.98}, {"elem": "O", "x": -0.07, "y": -2.0, "z": 3.1}, {"elem": "C", "x": -1.32, "y": -1.26, "z": 1.29}, {"elem": "C", "x": -2.32, "y": -0.55, "z": 1.95}, {"elem": "C", "x": -3.54, "y": -0.34, "z": 1.31}, {"elem": "C", "x": -3.78, "y": -0.82, "z": 0.02}, {"elem": "C", "x": -2.79, "y": -1.6, "z": -0.6}, {"elem": "C", "x": -1.56, "y": -1.81, "z": 0.03}, {"elem": "N", "x": -5.03, "y": -0.68, "z": -0.63}, {"elem": "C", "x": -5.79, "y": 0.5, "z": -0.65}, {"elem": "N", "x": -5.17, "y": 1.71, "z": -0.59}, {"elem": "C", "x": -5.92, "y": 2.83, "z": -0.62}, {"elem": "N", "x": -7.26, "y": 2.94, "z": -0.71}, {"elem": "C", "x": -7.82, "y": 1.73, "z": -0.78}, {"elem": "C", "x": -7.19, "y": 0.5, "z": -0.76}, {"elem": "C", "x": -8.24, "y": -0.44, "z": -0.87}, {"elem": "N", "x": -9.45, "y": 0.14, "z": -0.95}, {"elem": "N", "x": -9.16, "y": 1.46, "z": -0.89}, {"elem": "F", "x": -4.5, "y": 0.31, "z": 1.99}, {"elem": "H", "x": 8.7, "y": 2.63, "z": -1.9}, {"elem": "H", "x": 8.99, "y": 1.06, "z": -2.66}, {"elem": "H", "x": 9.53, "y": 1.36, "z": -0.99}, {"elem": "H", "x": 4.5, "y": 2.25, "z": -0.48}, {"elem": "H", "x": 5.91, "y": -1.8, "z": -0.22}, {"elem": "H", "x": 8.08, "y": -1.0, "z": -1.04}, {"elem": "H", "x": 3.49, "y": -2.36, "z": 0.38}, {"elem": "H", "x": 4.51, "y": -1.65, "z": 1.65}, {"elem": "H", "x": 2.33, "y": -2.38, "z": 2.56}, {"elem": "H", "x": 2.58, "y": -0.64, "z": 2.76}, {"elem": "H", "x": 1.18, "y": -0.9, "z": -0.71}, {"elem": "H", "x": 0.37, "y": 0.43, "z": 0.15}, {"elem": "H", "x": 2.52, "y": 1.14, "z": -0.82}, {"elem": "H", "x": 2.54, "y": 1.3, "z": 0.95}, {"elem": "H", "x": -2.16, "y": -0.16, "z": 2.96}, {"elem": "H", "x": -2.97, "y": -2.02, "z": -1.58}, {"elem": "H", "x": -0.8, "y": -2.42, "z": -0.46}, {"elem": "H", "x": -5.61, "y": -1.49, "z": -0.45}, {"elem": "H", "x": -5.37, "y": 3.77, "z": -0.56}, {"elem": "H", "x": -8.18, "y": -1.52, "z": -0.9}, {"elem": "H", "x": -9.91, "y": 2.13, "z": -0.93}], "bonds": [[0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [4, 7], [7, 8], [8, 9], [9, 10], [10, 11], [11, 12], [10, 13], [13, 14], [13, 15], [15, 16], [16, 17], [17, 18], [18, 19], [19, 20], [18, 21], [21, 22], [22, 23], [23, 24], [24, 25], [25, 26], [26, 27], [27, 28], [28, 29], [29, 30], [17, 31], [6, 1], [12, 7], [20, 15], [27, 22], [30, 26], [0, 32], [0, 33], [0, 34], [3, 35], [5, 36], [6, 37], [8, 38], [8, 39], [9, 40], [9, 41], [11, 42], [11, 43], [12, 44], [12, 45], [16, 46], [19, 47], [20, 48], [21, 49], [24, 50], [28, 51], [30, 52]]}, "MVA-SYN-02": {"atoms": [{"elem": "O", "x": -2.97, "y": -3.57, "z": 2.96}, {"elem": "C", "x": -3.51, "y": -2.63, "z": 2.38}, {"elem": "N", "x": -2.86, "y": -1.56, "z": 1.8}, {"elem": "C", "x": -1.48, "y": -1.28, "z": 1.77}, {"elem": "C", "x": -1.07, "y": -0.15, "z": 1.05}, {"elem": "C", "x": 0.28, "y": 0.2, "z": 0.98}, {"elem": "C", "x": 1.23, "y": -0.59, "z": 1.62}, {"elem": "O", "x": 2.57, "y": -0.28, "z": 1.59}, {"elem": "C", "x": 3.14, "y": -0.14, "z": 0.35}, {"elem": "N", "x": 3.91, "y": 0.96, "z": 0.2}, {"elem": "C", "x": 4.53, "y": 1.12, "z": -0.97}, {"elem": "N", "x": 5.3, "y": 2.27, "z": -1.07}, {"elem": "C", "x": 6.12, "y": 2.83, "z": -2.06}, {"elem": "C", "x": 6.85, "y": 3.99, "z": -1.77}, {"elem": "C", "x": 7.69, "y": 4.58, "z": -2.71}, {"elem": "C", "x": 7.82, "y": 4.03, "z": -3.98}, {"elem": "C", "x": 7.1, "y": 2.88, "z": -4.3}, {"elem": "C", "x": 6.26, "y": 2.29, "z": -3.35}, {"elem": "N", "x": 4.43, "y": 0.25, "z": -1.98}, {"elem": "C", "x": 3.67, "y": -0.84, "z": -1.79}, {"elem": "C", "x": 3.0, "y": -1.1, "z": -0.63}, {"elem": "C", "x": 0.83, "y": -1.7, "z": 2.36}, {"elem": "C", "x": -0.52, "y": -2.05, "z": 2.43}, {"elem": "C", "x": -5.03, "y": -2.61, "z": 2.22}, {"elem": "C", "x": -5.45, "y": -2.93, "z": 0.78}, {"elem": "C", "x": -5.25, "y": -1.77, "z": -0.2}, {"elem": "N", "x": -5.13, "y": -0.46, "z": 0.47}, {"elem": "C", "x": -6.09, "y": -0.36, "z": 1.58}, {"elem": "C", "x": -5.66, "y": -1.3, "z": 2.72}, {"elem": "C", "x": -5.34, "y": 0.63, "z": -0.49}, {"elem": "H", "x": -3.46, "y": -0.9, "z": 1.3}, {"elem": "H", "x": -1.81, "y": 0.48, "z": 0.55}, {"elem": "H", "x": 0.57, "y": 1.09, "z": 0.43}, {"elem": "H", "x": 5.26, "y": 2.77, "z": -0.19}, {"elem": "H", "x": 6.78, "y": 4.44, "z": -0.78}, {"elem": "H", "x": 8.25, "y": 5.48, "z": -2.45}, {"elem": "H", "x": 8.47, "y": 4.48, "z": -4.72}, {"elem": "H", "x": 7.18, "y": 2.44, "z": -5.29}, {"elem": "H", "x": 5.71, "y": 1.39, "z": -3.64}, {"elem": "H", "x": 3.62, "y": -1.53, "z": -2.63}, {"elem": "H", "x": 2.4, "y": -1.99, "z": -0.49}, {"elem": "H", "x": 1.57, "y": -2.29, "z": 2.89}, {"elem": "H", "x": -0.79, "y": -2.92, "z": 3.02}, {"elem": "H", "x": -5.4, "y": -3.42, "z": 2.87}, {"elem": "H", "x": -6.52, "y": -3.2, "z": 0.79}, {"elem": "H", "x": -4.91, "y": -3.81, "z": 0.41}, {"elem": "H", "x": -6.09, "y": -1.77, "z": -0.91}, {"elem": "H", "x": -4.34, "y": -1.94, "z": -0.78}, {"elem": "H", "x": -7.1, "y": -0.6, "z": 1.25}, {"elem": "H", "x": -6.12, "y": 0.66, "z": 1.98}, {"elem": "H", "x": -6.55, "y": -1.53, "z": 3.31}, {"elem": "H", "x": -4.97, "y": -0.78, "z": 3.39}, {"elem": "H", "x": -4.61, "y": 0.56, "z": -1.3}, {"elem": "H", "x": -5.18, "y": 1.6, "z": -0.01}, {"elem": "H", "x": -6.34, "y": 0.62, "z": -0.92}], "bonds": [[0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [9, 10], [10, 11], [11, 12], [12, 13], [13, 14], [14, 15], [15, 16], [16, 17], [10, 18], [18, 19], [19, 20], [6, 21], [21, 22], [1, 23], [23, 24], [24, 25], [25, 26], [26, 27], [27, 28], [26, 29], [22, 3], [20, 8], [17, 12], [28, 23], [2, 30], [4, 31], [5, 32], [11, 33], [13, 34], [14, 35], [15, 36], [16, 37], [17, 38], [19, 39], [20, 40], [21, 41], [22, 42], [23, 43], [24, 44], [24, 45], [25, 46], [25, 47], [27, 48], [27, 49], [28, 50], [28, 51], [29, 52], [29, 53], [29, 54]]}, "MVA-SYN-03": {"atoms": [{"elem": "C", "x": 5.97, "y": 1.21, "z": 2.46}, {"elem": "C", "x": 4.5, "y": 1.03, "z": 2.16}, {"elem": "C", "x": 4.03, "y": 0.58, "z": 0.91}, {"elem": "C", "x": 2.64, "y": 0.45, "z": 0.73}, {"elem": "C", "x": 1.73, "y": 0.75, "z": 1.74}, {"elem": "C", "x": 2.21, "y": 1.2, "z": 2.97}, {"elem": "C", "x": 3.58, "y": 1.34, "z": 3.18}, {"elem": "N", "x": 0.36, "y": 0.59, "z": 1.44}, {"elem": "C", "x": -0.72, "y": 0.75, "z": 2.3}, {"elem": "O", "x": -0.66, "y": 1.01, "z": 3.5}, {"elem": "C", "x": -2.05, "y": 0.57, "z": 1.71}, {"elem": "C", "x": -3.11, "y": 0.17, "z": 2.48}, {"elem": "N", "x": -4.36, "y": -0.02, "z": 2.0}, {"elem": "C", "x": -4.59, "y": 0.21, "z": 0.7}, {"elem": "N", "x": -3.6, "y": 0.63, "z": -0.12}, {"elem": "C", "x": -2.37, "y": 0.81, "z": 0.4}, {"elem": "N", "x": -5.88, "y": 0.05, "z": 0.18}, {"elem": "C", "x": -6.72, "y": -0.84, "z": 0.99}, {"elem": "C", "x": -8.17, "y": -0.78, "z": 0.5}, {"elem": "C", "x": -8.27, "y": -1.05, "z": -1.0}, {"elem": "C", "x": -7.34, "y": -0.14, "z": -1.78}, {"elem": "C", "x": -5.91, "y": -0.21, "z": -1.26}, {"elem": "O", "x": -7.95, "y": -2.41, "z": -1.28}, {"elem": "N", "x": 4.96, "y": 0.28, "z": -0.11}, {"elem": "C", "x": 4.71, "y": -0.24, "z": -1.36}, {"elem": "O", "x": 3.63, "y": -0.61, "z": -1.81}, {"elem": "C", "x": 5.91, "y": -0.39, "z": -2.23}, {"elem": "C", "x": 6.94, "y": 0.56, "z": -2.23}, {"elem": "C", "x": 8.05, "y": 0.39, "z": -3.07}, {"elem": "C", "x": 8.11, "y": -0.73, "z": -3.9}, {"elem": "F", "x": 9.18, "y": -0.89, "z": -4.7}, {"elem": "C", "x": 7.09, "y": -1.67, "z": -3.92}, {"elem": "C", "x": 5.98, "y": -1.49, "z": -3.09}, {"elem": "H", "x": 6.41, "y": 1.94, "z": 1.77}, {"elem": "H", "x": 6.49, "y": 0.25, "z": 2.36}, {"elem": "H", "x": 6.14, "y": 1.57, "z": 3.48}, {"elem": "H", "x": 2.25, "y": 0.12, "z": -0.23}, {"elem": "H", "x": 1.54, "y": 1.45, "z": 3.79}, {"elem": "H", "x": 3.93, "y": 1.69, "z": 4.15}, {"elem": "H", "x": 0.17, "y": 0.24, "z": 0.51}, {"elem": "H", "x": -3.0, "y": -0.03, "z": 3.55}, {"elem": "H", "x": -1.64, "y": 1.19, "z": -0.32}, {"elem": "H", "x": -6.35, "y": -1.87, "z": 0.94}, {"elem": "H", "x": -6.73, "y": -0.54, "z": 2.04}, {"elem": "H", "x": -8.76, "y": -1.52, "z": 1.06}, {"elem": "H", "x": -8.58, "y": 0.21, "z": 0.72}, {"elem": "H", "x": -9.3, "y": -0.89, "z": -1.33}, {"elem": "H", "x": -7.35, "y": -0.41, "z": -2.84}, {"elem": "H", "x": -7.7, "y": 0.9, "z": -1.71}, {"elem": "H", "x": -5.47, "y": -1.19, "z": -1.48}, {"elem": "H", "x": -5.33, "y": 0.54, "z": -1.82}, {"elem": "H", "x": -8.63, "y": -2.97, "z": -0.85}, {"elem": "H", "x": 5.93, "y": 0.41, "z": 0.14}, {"elem": "H", "x": 6.89, "y": 1.45, "z": -1.61}, {"elem": "H", "x": 8.86, "y": 1.11, "z": -3.08}, {"elem": "H", "x": 7.16, "y": -2.52, "z": -4.59}, {"elem": "H", "x": 5.17, "y": -2.22, "z": -3.11}], "bonds": [[0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [4, 7], [7, 8], [8, 9], [8, 10], [10, 11], [11, 12], [12, 13], [13, 14], [14, 15], [13, 16], [16, 17], [17, 18], [18, 19], [19, 20], [20, 21], [19, 22], [2, 23], [23, 24], [24, 25], [24, 26], [26, 27], [27, 28], [28, 29], [29, 30], [29, 31], [31, 32], [6, 1], [15, 10], [21, 16], [32, 26], [0, 33], [0, 34], [0, 35], [3, 36], [5, 37], [6, 38], [7, 39], [11, 40], [15, 41], [17, 42], [17, 43], [18, 44], [18, 45], [19, 46], [20, 47], [20, 48], [21, 49], [21, 50], [22, 51], [23, 52], [27, 53], [28, 54], [31, 55], [32, 56]]}, "MVA-SYN-04": {"atoms": [{"elem": "F", "x": 8.79, "y": -3.02, "z": -0.23}, {"elem": "C", "x": 7.72, "y": -2.21, "z": -0.13}, {"elem": "C", "x": 6.56, "y": -2.54, "z": -0.8}, {"elem": "C", "x": 5.44, "y": -1.69, "z": -0.7}, {"elem": "C", "x": 5.48, "y": -0.52, "z": 0.08}, {"elem": "C", "x": 6.69, "y": -0.22, "z": 0.75}, {"elem": "C", "x": 7.8, "y": -1.06, "z": 0.64}, {"elem": "C", "x": 4.3, "y": 0.38, "z": 0.19}, {"elem": "N", "x": 4.43, "y": 1.47, "z": 0.96}, {"elem": "C", "x": 3.31, "y": 2.21, "z": 0.98}, {"elem": "C", "x": 2.12, "y": 1.94, "z": 0.33}, {"elem": "C", "x": 1.3, "y": 3.04, "z": 0.65}, {"elem": "N", "x": 1.9, "y": 3.93, "z": 1.46}, {"elem": "N", "x": 3.13, "y": 3.39, "z": 1.64}, {"elem": "C", "x": 2.07, "y": 0.77, "z": -0.43}, {"elem": "N", "x": 3.19, "y": 0.01, "z": -0.5}, {"elem": "N", "x": 0.96, "y": 0.34, "z": -1.17}, {"elem": "C", "x": -0.4, "y": 0.31, "z": -0.79}, {"elem": "C", "x": -0.82, "y": 0.33, "z": 0.53}, {"elem": "C", "x": -2.19, "y": 0.28, "z": 0.85}, {"elem": "C", "x": -3.17, "y": 0.19, "z": -0.15}, {"elem": "N", "x": -4.52, "y": 0.14, "z": 0.22}, {"elem": "C", "x": -5.57, "y": 0.57, "z": -0.73}, {"elem": "C", "x": -6.36, "y": -0.63, "z": -1.28}, {"elem": "N", "x": -7.04, "y": -1.45, "z": -0.26}, {"elem": "C", "x": -6.38, "y": -1.31, "z": 1.06}, {"elem": "C", "x": -4.86, "y": -1.08, "z": 1.0}, {"elem": "C", "x": -2.73, "y": 0.16, "z": -1.48}, {"elem": "C", "x": -1.37, "y": 0.21, "z": -1.79}, {"elem": "H", "x": 6.51, "y": -3.44, "z": -1.4}, {"elem": "H", "x": 4.54, "y": -1.97, "z": -1.23}, {"elem": "H", "x": 6.77, "y": 0.67, "z": 1.36}, {"elem": "H", "x": 8.73, "y": -0.83, "z": 1.16}, {"elem": "H", "x": 0.28, "y": 3.23, "z": 0.33}, {"elem": "H", "x": 3.8, "y": 3.88, "z": 2.21}, {"elem": "H", "x": 1.22, "y": -0.52, "z": -1.65}, {"elem": "H", "x": -0.11, "y": 0.37, "z": 1.35}, {"elem": "H", "x": -2.48, "y": 0.32, "z": 1.89}, {"elem": "H", "x": -5.17, "y": 1.18, "z": -1.55}, {"elem": "H", "x": -6.26, "y": 1.23, "z": -0.19}, {"elem": "H", "x": -5.68, "y": -1.29, "z": -1.84}, {"elem": "H", "x": -7.11, "y": -0.28, "z": -2.0}, {"elem": "H", "x": -8.01, "y": -1.15, "z": -0.17}, {"elem": "H", "x": -6.85, "y": -0.46, "z": 1.59}, {"elem": "H", "x": -6.6, "y": -2.2, "z": 1.65}, {"elem": "H", "x": -4.39, "y": -1.96, "z": 0.55}, {"elem": "H", "x": -4.48, "y": -0.98, "z": 2.03}, {"elem": "H", "x": -3.43, "y": 0.06, "z": -2.3}, {"elem": "H", "x": -1.07, "y": 0.18, "z": -2.84}], "bonds": [[0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [4, 7], [7, 8], [8, 9], [9, 10], [10, 11], [11, 12], [12, 13], [10, 14], [14, 15], [14, 16], [16, 17], [17, 18], [18, 19], [19, 20], [20, 21], [21, 22], [22, 23], [23, 24], [24, 25], [25, 26], [20, 27], [27, 28], [6, 1], [15, 7], [13, 9], [28, 17], [26, 21], [2, 29], [3, 30], [5, 31], [6, 32], [11, 33], [13, 34], [16, 35], [18, 36], [19, 37], [22, 38], [22, 39], [23, 40], [23, 41], [24, 42], [25, 43], [25, 44], [26, 45], [26, 46], [27, 47], [28, 48]]}, "MVA-SYN-05": {"atoms": [{"elem": "C", "x": -4.99, "y": 3.34, "z": -0.98}, {"elem": "O", "x": -5.9, "y": 2.28, "z": -1.26}, {"elem": "C", "x": -5.44, "y": 1.01, "z": -1.13}, {"elem": "C", "x": -4.16, "y": 0.63, "z": -0.73}, {"elem": "C", "x": -3.8, "y": -0.74, "z": -0.64}, {"elem": "C", "x": -4.73, "y": -1.73, "z": -0.97}, {"elem": "C", "x": -6.0, "y": -1.34, "z": -1.36}, {"elem": "C", "x": -6.36, "y": 0.01, "z": -1.44}, {"elem": "N", "x": -4.46, "y": -3.04, "z": -0.92}, {"elem": "C", "x": -3.22, "y": -3.38, "z": -0.54}, {"elem": "N", "x": -2.24, "y": -2.54, "z": -0.2}, {"elem": "C", "x": -2.53, "y": -1.22, "z": -0.24}, {"elem": "N", "x": -1.54, "y": -0.29, "z": 0.16}, {"elem": "C", "x": -0.16, "y": -0.52, "z": 0.4}, {"elem": "C", "x": 0.57, "y": -1.46, "z": -0.34}, {"elem": "C", "x": 1.94, "y": -1.63, "z": -0.13}, {"elem": "C", "x": 2.61, "y": -0.83, "z": 0.8}, {"elem": "S", "x": 4.34, "y": -1.04, "z": 1.08}, {"elem": "O", "x": 4.56, "y": -0.98, "z": 2.51}, {"elem": "O", "x": 4.81, "y": -2.15, "z": 0.28}, {"elem": "N", "x": 4.95, "y": 0.36, "z": 0.34}, {"elem": "C", "x": 6.02, "y": 1.04, "z": 1.1}, {"elem": "C", "x": 6.96, "y": 1.98, "z": 0.4}, {"elem": "C", "x": 7.46, "y": 0.67, "z": 0.92}, {"elem": "C", "x": 1.91, "y": 0.13, "z": 1.53}, {"elem": "C", "x": 0.54, "y": 0.29, "z": 1.31}, {"elem": "Cl", "x": -0.29, "y": 1.51, "z": 2.22}, {"elem": "H", "x": -5.52, "y": 4.28, "z": -1.14}, {"elem": "H", "x": -4.14, "y": 3.31, "z": -1.67}, {"elem": "H", "x": -4.66, "y": 3.31, "z": 0.06}, {"elem": "H", "x": -3.41, "y": 1.38, "z": -0.5}, {"elem": "H", "x": -6.74, "y": -2.1, "z": -1.61}, {"elem": "H", "x": -7.37, "y": 0.28, "z": -1.76}, {"elem": "H", "x": -3.0, "y": -4.44, "z": -0.51}, {"elem": "H", "x": -1.92, "y": 0.32, "z": 0.88}, {"elem": "H", "x": 0.08, "y": -2.08, "z": -1.09}, {"elem": "H", "x": 2.48, "y": -2.39, "z": -0.71}, {"elem": "H", "x": 5.26, "y": 0.11, "z": -0.6}, {"elem": "H", "x": 5.7, "y": 1.33, "z": 2.09}, {"elem": "H", "x": 6.87, "y": 2.11, "z": -0.67}, {"elem": "H", "x": 7.26, "y": 2.88, "z": 0.94}, {"elem": "H", "x": 8.1, "y": 0.67, "z": 1.8}, {"elem": "H", "x": 7.72, "y": -0.1, "z": 0.2}, {"elem": "H", "x": 2.44, "y": 0.75, "z": 2.25}], "bonds": [[0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [5, 8], [8, 9], [9, 10], [10, 11], [11, 12], [12, 13], [13, 14], [14, 15], [15, 16], [16, 17], [17, 18], [17, 19], [17, 20], [20, 21], [21, 22], [22, 23], [16, 24], [24, 25], [25, 26], [7, 2], [11, 4], [25, 13], [23, 21], [0, 27], [0, 28], [0, 29], [3, 30], [6, 31], [7, 32], [9, 33], [12, 34], [14, 35], [15, 36], [20, 37], [21, 38], [22, 39], [22, 40], [23, 41], [23, 42], [24, 43]]}, "MVA-PRO-01": {"atoms": [{"elem": "O", "x": -9.69, "y": -2.92, "z": -1.7}, {"elem": "C", "x": -10.31, "y": -1.94, "z": -1.3}, {"elem": "N", "x": -9.7, "y": -0.87, "z": -0.71}, {"elem": "C", "x": -8.29, "y": -0.88, "z": -0.39}, {"elem": "C", "x": -7.78, "y": 0.51, "z": -0.03}, {"elem": "C", "x": -6.27, "y": 0.57, "z": 0.18}, {"elem": "C", "x": -5.78, "y": -0.29, "z": 1.34}, {"elem": "N", "x": -4.36, "y": -0.1, "z": 1.57}, {"elem": "C", "x": -3.89, "y": 0.92, "z": 2.37}, {"elem": "O", "x": -4.63, "y": 1.71, "z": 2.96}, {"elem": "C", "x": -2.41, "y": 1.07, "z": 2.46}, {"elem": "C", "x": -1.89, "y": 2.33, "z": 2.82}, {"elem": "C", "x": -0.51, "y": 2.52, "z": 2.93}, {"elem": "C", "x": 0.35, "y": 1.46, "z": 2.68}, {"elem": "S", "x": 2.11, "y": 1.68, "z": 2.84}, {"elem": "O", "x": 2.35, "y": 2.93, "z": 3.52}, {"elem": "O", "x": 2.66, "y": 0.42, "z": 3.31}, {"elem": "N", "x": 2.53, "y": 1.94, "z": 1.2}, {"elem": "C", "x": 3.83, "y": 1.48, "z": 0.84}, {"elem": "C", "x": 4.99, "y": 2.02, "z": 1.4}, {"elem": "C", "x": 6.25, "y": 1.57, "z": 0.99}, {"elem": "C", "x": 6.38, "y": 0.6, "z": -0.01}, {"elem": "N", "x": 7.62, "y": 0.13, "z": -0.47}, {"elem": "C", "x": 8.82, "y": 0.24, "z": 0.39}, {"elem": "C", "x": 9.76, "y": 1.36, "z": -0.11}, {"elem": "N", "x": 10.21, "y": 1.2, "z": -1.5}, {"elem": "C", "x": 9.36, "y": 0.28, "z": -2.27}, {"elem": "C", "x": 7.86, "y": 0.41, "z": -1.91}, {"elem": "C", "x": 11.65, "y": 0.97, "z": -1.67}, {"elem": "C", "x": 12.2, "y": -0.35, "z": -1.16}, {"elem": "C", "x": 12.28, "y": -1.46, "z": -2.02}, {"elem": "C", "x": 12.78, "y": -2.68, "z": -1.56}, {"elem": "C", "x": 13.2, "y": -2.81, "z": -0.24}, {"elem": "C", "x": 13.13, "y": -1.72, "z": 0.62}, {"elem": "C", "x": 12.64, "y": -0.49, "z": 0.16}, {"elem": "C", "x": 5.2, "y": 0.08, "z": -0.57}, {"elem": "C", "x": 3.94, "y": 0.52, "z": -0.16}, {"elem": "C", "x": -0.15, "y": 0.19, "z": 2.34}, {"elem": "C", "x": -1.53, "y": -0.0, "z": 2.24}, {"elem": "C", "x": -11.8, "y": -1.84, "z": -1.45}, {"elem": "C", "x": -12.42, "y": -2.84, "z": -2.12}, {"elem": "C", "x": -13.85, "y": -2.84, "z": -2.33}, {"elem": "C", "x": -14.56, "y": -1.82, "z": -1.84}, {"elem": "N", "x": -13.98, "y": -0.78, "z": -1.15}, {"elem": "C", "x": -15.0, "y": 0.12, "z": -0.78}, {"elem": "O", "x": -14.91, "y": 1.16, "z": -0.15}, {"elem": "N", "x": -16.19, "y": -0.38, "z": -1.25}, {"elem": "C", "x": -16.02, "y": -1.56, "z": -1.92}, {"elem": "O", "x": -16.85, "y": -2.26, "z": -2.46}, {"elem": "C", "x": -12.62, "y": -0.7, "z": -0.9}, {"elem": "O", "x": -12.08, "y": 0.21, "z": -0.27}, {"elem": "H", "x": -10.29, "y": -0.14, "z": -0.29}, {"elem": "H", "x": -7.74, "y": -1.29, "z": -1.24}, {"elem": "H", "x": -8.16, "y": -1.57, "z": 0.45}, {"elem": "H", "x": -8.05, "y": 1.21, "z": -0.83}, {"elem": "H", "x": -8.3, "y": 0.87, "z": 0.87}, {"elem": "H", "x": -5.99, "y": 1.62, "z": 0.35}, {"elem": "H", "x": -5.76, "y": 0.27, "z": -0.74}, {"elem": "H", "x": -6.33, "y": -0.04, "z": 2.26}, {"elem": "H", "x": -5.93, "y": -1.35, "z": 1.13}, {"elem": "H", "x": -3.72, "y": -0.59, "z": 0.95}, {"elem": "H", "x": -2.57, "y": 3.16, "z": 3.02}, {"elem": "H", "x": -0.13, "y": 3.5, "z": 3.22}, {"elem": "H", "x": 2.47, "y": 2.95, "z": 1.06}, {"elem": "H", "x": 4.93, "y": 2.79, "z": 2.17}, {"elem": "H", "x": 7.12, "y": 2.03, "z": 1.44}, {"elem": "H", "x": 8.57, "y": 0.38, "z": 1.45}, {"elem": "H", "x": 9.35, "y": -0.72, "z": 0.35}, {"elem": "H", "x": 10.59, "y": 1.48, "z": 0.59}, {"elem": "H", "x": 9.21, "y": 2.31, "z": -0.06}, {"elem": "H", "x": 9.64, "y": -0.76, "z": -2.11}, {"elem": "H", "x": 9.48, "y": 0.49, "z": -3.34}, {"elem": "H", "x": 7.52, "y": 1.43, "z": -2.16}, {"elem": "H", "x": 7.29, "y": -0.3, "z": -2.53}, {"elem": "H", "x": 12.21, "y": 1.79, "z": -1.18}, {"elem": "H", "x": 11.91, "y": 1.07, "z": -2.73}, {"elem": "H", "x": 11.96, "y": -1.38, "z": -3.05}, {"elem": "H", "x": 12.84, "y": -3.53, "z": -2.23}, {"elem": "H", "x": 13.59, "y": -3.76, "z": 0.12}, {"elem": "H", "x": 13.47, "y": -1.82, "z": 1.65}, {"elem": "H", "x": 12.61, "y": 0.35, "z": 0.85}, {"elem": "H", "x": 5.26, "y": -0.69, "z": -1.33}, {"elem": "H", "x": 3.05, "y": 0.09, "z": -0.61}, {"elem": "H", "x": 0.53, "y": -0.64, "z": 2.18}, {"elem": "H", "x": -1.9, "y": -1.0, "z": 2.01}, {"elem": "H", "x": -11.86, "y": -3.68, "z": -2.53}, {"elem": "H", "x": -14.32, "y": -3.66, "z": -2.87}, {"elem": "H", "x": -17.08, "y": 0.07, "z": -1.13}], "bonds": [[0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [8, 10], [10, 11], [11, 12], [12, 13], [13, 14], [14, 15], [14, 16], [14, 17], [17, 18], [18, 19], [19, 20], [20, 21], [21, 22], [22, 23], [23, 24], [24, 25], [25, 26], [26, 27], [25, 28], [28, 29], [29, 30], [30, 31], [31, 32], [32, 33], [33, 34], [21, 35], [35, 36], [13, 37], [37, 38], [1, 39], [39, 40], [40, 41], [41, 42], [42, 43], [43, 44], [44, 45], [44, 46], [46, 47], [47, 48], [43, 49], [49, 50], [38, 10], [36, 18], [27, 22], [34, 29], [49, 39], [47, 42], [2, 51], [3, 52], [3, 53], [4, 54], [4, 55], [5, 56], [5, 57], [6, 58], [6, 59], [7, 60], [11, 61], [12, 62], [17, 63], [19, 64], [20, 65], [23, 66], [23, 67], [24, 68], [24, 69], [26, 70], [26, 71], [27, 72], [27, 73], [28, 74], [28, 75], [30, 76], [31, 77], [32, 78], [33, 79], [34, 80], [35, 81], [36, 82], [37, 83], [38, 84], [40, 85], [41, 86], [46, 87]]}, "MVA-PRO-02": {"atoms": [{"elem": "O", "x": -4.89, "y": -3.03, "z": -0.21}, {"elem": "C", "x": -5.96, "y": -2.43, "z": -0.24}, {"elem": "C", "x": -7.23, "y": -3.19, "z": -0.17}, {"elem": "C", "x": -7.26, "y": -4.36, "z": 0.6}, {"elem": "C", "x": -8.44, "y": -5.11, "z": 0.69}, {"elem": "C", "x": -9.57, "y": -4.69, "z": -0.02}, {"elem": "S", "x": -11.06, "y": -5.67, "z": 0.05}, {"elem": "O", "x": -11.75, "y": -5.51, "z": -1.21}, {"elem": "O", "x": -10.68, "y": -6.98, "z": 0.53}, {"elem": "N", "x": -11.93, "y": -4.95, "z": 1.3}, {"elem": "C", "x": -12.26, "y": -3.56, "z": 1.21}, {"elem": "C", "x": -11.69, "y": -2.68, "z": 2.12}, {"elem": "C", "x": -11.96, "y": -1.31, "z": 2.03}, {"elem": "C", "x": -12.81, "y": -0.79, "z": 1.04}, {"elem": "N", "x": -13.11, "y": 0.57, "z": 0.91}, {"elem": "C", "x": -14.57, "y": 0.88, "z": 1.02}, {"elem": "C", "x": -14.86, "y": 2.34, "z": 0.6}, {"elem": "N", "x": -14.06, "y": 3.32, "z": 1.37}, {"elem": "C", "x": -12.62, "y": 3.0, "z": 1.22}, {"elem": "C", "x": -12.3, "y": 1.55, "z": 1.66}, {"elem": "C", "x": -14.33, "y": 4.68, "z": 0.9}, {"elem": "C", "x": -13.36, "y": -1.71, "z": 0.13}, {"elem": "C", "x": -13.09, "y": -3.08, "z": 0.21}, {"elem": "C", "x": -9.53, "y": -3.55, "z": -0.83}, {"elem": "C", "x": -8.36, "y": -2.79, "z": -0.9}, {"elem": "N", "x": -6.07, "y": -1.06, "z": -0.31}, {"elem": "C", "x": -4.88, "y": -0.23, "z": -0.27}, {"elem": "C", "x": -4.12, "y": -0.2, "z": -1.59}, {"elem": "O", "x": -2.96, "y": 0.63, "z": -1.45}, {"elem": "C", "x": -2.21, "y": 0.69, "z": -2.66}, {"elem": "C", "x": -0.86, "y": 1.37, "z": -2.4}, {"elem": "O", "x": 0.04, "y": 0.6, "z": -1.59}, {"elem": "C", "x": 0.49, "y": -0.6, "z": -2.22}, {"elem": "C", "x": 1.75, "y": -1.1, "z": -1.51}, {"elem": "N", "x": 2.85, "y": -0.17, "z": -1.72}, {"elem": "C", "x": 4.16, "y": -0.55, "z": -1.57}, {"elem": "O", "x": 4.51, "y": -1.72, "z": -1.44}, {"elem": "C", "x": 5.16, "y": 0.58, "z": -1.77}, {"elem": "C", "x": 4.94, "y": 1.83, "z": -0.91}, {"elem": "O", "x": 3.59, "y": 2.22, "z": -0.78}, {"elem": "C", "x": 5.62, "y": 1.47, "z": 0.42}, {"elem": "N", "x": 6.71, "y": 0.58, "z": 0.04}, {"elem": "C", "x": 6.57, "y": 0.15, "z": -1.35}, {"elem": "C", "x": 7.87, "y": 0.55, "z": 0.8}, {"elem": "O", "x": 8.04, "y": 1.35, "z": 1.71}, {"elem": "C", "x": 8.93, "y": -0.54, "z": 0.44}, {"elem": "C", "x": 8.77, "y": -1.89, "z": 1.24}, {"elem": "C", "x": 8.36, "y": -1.7, "z": 2.71}, {"elem": "C", "x": 10.06, "y": -2.73, "z": 1.17}, {"elem": "C", "x": 7.65, "y": -2.73, "z": 0.59}, {"elem": "N", "x": 10.27, "y": 0.08, "z": 0.36}, {"elem": "C", "x": 11.05, "y": 0.46, "z": 1.43}, {"elem": "O", "x": 10.86, "y": 0.19, "z": 2.6}, {"elem": "C", "x": 12.23, "y": 1.29, "z": 1.06}, {"elem": "C", "x": 12.54, "y": 2.4, "z": 1.85}, {"elem": "C", "x": 13.63, "y": 3.2, "z": 1.52}, {"elem": "C", "x": 14.44, "y": 2.9, "z": 0.41}, {"elem": "C", "x": 15.6, "y": 3.72, "z": 0.06}, {"elem": "C", "x": 16.0, "y": 4.27, "z": -1.15}, {"elem": "C", "x": 15.28, "y": 4.2, "z": -2.45}, {"elem": "N", "x": 17.2, "y": 4.97, "z": -1.12}, {"elem": "C", "x": 17.7, "y": 4.95, "z": 0.1}, {"elem": "S", "x": 16.78, "y": 4.11, "z": 1.27}, {"elem": "C", "x": 14.12, "y": 1.77, "z": -0.37}, {"elem": "C", "x": 13.02, "y": 0.97, "z": -0.05}, {"elem": "H", "x": -6.38, "y": -4.69, "z": 1.14}, {"elem": "H", "x": -8.45, "y": -6.02, "z": 1.28}, {"elem": "H", "x": -11.68, "y": -5.32, "z": 2.21}, {"elem": "H", "x": -11.03, "y": -3.03, "z": 2.91}, {"elem": "H", "x": -11.5, "y": -0.65, "z": 2.77}, {"elem": "H", "x": -14.9, "y": 0.71, "z": 2.06}, {"elem": "H", "x": -15.17, "y": 0.23, "z": 0.38}, {"elem": "H", "x": -14.66, "y": 2.44, "z": -0.47}, {"elem": "H", "x": -15.92, "y": 2.54, "z": 0.76}, {"elem": "H", "x": -12.31, "y": 3.13, "z": 0.18}, {"elem": "H", "x": -12.03, "y": 3.68, "z": 1.83}, {"elem": "H", "x": -12.48, "y": 1.45, "z": 2.74}, {"elem": "H", "x": -11.23, "y": 1.37, "z": 1.48}, {"elem": "H", "x": -13.76, "y": 5.41, "z": 1.49}, {"elem": "H", "x": -15.39, "y": 4.93, "z": 1.03}, {"elem": "H", "x": -14.06, "y": 4.82, "z": -0.16}, {"elem": "H", "x": -13.99, "y": -1.36, "z": -0.68}, {"elem": "H", "x": -13.55, "y": -3.76, "z": -0.51}, {"elem": "H", "x": -10.4, "y": -3.25, "z": -1.42}, {"elem": "H", "x": -8.33, "y": -1.92, "z": -1.54}, {"elem": "H", "x": -6.96, "y": -0.63, "z": -0.16}, {"elem": "H", "x": -5.2, "y": 0.79, "z": -0.0}, {"elem": "H", "x": -4.23, "y": -0.58, "z": 0.54}, {"elem": "H", "x": -4.76, "y": 0.2, "z": -2.38}, {"elem": "H", "x": -3.81, "y": -1.21, "z": -1.88}, {"elem": "H", "x": -2.77, "y": 1.27, "z": -3.39}, {"elem": "H", "x": -2.06, "y": -0.32, "z": -3.06}, {"elem": "H", "x": -0.36, "y": 1.62, "z": -3.34}, {"elem": "H", "x": -1.03, "y": 2.3, "z": -1.85}, {"elem": "H", "x": -0.29, "y": -1.36, "z": -2.13}, {"elem": "H", "x": 0.7, "y": -0.43, "z": -3.28}, {"elem": "H", "x": 1.59, "y": -1.16, "z": -0.43}, {"elem": "H", "x": 2.04, "y": -2.09, "z": -1.88}, {"elem": "H", "x": 2.65, "y": 0.8, "z": -1.48}, {"elem": "H", "x": 5.13, "y": 0.83, "z": -2.84}, {"elem": "H", "x": 5.48, "y": 2.67, "z": -1.37}, {"elem": "H", "x": 3.55, "y": 2.96, "z": -0.15}, {"elem": "H", "x": 5.96, "y": 2.36, "z": 0.95}, {"elem": "H", "x": 4.94, "y": 0.92, "z": 1.08}, {"elem": "H", "x": 7.33, "y": 0.7, "z": -1.93}, {"elem": "H", "x": 6.78, "y": -0.91, "z": -1.45}, {"elem": "H", "x": 8.78, "y": -0.8, "z": -0.61}, {"elem": "H", "x": 9.05, "y": -1.07, "z": 3.27}, {"elem": "H", "x": 7.37, "y": -1.24, "z": 2.8}, {"elem": "H", "x": 8.31, "y": -2.66, "z": 3.23}, {"elem": "H", "x": 9.9, "y": -3.73, "z": 1.59}, {"elem": "H", "x": 10.88, "y": -2.29, "z": 1.74}, {"elem": "H", "x": 10.39, "y": -2.86, "z": 0.13}, {"elem": "H", "x": 7.52, "y": -3.69, "z": 1.1}, {"elem": "H", "x": 7.87, "y": -2.95, "z": -0.46}, {"elem": "H", "x": 6.68, "y": -2.21, "z": 0.63}, {"elem": "H", "x": 10.46, "y": 0.55, "z": -0.51}, {"elem": "H", "x": 11.93, "y": 2.64, "z": 2.71}, {"elem": "H", "x": 13.85, "y": 4.07, "z": 2.14}, {"elem": "H", "x": 14.2, "y": 4.35, "z": -2.32}, {"elem": "H", "x": 15.65, "y": 4.98, "z": -3.14}, {"elem": "H", "x": 15.45, "y": 3.23, "z": -2.92}, {"elem": "H", "x": 18.63, "y": 5.43, "z": 0.35}, {"elem": "H", "x": 14.75, "y": 1.49, "z": -1.21}, {"elem": "H", "x": 12.82, "y": 0.08, "z": -0.65}], "bonds": [[0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [6, 8], [6, 9], [9, 10], [10, 11], [11, 12], [12, 13], [13, 14], [14, 15], [15, 16], [16, 17], [17, 18], [18, 19], [17, 20], [13, 21], [21, 22], [5, 23], [23, 24], [1, 25], [25, 26], [26, 27], [27, 28], [28, 29], [29, 30], [30, 31], [31, 32], [32, 33], [33, 34], [34, 35], [35, 36], [35, 37], [37, 38], [38, 39], [38, 40], [40, 41], [41, 42], [41, 43], [43, 44], [43, 45], [45, 46], [46, 47], [46, 48], [46, 49], [45, 50], [50, 51], [51, 52], [51, 53], [53, 54], [54, 55], [55, 56], [56, 57], [57, 58], [58, 59], [58, 60], [60, 61], [61, 62], [56, 63], [63, 64], [24, 2], [22, 10], [19, 14], [42, 37], [64, 53], [62, 57], [3, 65], [4, 66], [9, 67], [11, 68], [12, 69], [15, 70], [15, 71], [16, 72], [16, 73], [18, 74], [18, 75], [19, 76], [19, 77], [20, 78], [20, 79], [20, 80], [21, 81], [22, 82], [23, 83], [24, 84], [25, 85], [26, 86], [26, 87], [27, 88], [27, 89], [29, 90], [29, 91], [30, 92], [30, 93], [32, 94], [32, 95], [33, 96], [33, 97], [34, 98], [37, 99], [38, 100], [39, 101], [40, 102], [40, 103], [42, 104], [42, 105], [45, 106], [47, 107], [47, 108], [47, 109], [48, 110], [48, 111], [48, 112], [49, 113], [49, 114], [49, 115], [50, 116], [54, 117], [55, 118], [59, 119], [59, 120], [59, 121], [61, 122], [63, 123], [64, 124]]}, "MVA-PRO-03": {"atoms": [{"elem": "O", "x": -11.62, "y": 4.7, "z": 1.22}, {"elem": "C", "x": -10.84, "y": 3.78, "z": 1.09}, {"elem": "N", "x": -9.49, "y": 3.84, "z": 0.97}, {"elem": "C", "x": -8.93, "y": 2.61, "z": 0.76}, {"elem": "O", "x": -7.75, "y": 2.4, "z": 0.55}, {"elem": "C", "x": -10.03, "y": 1.63, "z": 0.82}, {"elem": "C", "x": -11.2, "y": 2.37, "z": 1.0}, {"elem": "C", "x": -12.45, "y": 1.79, "z": 1.05}, {"elem": "C", "x": -12.51, "y": 0.41, "z": 0.89}, {"elem": "C", "x": -11.33, "y": -0.34, "z": 0.7}, {"elem": "C", "x": -10.05, "y": 0.24, "z": 0.67}, {"elem": "N", "x": -8.91, "y": -0.52, "z": 0.47}, {"elem": "C", "x": -7.87, "y": -0.51, "z": 1.52}, {"elem": "C", "x": -6.46, "y": -0.67, "z": 0.9}, {"elem": "N", "x": -6.37, "y": -1.44, "z": -0.37}, {"elem": "C", "x": -6.37, "y": -0.53, "z": -1.54}, {"elem": "C", "x": -5.02, "y": 0.18, "z": -1.78}, {"elem": "O", "x": -3.94, "y": -0.72, "z": -2.08}, {"elem": "C", "x": -3.99, "y": -1.24, "z": -3.41}, {"elem": "C", "x": -2.71, "y": -2.01, "z": -3.72}, {"elem": "O", "x": -1.6, "y": -1.11, "z": -3.86}, {"elem": "C", "x": -0.8, "y": -1.05, "z": -2.68}, {"elem": "C", "x": 0.14, "y": 0.15, "z": -2.78}, {"elem": "O", "x": 1.04, "y": 0.13, "z": -1.66}, {"elem": "C", "x": 1.83, "y": 1.32, "z": -1.63}, {"elem": "C", "x": 2.89, "y": 1.26, "z": -0.52}, {"elem": "O", "x": 3.62, "y": 2.22, "z": -0.29}, {"elem": "N", "x": 2.9, "y": 0.04, "z": 0.12}, {"elem": "C", "x": 3.75, "y": -0.41, "z": 1.14}, {"elem": "C", "x": 3.59, "y": -1.74, "z": 1.57}, {"elem": "C", "x": 4.43, "y": -2.28, "z": 2.54}, {"elem": "C", "x": 5.43, "y": -1.48, "z": 3.11}, {"elem": "S", "x": 6.53, "y": -2.18, "z": 4.32}, {"elem": "O", "x": 7.01, "y": -1.11, "z": 5.17}, {"elem": "O", "x": 5.88, "y": -3.35, "z": 4.88}, {"elem": "N", "x": 7.81, "y": -2.77, "z": 3.38}, {"elem": "C", "x": 8.46, "y": -1.89, "z": 2.48}, {"elem": "C", "x": 9.23, "y": -0.83, "z": 2.95}, {"elem": "C", "x": 9.79, "y": 0.09, "z": 2.05}, {"elem": "C", "x": 9.57, "y": -0.02, "z": 0.66}, {"elem": "N", "x": 10.08, "y": 0.88, "z": -0.28}, {"elem": "C", "x": 11.19, "y": 1.77, "z": 0.14}, {"elem": "C", "x": 11.74, "y": 2.52, "z": -1.09}, {"elem": "O", "x": 10.71, "y": 3.29, "z": -1.73}, {"elem": "C", "x": 9.65, "y": 2.42, "z": -2.17}, {"elem": "C", "x": 9.03, "y": 1.64, "z": -1.0}, {"elem": "C", "x": 8.8, "y": -1.11, "z": 0.22}, {"elem": "C", "x": 8.25, "y": -2.03, "z": 1.11}, {"elem": "C", "x": 5.57, "y": -0.15, "z": 2.73}, {"elem": "C", "x": 4.74, "y": 0.38, "z": 1.74}, {"elem": "C", "x": -7.51, "y": -2.38, "z": -0.45}, {"elem": "C", "x": -8.93, "y": -1.74, "z": -0.35}, {"elem": "H", "x": -8.96, "y": 4.7, "z": 0.95}, {"elem": "H", "x": -13.34, "y": 2.39, "z": 1.19}, {"elem": "H", "x": -13.48, "y": -0.09, "z": 0.91}, {"elem": "H", "x": -11.45, "y": -1.42, "z": 0.59}, {"elem": "H", "x": -8.07, "y": -1.36, "z": 2.2}, {"elem": "H", "x": -7.9, "y": 0.39, "z": 2.15}, {"elem": "H", "x": -6.01, "y": 0.32, "z": 0.79}, {"elem": "H", "x": -5.83, "y": -1.18, "z": 1.64}, {"elem": "H", "x": -7.16, "y": 0.24, "z": -1.45}, {"elem": "H", "x": -6.61, "y": -1.11, "z": -2.44}, {"elem": "H", "x": -4.72, "y": 0.75, "z": -0.89}, {"elem": "H", "x": -5.12, "y": 0.91, "z": -2.59}, {"elem": "H", "x": -4.1, "y": -0.41, "z": -4.12}, {"elem": "H", "x": -4.85, "y": -1.91, "z": -3.5}, {"elem": "H", "x": -2.5, "y": -2.77, "z": -2.96}, {"elem": "H", "x": -2.83, "y": -2.52, "z": -4.68}, {"elem": "H", "x": -1.42, "y": -0.96, "z": -1.78}, {"elem": "H", "x": -0.22, "y": -1.98, "z": -2.6}, {"elem": "H", "x": -0.45, "y": 1.07, "z": -2.78}, {"elem": "H", "x": 0.71, "y": 0.11, "z": -3.71}, {"elem": "H", "x": 2.36, "y": 1.45, "z": -2.58}, {"elem": "H", "x": 1.19, "y": 2.18, "z": -1.43}, {"elem": "H", "x": 2.19, "y": -0.61, "z": -0.23}, {"elem": "H", "x": 2.82, "y": -2.37, "z": 1.13}, {"elem": "H", "x": 4.3, "y": -3.31, "z": 2.86}, {"elem": "H", "x": 7.63, "y": -3.72, "z": 3.06}, {"elem": "H", "x": 9.41, "y": -0.7, "z": 4.01}, {"elem": "H", "x": 10.38, "y": 0.9, "z": 2.46}, {"elem": "H", "x": 10.83, "y": 2.5, "z": 0.87}, {"elem": "H", "x": 12.0, "y": 1.18, "z": 0.59}, {"elem": "H", "x": 12.17, "y": 1.83, "z": -1.81}, {"elem": "H", "x": 12.53, "y": 3.21, "z": -0.78}, {"elem": "H", "x": 10.06, "y": 1.73, "z": -2.93}, {"elem": "H", "x": 8.89, "y": 3.04, "z": -2.66}, {"elem": "H", "x": 8.56, "y": 2.35, "z": -0.3}, {"elem": "H", "x": 8.25, "y": 0.98, "z": -1.4}, {"elem": "H", "x": 8.63, "y": -1.25, "z": -0.84}, {"elem": "H", "x": 7.64, "y": -2.85, "z": 0.72}, {"elem": "H", "x": 6.33, "y": 0.49, "z": 3.18}, {"elem": "H", "x": 4.88, "y": 1.42, "z": 1.45}, {"elem": "H", "x": -7.4, "y": -3.1, "z": 0.38}, {"elem": "H", "x": -7.45, "y": -2.99, "z": -1.35}, {"elem": "H", "x": -9.61, "y": -2.49, "z": 0.07}, {"elem": "H", "x": -9.27, "y": -1.48, "z": -1.36}], "bonds": [[0, 1], [1, 2], [2, 3], [3, 4], [3, 5], [5, 6], [6, 7], [7, 8], [8, 9], [9, 10], [10, 11], [11, 12], [12, 13], [13, 14], [14, 15], [15, 16], [16, 17], [17, 18], [18, 19], [19, 20], [20, 21], [21, 22], [22, 23], [23, 24], [24, 25], [25, 26], [25, 27], [27, 28], [28, 29], [29, 30], [30, 31], [31, 32], [32, 33], [32, 34], [32, 35], [35, 36], [36, 37], [37, 38], [38, 39], [39, 40], [40, 41], [41, 42], [42, 43], [43, 44], [44, 45], [39, 46], [46, 47], [31, 48], [48, 49], [14, 50], [50, 51], [6, 1], [10, 5], [51, 11], [49, 28], [47, 36], [45, 40], [2, 52], [7, 53], [8, 54], [9, 55], [12, 56], [12, 57], [13, 58], [13, 59], [15, 60], [15, 61], [16, 62], [16, 63], [18, 64], [18, 65], [19, 66], [19, 67], [21, 68], [21, 69], [22, 70], [22, 71], [24, 72], [24, 73], [27, 74], [29, 75], [30, 76], [35, 77], [37, 78], [38, 79], [41, 80], [41, 81], [42, 82], [42, 83], [44, 84], [44, 85], [45, 86], [45, 87], [46, 88], [47, 89], [48, 90], [49, 91], [50, 92], [50, 93], [51, 94], [51, 95]]}, "MVA-PRO-04": {"atoms": [{"elem": "C", "x": -10.06, "y": -1.7, "z": -0.7}, {"elem": "C", "x": -8.78, "y": -1.95, "z": 0.06}, {"elem": "C", "x": -7.65, "y": -1.12, "z": -0.07}, {"elem": "C", "x": -6.51, "y": -1.4, "z": 0.69}, {"elem": "C", "x": -6.48, "y": -2.52, "z": 1.53}, {"elem": "C", "x": -7.59, "y": -3.35, "z": 1.66}, {"elem": "C", "x": -8.74, "y": -3.06, "z": 0.93}, {"elem": "S", "x": -5.03, "y": -2.84, "z": 2.51}, {"elem": "O", "x": -4.34, "y": -1.59, "z": 2.74}, {"elem": "O", "x": -5.45, "y": -3.68, "z": 3.62}, {"elem": "N", "x": -4.11, "y": -3.86, "z": 1.51}, {"elem": "C", "x": -3.12, "y": -3.25, "z": 0.69}, {"elem": "C", "x": -3.48, "y": -2.64, "z": -0.51}, {"elem": "C", "x": -2.52, "y": -1.98, "z": -1.28}, {"elem": "C", "x": -1.19, "y": -1.95, "z": -0.85}, {"elem": "C", "x": -0.82, "y": -2.58, "z": 0.34}, {"elem": "C", "x": -1.8, "y": -3.22, "z": 1.12}, {"elem": "C", "x": 0.58, "y": -2.58, "z": 0.84}, {"elem": "O", "x": 0.81, "y": -2.71, "z": 2.04}, {"elem": "N", "x": 1.57, "y": -2.47, "z": -0.12}, {"elem": "C", "x": 2.97, "y": -2.6, "z": 0.22}, {"elem": "C", "x": 3.83, "y": -1.63, "z": -0.61}, {"elem": "C", "x": 3.53, "y": -0.15, "z": -0.34}, {"elem": "C", "x": 3.86, "y": 0.33, "z": 1.08}, {"elem": "N", "x": 5.29, "y": 0.35, "z": 1.34}, {"elem": "C", "x": 6.12, "y": 1.37, "z": 0.95}, {"elem": "O", "x": 5.87, "y": 2.39, "z": 0.35}, {"elem": "C", "x": 7.47, "y": 1.0, "z": 1.37}, {"elem": "C", "x": 7.38, "y": -0.24, "z": 1.99}, {"elem": "C", "x": 5.98, "y": -0.66, "z": 1.95}, {"elem": "O", "x": 5.59, "y": -1.72, "z": 2.38}, {"elem": "C", "x": 8.49, "y": -0.87, "z": 2.51}, {"elem": "C", "x": 9.72, "y": -0.21, "z": 2.38}, {"elem": "C", "x": 9.8, "y": 1.05, "z": 1.75}, {"elem": "C", "x": 8.67, "y": 1.68, "z": 1.23}, {"elem": "N", "x": 8.67, "y": 2.93, "z": 0.58}, {"elem": "C", "x": 9.75, "y": 3.77, "z": 0.35}, {"elem": "O", "x": 10.91, "y": 3.55, "z": 0.68}, {"elem": "C", "x": 9.33, "y": 5.04, "z": -0.37}, {"elem": "C", "x": 10.51, "y": 5.93, "z": -0.7}, {"elem": "N", "x": -7.71, "y": -0.01, "z": -0.95}, {"elem": "C", "x": -6.66, "y": 0.76, "z": -1.39}, {"elem": "O", "x": -5.47, "y": 0.53, "z": -1.2}, {"elem": "C", "x": -7.02, "y": 1.92, "z": -2.28}, {"elem": "C", "x": -6.08, "y": 2.25, "z": -3.27}, {"elem": "C", "x": -6.31, "y": 3.31, "z": -4.15}, {"elem": "C", "x": -7.48, "y": 4.06, "z": -4.05}, {"elem": "C", "x": -8.41, "y": 3.75, "z": -3.06}, {"elem": "C", "x": -8.19, "y": 2.68, "z": -2.17}, {"elem": "Cl", "x": -9.4, "y": 2.43, "z": -0.97}, {"elem": "H", "x": -10.52, "y": -0.76, "z": -0.36}, {"elem": "H", "x": -9.86, "y": -1.64, "z": -1.78}, {"elem": "H", "x": -10.79, "y": -2.5, "z": -0.55}, {"elem": "H", "x": -5.64, "y": -0.75, "z": 0.66}, {"elem": "H", "x": -7.58, "y": -4.2, "z": 2.33}, {"elem": "H", "x": -9.61, "y": -3.71, "z": 1.04}, {"elem": "H", "x": -3.82, "y": -4.67, "z": 2.05}, {"elem": "H", "x": -4.51, "y": -2.66, "z": -0.86}, {"elem": "H", "x": -2.81, "y": -1.47, "z": -2.19}, {"elem": "H", "x": -0.46, "y": -1.4, "z": -1.44}, {"elem": "H", "x": -1.52, "y": -3.67, "z": 2.07}, {"elem": "H", "x": 1.31, "y": -2.64, "z": -1.08}, {"elem": "H", "x": 3.13, "y": -2.45, "z": 1.29}, {"elem": "H", "x": 3.26, "y": -3.63, "z": -0.02}, {"elem": "H", "x": 4.89, "y": -1.85, "z": -0.43}, {"elem": "H", "x": 3.65, "y": -1.83, "z": -1.67}, {"elem": "H", "x": 4.1, "y": 0.44, "z": -1.06}, {"elem": "H", "x": 2.47, "y": 0.05, "z": -0.54}, {"elem": "H", "x": 3.49, "y": 1.35, "z": 1.19}, {"elem": "H", "x": 3.37, "y": -0.29, "z": 1.83}, {"elem": "H", "x": 8.41, "y": -1.84, "z": 2.99}, {"elem": "H", "x": 10.62, "y": -0.68, "z": 2.77}, {"elem": "H", "x": 10.79, "y": 1.51, "z": 1.68}, {"elem": "H", "x": 7.75, "y": 3.26, "z": 0.26}, {"elem": "H", "x": 8.81, "y": 4.76, "z": -1.29}, {"elem": "H", "x": 8.63, "y": 5.58, "z": 0.27}, {"elem": "H", "x": 11.23, "y": 5.42, "z": -1.33}, {"elem": "H", "x": 11.03, "y": 6.25, "z": 0.21}, {"elem": "H", "x": 10.17, "y": 6.83, "z": -1.23}, {"elem": "H", "x": -8.62, "y": 0.22, "z": -1.31}, {"elem": "H", "x": -5.15, "y": 1.68, "z": -3.36}, {"elem": "H", "x": -5.57, "y": 3.55, "z": -4.91}, {"elem": "H", "x": -7.66, "y": 4.88, "z": -4.73}, {"elem": "H", "x": -9.31, "y": 4.35, "z": -2.98}], "bonds": [[0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [4, 7], [7, 8], [7, 9], [7, 10], [10, 11], [11, 12], [12, 13], [13, 14], [14, 15], [15, 16], [15, 17], [17, 18], [17, 19], [19, 20], [20, 21], [21, 22], [22, 23], [23, 24], [24, 25], [25, 26], [25, 27], [27, 28], [28, 29], [29, 30], [28, 31], [31, 32], [32, 33], [33, 34], [34, 35], [35, 36], [36, 37], [36, 38], [38, 39], [2, 40], [40, 41], [41, 42], [41, 43], [43, 44], [44, 45], [45, 46], [46, 47], [47, 48], [48, 49], [6, 1], [16, 11], [29, 24], [34, 27], [48, 43], [0, 50], [0, 51], [0, 52], [3, 53], [5, 54], [6, 55], [10, 56], [12, 57], [13, 58], [14, 59], [16, 60], [19, 61], [20, 62], [20, 63], [21, 64], [21, 65], [22, 66], [22, 67], [23, 68], [23, 69], [31, 70], [32, 71], [33, 72], [35, 73], [38, 74], [38, 75], [39, 76], [39, 77], [39, 78], [40, 79], [44, 80], [45, 81], [46, 82], [47, 83]]}, "MVA-PRO-05": {"atoms": [{"elem": "C", "x": -11.73, "y": -0.84, "z": -1.5}, {"elem": "C", "x": -10.76, "y": -1.33, "z": -0.41}, {"elem": "C", "x": -10.28, "y": -2.75, "z": -0.73}, {"elem": "N", "x": -9.69, "y": -0.34, "z": -0.21}, {"elem": "C", "x": -9.07, "y": -0.44, "z": 1.13}, {"elem": "C", "x": -7.72, "y": 0.3, "z": 1.22}, {"elem": "N", "x": -6.74, "y": -0.33, "z": 0.32}, {"elem": "C", "x": -7.29, "y": -0.86, "z": -0.95}, {"elem": "C", "x": -8.67, "y": -0.25, "z": -1.28}, {"elem": "C", "x": -5.39, "y": 0.05, "z": 0.34}, {"elem": "C", "x": -5.02, "y": 1.33, "z": 0.79}, {"elem": "C", "x": -3.68, "y": 1.75, "z": 0.81}, {"elem": "C", "x": -2.66, "y": 0.9, "z": 0.39}, {"elem": "N", "x": -1.34, "y": 1.4, "z": 0.44}, {"elem": "C", "x": -0.19, "y": 0.78, "z": -0.02}, {"elem": "O", "x": -0.12, "y": -0.29, "z": -0.61}, {"elem": "C", "x": 1.07, "y": 1.54, "z": 0.23}, {"elem": "C", "x": 2.06, "y": 1.52, "z": -0.76}, {"elem": "C", "x": 3.26, "y": 2.21, "z": -0.57}, {"elem": "C", "x": 3.46, "y": 2.91, "z": 0.63}, {"elem": "S", "x": 4.97, "y": 3.81, "z": 0.88}, {"elem": "O", "x": 5.6, "y": 4.03, "z": -0.41}, {"elem": "O", "x": 4.67, "y": 4.92, "z": 1.75}, {"elem": "N", "x": 5.9, "y": 2.74, "z": 1.8}, {"elem": "C", "x": 6.54, "y": 1.66, "z": 1.12}, {"elem": "C", "x": 7.77, "y": 1.85, "z": 0.52}, {"elem": "C", "x": 8.38, "y": 0.8, "z": -0.18}, {"elem": "C", "x": 7.78, "y": -0.47, "z": -0.28}, {"elem": "N", "x": 8.35, "y": -1.53, "z": -0.98}, {"elem": "C", "x": 8.4, "y": -2.84, "z": -0.29}, {"elem": "C", "x": 9.74, "y": -2.99, "z": 0.48}, {"elem": "N", "x": 10.93, "y": -2.82, "z": -0.37}, {"elem": "C", "x": 10.85, "y": -1.53, "z": -1.08}, {"elem": "C", "x": 9.52, "y": -1.34, "z": -1.86}, {"elem": "C", "x": 6.52, "y": -0.61, "z": 0.32}, {"elem": "C", "x": 5.9, "y": 0.43, "z": 1.02}, {"elem": "C", "x": 2.47, "y": 2.93, "z": 1.62}, {"elem": "C", "x": 1.28, "y": 2.24, "z": 1.42}, {"elem": "C", "x": -2.99, "y": -0.38, "z": -0.04}, {"elem": "C", "x": -4.34, "y": -0.8, "z": -0.05}, {"elem": "Cl", "x": -4.6, "y": -2.46, "z": -0.5}, {"elem": "H", "x": -12.6, "y": -1.51, "z": -1.55}, {"elem": "H", "x": -12.1, "y": 0.16, "z": -1.27}, {"elem": "H", "x": -11.27, "y": -0.82, "z": -2.49}, {"elem": "H", "x": -11.35, "y": -1.38, "z": 0.51}, {"elem": "H", "x": -11.14, "y": -3.43, "z": -0.78}, {"elem": "H", "x": -9.77, "y": -2.81, "z": -1.69}, {"elem": "H", "x": -9.61, "y": -3.14, "z": 0.04}, {"elem": "H", "x": -9.76, "y": -0.01, "z": 1.86}, {"elem": "H", "x": -8.91, "y": -1.48, "z": 1.41}, {"elem": "H", "x": -7.87, "y": 1.36, "z": 0.96}, {"elem": "H", "x": -7.36, "y": 0.25, "z": 2.25}, {"elem": "H", "x": -7.39, "y": -1.95, "z": -0.86}, {"elem": "H", "x": -6.62, "y": -0.65, "z": -1.79}, {"elem": "H", "x": -9.03, "y": -0.67, "z": -2.23}, {"elem": "H", "x": -8.52, "y": 0.82, "z": -1.48}, {"elem": "H", "x": -5.77, "y": 2.04, "z": 1.11}, {"elem": "H", "x": -3.47, "y": 2.76, "z": 1.15}, {"elem": "H", "x": -1.24, "y": 2.35, "z": 0.78}, {"elem": "H", "x": 1.91, "y": 0.96, "z": -1.68}, {"elem": "H", "x": 4.02, "y": 2.19, "z": -1.34}, {"elem": "H", "x": 6.45, "y": 3.24, "z": 2.49}, {"elem": "H", "x": 8.27, "y": 2.82, "z": 0.55}, {"elem": "H", "x": 9.34, "y": 1.0, "z": -0.64}, {"elem": "H", "x": 7.57, "y": -3.01, "z": 0.4}, {"elem": "H", "x": 8.33, "y": -3.63, "z": -1.05}, {"elem": "H", "x": 9.78, "y": -3.99, "z": 0.93}, {"elem": "H", "x": 9.77, "y": -2.27, "z": 1.3}, {"elem": "H", "x": 11.76, "y": -2.83, "z": 0.21}, {"elem": "H", "x": 10.98, "y": -0.72, "z": -0.36}, {"elem": "H", "x": 11.68, "y": -1.47, "z": -1.79}, {"elem": "H", "x": 9.47, "y": -2.09, "z": -2.66}, {"elem": "H", "x": 9.5, "y": -0.37, "z": -2.37}, {"elem": "H", "x": 5.97, "y": -1.55, "z": 0.23}, {"elem": "H", "x": 4.93, "y": 0.27, "z": 1.47}, {"elem": "H", "x": 2.64, "y": 3.48, "z": 2.55}, {"elem": "H", "x": 0.53, "y": 2.23, "z": 2.21}, {"elem": "H", "x": -2.23, "y": -1.09, "z": -0.35}], "bonds": [[0, 1], [1, 2], [1, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [6, 9], [9, 10], [10, 11], [11, 12], [12, 13], [13, 14], [14, 15], [14, 16], [16, 17], [17, 18], [18, 19], [19, 20], [20, 21], [20, 22], [20, 23], [23, 24], [24, 25], [25, 26], [26, 27], [27, 28], [28, 29], [29, 30], [30, 31], [31, 32], [32, 33], [27, 34], [34, 35], [19, 36], [36, 37], [12, 38], [38, 39], [39, 40], [8, 3], [39, 9], [37, 16], [35, 24], [33, 28], [0, 41], [0, 42], [0, 43], [1, 44], [2, 45], [2, 46], [2, 47], [4, 48], [4, 49], [5, 50], [5, 51], [7, 52], [7, 53], [8, 54], [8, 55], [10, 56], [11, 57], [13, 58], [17, 59], [18, 60], [23, 61], [25, 62], [26, 63], [29, 64], [29, 65], [30, 66], [30, 67], [31, 68], [32, 69], [32, 70], [33, 71], [33, 72], [34, 73], [35, 74], [36, 75], [37, 76], [38, 77]]}, "MVA-CEN-01": {"atoms": [{"elem": "C", "x": -2.15, "y": 2.57, "z": 2.24}, {"elem": "O", "x": -1.19, "y": 1.75, "z": 1.58}, {"elem": "C", "x": -1.67, "y": 0.78, "z": 0.73}, {"elem": "C", "x": -0.68, "y": -0.01, "z": 0.09}, {"elem": "C", "x": -1.04, "y": -1.02, "z": -0.8}, {"elem": "C", "x": -2.41, "y": -1.22, "z": -1.02}, {"elem": "C", "x": -3.41, "y": -0.48, "z": -0.41}, {"elem": "C", "x": -3.03, "y": 0.55, "z": 0.48}, {"elem": "C", "x": -4.64, "y": -1.02, "z": -0.91}, {"elem": "N", "x": -4.4, "y": -2.0, "z": -1.8}, {"elem": "N", "x": -3.07, "y": -2.11, "z": -1.83}, {"elem": "C", "x": -6.01, "y": -0.63, "z": -0.58}, {"elem": "C", "x": -6.38, "y": -0.36, "z": 0.74}, {"elem": "C", "x": -7.69, "y": 0.03, "z": 1.03}, {"elem": "C", "x": -8.64, "y": 0.14, "z": 0.02}, {"elem": "C", "x": -8.28, "y": -0.15, "z": -1.3}, {"elem": "C", "x": -6.97, "y": -0.53, "z": -1.6}, {"elem": "Cl", "x": -8.13, "y": 0.37, "z": 2.66}, {"elem": "N", "x": 0.66, "y": 0.3, "z": 0.41}, {"elem": "C", "x": 1.82, "y": -0.23, "z": -0.13}, {"elem": "O", "x": 1.85, "y": -1.04, "z": -1.05}, {"elem": "N", "x": 2.94, "y": 0.29, "z": 0.51}, {"elem": "C", "x": 4.29, "y": 0.05, "z": 0.21}, {"elem": "C", "x": 4.74, "y": -0.72, "z": -0.86}, {"elem": "C", "x": 6.11, "y": -0.91, "z": -1.09}, {"elem": "C", "x": 7.05, "y": -0.32, "z": -0.24}, {"elem": "C", "x": 6.61, "y": 0.44, "z": 0.85}, {"elem": "C", "x": 5.24, "y": 0.63, "z": 1.07}, {"elem": "C", "x": 8.5, "y": -0.55, "z": -0.52}, {"elem": "O", "x": 8.88, "y": -1.51, "z": -1.19}, {"elem": "N", "x": 9.38, "y": 0.39, "z": -0.03}, {"elem": "O", "x": 10.71, "y": 0.25, "z": -0.5}, {"elem": "H", "x": -1.6, "y": 3.28, "z": 2.87}, {"elem": "H", "x": -2.73, "y": 3.14, "z": 1.52}, {"elem": "H", "x": -2.79, "y": 1.97, "z": 2.89}, {"elem": "H", "x": -0.31, "y": -1.64, "z": -1.3}, {"elem": "H", "x": -3.81, "y": 1.14, "z": 0.95}, {"elem": "H", "x": -2.65, "y": -2.81, "z": -2.44}, {"elem": "H", "x": -5.66, "y": -0.46, "z": 1.55}, {"elem": "H", "x": -9.66, "y": 0.43, "z": 0.25}, {"elem": "H", "x": -9.02, "y": -0.07, "z": -2.1}, {"elem": "H", "x": -6.7, "y": -0.75, "z": -2.63}, {"elem": "H", "x": 0.75, "y": 1.07, "z": 1.06}, {"elem": "H", "x": 2.75, "y": 0.85, "z": 1.33}, {"elem": "H", "x": 4.05, "y": -1.19, "z": -1.56}, {"elem": "H", "x": 6.43, "y": -1.52, "z": -1.93}, {"elem": "H", "x": 7.32, "y": 0.88, "z": 1.55}, {"elem": "H", "x": 4.93, "y": 1.22, "z": 1.92}, {"elem": "H", "x": 9.08, "y": 1.35, "z": 0.15}, {"elem": "H", "x": 10.65, "y": -0.57, "z": -1.03}], "bonds": [[0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [6, 8], [8, 9], [9, 10], [8, 11], [11, 12], [12, 13], [13, 14], [14, 15], [15, 16], [13, 17], [3, 18], [18, 19], [19, 20], [19, 21], [21, 22], [22, 23], [23, 24], [24, 25], [25, 26], [26, 27], [25, 28], [28, 29], [28, 30], [30, 31], [7, 2], [10, 5], [16, 11], [27, 22], [0, 32], [0, 33], [0, 34], [4, 35], [7, 36], [10, 37], [12, 38], [14, 39], [15, 40], [16, 41], [18, 42], [21, 43], [23, 44], [24, 45], [26, 46], [27, 47], [30, 48], [31, 49]]}, "MVA-CEN-02": {"atoms": [{"elem": "C", "x": -0.4, "y": -5.88, "z": 2.21}, {"elem": "O", "x": -0.56, "y": -4.88, "z": 1.21}, {"elem": "C", "x": 0.29, "y": -3.8, "z": 1.24}, {"elem": "C", "x": 1.32, "y": -3.63, "z": 2.18}, {"elem": "C", "x": 2.15, "y": -2.52, "z": 2.17}, {"elem": "N", "x": 3.1, "y": -2.42, "z": 3.1}, {"elem": "C", "x": 3.86, "y": -1.33, "z": 3.08}, {"elem": "N", "x": 3.78, "y": -0.33, "z": 2.19}, {"elem": "C", "x": 2.84, "y": -0.44, "z": 1.24}, {"elem": "N", "x": 2.74, "y": 0.57, "z": 0.24}, {"elem": "C", "x": 3.29, "y": 1.87, "z": 0.25}, {"elem": "C", "x": 3.5, "y": 2.53, "z": -0.97}, {"elem": "C", "x": 3.98, "y": 3.84, "z": -1.01}, {"elem": "C", "x": 4.22, "y": 4.52, "z": 0.17}, {"elem": "Br", "x": 4.87, "y": 6.3, "z": 0.12}, {"elem": "C", "x": 3.99, "y": 3.91, "z": 1.4}, {"elem": "C", "x": 3.51, "y": 2.59, "z": 1.43}, {"elem": "C", "x": 1.96, "y": -1.54, "z": 1.19}, {"elem": "C", "x": 0.91, "y": -1.7, "z": 0.24}, {"elem": "C", "x": 0.08, "y": -2.82, "z": 0.26}, {"elem": "O", "x": -0.96, "y": -3.04, "z": -0.6}, {"elem": "C", "x": -1.2, "y": -2.13, "z": -1.68}, {"elem": "C", "x": -2.09, "y": -0.98, "z": -1.22}, {"elem": "C", "x": -2.34, "y": 0.0, "z": -2.38}, {"elem": "N", "x": -3.15, "y": 1.18, "z": -2.09}, {"elem": "C", "x": -4.53, "y": 0.87, "z": -1.66}, {"elem": "C", "x": -5.35, "y": 2.16, "z": -1.46}, {"elem": "O", "x": -4.73, "y": 3.02, "z": -0.49}, {"elem": "C", "x": -3.4, "y": 3.36, "z": -0.91}, {"elem": "C", "x": -2.54, "y": 2.1, "z": -1.1}, {"elem": "H", "x": 0.58, "y": -6.36, "z": 2.13}, {"elem": "H", "x": -1.16, "y": -6.64, "z": 2.04}, {"elem": "H", "x": -0.56, "y": -5.46, "z": 3.21}, {"elem": "H", "x": 1.5, "y": -4.37, "z": 2.95}, {"elem": "H", "x": 4.63, "y": -1.24, "z": 3.84}, {"elem": "H", "x": 2.84, "y": 0.13, "z": -0.67}, {"elem": "H", "x": 3.3, "y": 2.02, "z": -1.91}, {"elem": "H", "x": 4.15, "y": 4.32, "z": -1.97}, {"elem": "H", "x": 4.16, "y": 4.43, "z": 2.33}, {"elem": "H", "x": 3.3, "y": 2.14, "z": 2.4}, {"elem": "H", "x": 0.75, "y": -0.91, "z": -0.49}, {"elem": "H", "x": -0.27, "y": -1.8, "z": -2.15}, {"elem": "H", "x": -1.73, "y": -2.7, "z": -2.45}, {"elem": "H", "x": -3.03, "y": -1.39, "z": -0.84}, {"elem": "H", "x": -1.63, "y": -0.46, "z": -0.37}, {"elem": "H", "x": -1.38, "y": 0.34, "z": -2.77}, {"elem": "H", "x": -2.82, "y": -0.55, "z": -3.2}, {"elem": "H", "x": -4.52, "y": 0.31, "z": -0.72}, {"elem": "H", "x": -5.03, "y": 0.25, "z": -2.42}, {"elem": "H", "x": -5.47, "y": 2.7, "z": -2.4}, {"elem": "H", "x": -6.35, "y": 1.91, "z": -1.09}, {"elem": "H", "x": -2.96, "y": 3.99, "z": -0.14}, {"elem": "H", "x": -3.45, "y": 3.95, "z": -1.84}, {"elem": "H", "x": -2.44, "y": 1.6, "z": -0.13}, {"elem": "H", "x": -1.54, "y": 2.4, "z": -1.44}], "bonds": [[0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [9, 10], [10, 11], [11, 12], [12, 13], [13, 14], [13, 15], [15, 16], [8, 17], [17, 18], [18, 19], [19, 20], [20, 21], [21, 22], [22, 23], [23, 24], [24, 25], [25, 26], [26, 27], [27, 28], [28, 29], [19, 2], [17, 4], [16, 10], [29, 24], [0, 30], [0, 31], [0, 32], [3, 33], [6, 34], [9, 35], [11, 36], [12, 37], [15, 38], [16, 39], [18, 40], [21, 41], [21, 42], [22, 43], [22, 44], [23, 45], [23, 46], [25, 47], [25, 48], [26, 49], [26, 50], [28, 51], [28, 52], [29, 53], [29, 54]]}, "MVA-CEN-03": {"atoms": [{"elem": "F", "x": -4.67, "y": -4.02, "z": -3.03}, {"elem": "C", "x": -4.32, "y": -2.94, "z": -2.31}, {"elem": "C", "x": -3.48, "y": -1.99, "z": -2.87}, {"elem": "C", "x": -3.11, "y": -0.87, "z": -2.13}, {"elem": "C", "x": -3.58, "y": -0.71, "z": -0.82}, {"elem": "C", "x": -4.44, "y": -1.67, "z": -0.27}, {"elem": "C", "x": -4.81, "y": -2.79, "z": -1.02}, {"elem": "C", "x": -3.21, "y": 0.46, "z": -0.02}, {"elem": "N", "x": -4.06, "y": 1.39, "z": 0.35}, {"elem": "C", "x": -3.33, "y": 2.32, "z": 1.03}, {"elem": "C", "x": -3.75, "y": 3.53, "z": 1.62}, {"elem": "C", "x": -2.82, "y": 4.33, "z": 2.27}, {"elem": "C", "x": -1.48, "y": 3.95, "z": 2.34}, {"elem": "C", "x": -1.04, "y": 2.75, "z": 1.77}, {"elem": "C", "x": -1.99, "y": 1.95, "z": 1.12}, {"elem": "N", "x": -1.94, "y": 0.73, "z": 0.46}, {"elem": "C", "x": -0.77, "y": -0.14, "z": 0.33}, {"elem": "C", "x": 0.33, "y": 0.47, "z": -0.55}, {"elem": "C", "x": 1.49, "y": -0.5, "z": -0.71}, {"elem": "N", "x": 1.98, "y": -0.97, "z": 0.59}, {"elem": "C", "x": 0.96, "y": -1.56, "z": 1.47}, {"elem": "C", "x": -0.22, "y": -0.61, "z": 1.68}, {"elem": "C", "x": 3.28, "y": -1.48, "z": 0.74}, {"elem": "O", "x": 3.57, "y": -2.38, "z": 1.52}, {"elem": "C", "x": 4.37, "y": -0.88, "z": -0.06}, {"elem": "C", "x": 4.55, "y": 0.51, "z": -0.09}, {"elem": "C", "x": 5.61, "y": 1.05, "z": -0.83}, {"elem": "C", "x": 6.48, "y": 0.21, "z": -1.51}, {"elem": "F", "x": 7.49, "y": 0.73, "z": -2.21}, {"elem": "C", "x": 6.32, "y": -1.18, "z": -1.46}, {"elem": "C", "x": 5.26, "y": -1.72, "z": -0.73}, {"elem": "H", "x": -3.13, "y": -2.12, "z": -3.89}, {"elem": "H", "x": -2.48, "y": -0.11, "z": -2.58}, {"elem": "H", "x": -4.84, "y": -1.54, "z": 0.73}, {"elem": "H", "x": -5.48, "y": -3.54, "z": -0.6}, {"elem": "H", "x": -4.8, "y": 3.82, "z": 1.56}, {"elem": "H", "x": -3.14, "y": 5.27, "z": 2.73}, {"elem": "H", "x": -0.76, "y": 4.59, "z": 2.85}, {"elem": "H", "x": 0.01, "y": 2.47, "z": 1.84}, {"elem": "H", "x": -1.12, "y": -1.04, "z": -0.19}, {"elem": "H", "x": -0.07, "y": 0.74, "z": -1.53}, {"elem": "H", "x": 0.7, "y": 1.4, "z": -0.1}, {"elem": "H", "x": 2.28, "y": -0.03, "z": -1.29}, {"elem": "H", "x": 1.17, "y": -1.39, "z": -1.27}, {"elem": "H", "x": 1.4, "y": -1.8, "z": 2.44}, {"elem": "H", "x": 0.63, "y": -2.5, "z": 1.01}, {"elem": "H", "x": 0.12, "y": 0.24, "z": 2.28}, {"elem": "H", "x": -1.0, "y": -1.12, "z": 2.26}, {"elem": "H", "x": 3.89, "y": 1.17, "z": 0.46}, {"elem": "H", "x": 5.77, "y": 2.13, "z": -0.86}, {"elem": "H", "x": 7.02, "y": -1.82, "z": -1.99}, {"elem": "H", "x": 5.14, "y": -2.8, "z": -0.67}], "bonds": [[0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [4, 7], [7, 8], [8, 9], [9, 10], [10, 11], [11, 12], [12, 13], [13, 14], [14, 15], [15, 16], [16, 17], [17, 18], [18, 19], [19, 20], [20, 21], [19, 22], [22, 23], [22, 24], [24, 25], [25, 26], [26, 27], [27, 28], [27, 29], [29, 30], [6, 1], [15, 7], [14, 9], [21, 16], [30, 24], [2, 31], [3, 32], [5, 33], [6, 34], [10, 35], [11, 36], [12, 37], [13, 38], [16, 39], [17, 40], [17, 41], [18, 42], [18, 43], [20, 44], [20, 45], [21, 46], [21, 47], [25, 48], [26, 49], [29, 50], [30, 51]]}, "MVA-CEN-04": {"atoms": [{"elem": "C", "x": 10.66, "y": 2.27, "z": -1.32}, {"elem": "C", "x": 9.52, "y": 1.49, "z": -0.78}, {"elem": "C", "x": 8.21, "y": 1.82, "z": -1.02}, {"elem": "N", "x": 7.16, "y": 1.15, "z": -0.51}, {"elem": "C", "x": 7.42, "y": 0.11, "z": 0.29}, {"elem": "N", "x": 8.66, "y": -0.28, "z": 0.6}, {"elem": "C", "x": 9.68, "y": 0.42, "z": 0.07}, {"elem": "N", "x": 6.41, "y": -0.65, "z": 0.87}, {"elem": "C", "x": 5.01, "y": -0.61, "z": 0.84}, {"elem": "C", "x": 4.29, "y": -1.57, "z": 1.56}, {"elem": "C", "x": 2.89, "y": -1.58, "z": 1.56}, {"elem": "C", "x": 2.14, "y": -0.63, "z": 0.84}, {"elem": "C", "x": 2.87, "y": 0.34, "z": 0.14}, {"elem": "C", "x": 4.27, "y": 0.34, "z": 0.13}, {"elem": "N", "x": 0.74, "y": -0.68, "z": 0.89}, {"elem": "C", "x": 0.19, "y": -1.9, "z": 0.27}, {"elem": "C", "x": -1.27, "y": -2.07, "z": 0.68}, {"elem": "C", "x": -2.15, "y": -0.84, "z": 0.35}, {"elem": "C", "x": -3.55, "y": -1.04, "z": 0.99}, {"elem": "C", "x": -4.55, "y": 0.03, "z": 0.58}, {"elem": "N", "x": -4.65, "y": 0.16, "z": -0.88}, {"elem": "C", "x": -3.38, "y": 0.34, "z": -1.57}, {"elem": "C", "x": -2.35, "y": -0.71, "z": -1.18}, {"elem": "C", "x": -5.77, "y": 0.75, "z": -1.48}, {"elem": "O", "x": -5.71, "y": 1.41, "z": -2.51}, {"elem": "C", "x": -7.1, "y": 0.54, "z": -0.87}, {"elem": "C", "x": -7.55, "y": -0.75, "z": -0.55}, {"elem": "C", "x": -8.82, "y": -0.93, "z": -0.01}, {"elem": "C", "x": -9.65, "y": 0.17, "z": 0.19}, {"elem": "Cl", "x": -11.22, "y": -0.05, "z": 0.85}, {"elem": "C", "x": -9.22, "y": 1.46, "z": -0.16}, {"elem": "C", "x": -7.95, "y": 1.64, "z": -0.7}, {"elem": "C", "x": -1.46, "y": 0.41, "z": 0.95}, {"elem": "C", "x": 0.01, "y": 0.54, "z": 0.54}, {"elem": "H", "x": 10.41, "y": 2.7, "z": -2.3}, {"elem": "H", "x": 10.93, "y": 3.08, "z": -0.64}, {"elem": "H", "x": 11.54, "y": 1.63, "z": -1.47}, {"elem": "H", "x": 7.94, "y": 2.67, "z": -1.65}, {"elem": "H", "x": 10.67, "y": 0.07, "z": 0.35}, {"elem": "H", "x": 6.83, "y": -1.38, "z": 1.43}, {"elem": "H", "x": 4.81, "y": -2.33, "z": 2.13}, {"elem": "H", "x": 2.37, "y": -2.33, "z": 2.16}, {"elem": "H", "x": 2.36, "y": 1.1, "z": -0.44}, {"elem": "H", "x": 4.77, "y": 1.12, "z": -0.44}, {"elem": "H", "x": 0.29, "y": -1.85, "z": -0.82}, {"elem": "H", "x": 0.73, "y": -2.8, "z": 0.6}, {"elem": "H", "x": -1.31, "y": -2.26, "z": 1.76}, {"elem": "H", "x": -1.68, "y": -2.97, "z": 0.2}, {"elem": "H", "x": -3.94, "y": -2.02, "z": 0.68}, {"elem": "H", "x": -3.47, "y": -1.06, "z": 2.08}, {"elem": "H", "x": -4.27, "y": 1.01, "z": 0.97}, {"elem": "H", "x": -5.52, "y": -0.2, "z": 1.02}, {"elem": "H", "x": -3.02, "y": 1.35, "z": -1.35}, {"elem": "H", "x": -3.55, "y": 0.29, "z": -2.66}, {"elem": "H", "x": -2.7, "y": -1.68, "z": -1.57}, {"elem": "H", "x": -1.41, "y": -0.5, "z": -1.7}, {"elem": "H", "x": -6.91, "y": -1.61, "z": -0.73}, {"elem": "H", "x": -9.17, "y": -1.93, "z": 0.24}, {"elem": "H", "x": -9.88, "y": 2.31, "z": -0.01}, {"elem": "H", "x": -7.62, "y": 2.64, "z": -0.98}, {"elem": "H", "x": -1.5, "y": 0.34, "z": 2.05}, {"elem": "H", "x": -1.98, "y": 1.33, "z": 0.68}, {"elem": "H", "x": 0.43, "y": 1.4, "z": 1.08}, {"elem": "H", "x": 0.08, "y": 0.75, "z": -0.54}], "bonds": [[0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [4, 7], [7, 8], [8, 9], [9, 10], [10, 11], [11, 12], [12, 13], [11, 14], [14, 15], [15, 16], [16, 17], [17, 18], [18, 19], [19, 20], [20, 21], [21, 22], [20, 23], [23, 24], [23, 25], [25, 26], [26, 27], [27, 28], [28, 29], [28, 30], [30, 31], [17, 32], [32, 33], [6, 1], [13, 8], [33, 14], [22, 17], [31, 25], [0, 34], [0, 35], [0, 36], [2, 37], [6, 38], [7, 39], [9, 40], [10, 41], [12, 42], [13, 43], [15, 44], [15, 45], [16, 46], [16, 47], [18, 48], [18, 49], [19, 50], [19, 51], [21, 52], [21, 53], [22, 54], [22, 55], [26, 56], [27, 57], [30, 58], [31, 59], [32, 60], [32, 61], [33, 62], [33, 63]]}, "MVA-CEN-05": {"atoms": [{"elem": "O", "x": -3.14, "y": 1.84, "z": -1.89}, {"elem": "C", "x": -2.73, "y": 1.02, "z": -1.07}, {"elem": "N", "x": -3.51, "y": 0.23, "z": -0.26}, {"elem": "C", "x": -4.91, "y": 0.1, "z": -0.26}, {"elem": "C", "x": -5.48, "y": -0.7, "z": 0.74}, {"elem": "C", "x": -6.87, "y": -0.88, "z": 0.8}, {"elem": "C", "x": -7.69, "y": -0.26, "z": -0.13}, {"elem": "Cl", "x": -9.4, "y": -0.48, "z": -0.05}, {"elem": "C", "x": -7.14, "y": 0.54, "z": -1.13}, {"elem": "C", "x": -5.75, "y": 0.72, "z": -1.19}, {"elem": "C", "x": -1.3, "y": 0.86, "z": -0.82}, {"elem": "C", "x": -0.39, "y": 1.9, "z": -0.9}, {"elem": "N", "x": 0.85, "y": 1.41, "z": -0.58}, {"elem": "C", "x": 0.8, "y": 0.06, "z": -0.33}, {"elem": "C", "x": -0.54, "y": -0.32, "z": -0.5}, {"elem": "C", "x": -0.87, "y": -1.69, "z": -0.36}, {"elem": "C", "x": 0.12, "y": -2.61, "z": -0.02}, {"elem": "C", "x": 1.43, "y": -2.19, "z": 0.17}, {"elem": "C", "x": 1.82, "y": -0.85, "z": 0.02}, {"elem": "N", "x": 3.19, "y": -0.56, "z": 0.24}, {"elem": "C", "x": 3.84, "y": 0.65, "z": 0.12}, {"elem": "O", "x": 3.37, "y": 1.71, "z": -0.26}, {"elem": "C", "x": 5.28, "y": 0.62, "z": 0.47}, {"elem": "C", "x": 5.81, "y": -0.2, "z": 1.47}, {"elem": "C", "x": 7.18, "y": -0.16, "z": 1.73}, {"elem": "C", "x": 7.97, "y": 0.7, "z": 0.99}, {"elem": "N", "x": 7.49, "y": 1.51, "z": 0.02}, {"elem": "C", "x": 6.15, "y": 1.46, "z": -0.21}, {"elem": "H", "x": -3.02, "y": -0.27, "z": 0.47}, {"elem": "H", "x": -4.86, "y": -1.2, "z": 1.48}, {"elem": "H", "x": -7.3, "y": -1.51, "z": 1.58}, {"elem": "H", "x": -7.78, "y": 1.03, "z": -1.86}, {"elem": "H", "x": -5.36, "y": 1.34, "z": -1.99}, {"elem": "H", "x": -0.52, "y": 2.94, "z": -1.14}, {"elem": "H", "x": 1.71, "y": 1.95, "z": -0.55}, {"elem": "H", "x": -1.89, "y": -2.03, "z": -0.54}, {"elem": "H", "x": -0.14, "y": -3.66, "z": 0.08}, {"elem": "H", "x": 2.17, "y": -2.95, "z": 0.43}, {"elem": "H", "x": 3.76, "y": -1.37, "z": 0.45}, {"elem": "H", "x": 5.18, "y": -0.84, "z": 2.07}, {"elem": "H", "x": 7.62, "y": -0.77, "z": 2.51}, {"elem": "H", "x": 9.04, "y": 0.77, "z": 1.15}, {"elem": "H", "x": 5.8, "y": 2.13, "z": -0.99}], "bonds": [[0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [6, 8], [8, 9], [1, 10], [10, 11], [11, 12], [12, 13], [13, 14], [14, 15], [15, 16], [16, 17], [17, 18], [18, 19], [19, 20], [20, 21], [20, 22], [22, 23], [23, 24], [24, 25], [25, 26], [26, 27], [9, 3], [14, 10], [18, 13], [27, 22], [2, 28], [4, 29], [5, 30], [8, 31], [9, 32], [11, 33], [12, 34], [15, 35], [16, 36], [17, 37], [19, 38], [23, 39], [24, 40], [25, 41], [27, 42]]}, "MVA-CGS-01": {"atoms": [{"elem": "C", "x": -5.42, "y": -3.83, "z": 0.31}, {"elem": "C", "x": -4.2, "y": -2.96, "z": 0.22}, {"elem": "C", "x": -4.33, "y": -1.57, "z": 0.12}, {"elem": "C", "x": -3.2, "y": -0.73, "z": -0.0}, {"elem": "C", "x": -1.91, "y": -1.32, "z": -0.03}, {"elem": "C", "x": -1.8, "y": -2.71, "z": 0.04}, {"elem": "C", "x": -2.93, "y": -3.52, "z": 0.16}, {"elem": "N", "x": -0.78, "y": -0.47, "z": -0.18}, {"elem": "C", "x": 0.56, "y": -0.81, "z": -0.02}, {"elem": "O", "x": 0.97, "y": -1.88, "z": 0.4}, {"elem": "N", "x": 1.36, "y": 0.26, "z": -0.41}, {"elem": "C", "x": 2.76, "y": 0.36, "z": -0.31}, {"elem": "C", "x": 3.56, "y": -0.55, "z": 0.38}, {"elem": "C", "x": 4.95, "y": -0.37, "z": 0.45}, {"elem": "C", "x": 5.53, "y": 0.74, "z": -0.17}, {"elem": "C", "x": 4.75, "y": 1.65, "z": -0.87}, {"elem": "C", "x": 3.36, "y": 1.46, "z": -0.94}, {"elem": "S", "x": 7.29, "y": 0.94, "z": -0.11}, {"elem": "O", "x": 7.92, "y": -0.35, "z": 0.03}, {"elem": "O", "x": 7.69, "y": 1.9, "z": -1.12}, {"elem": "N", "x": 7.49, "y": 1.72, "z": 1.36}, {"elem": "C", "x": -3.41, "y": 0.72, "z": -0.07}, {"elem": "C", "x": -3.44, "y": 1.47, "z": 1.12}, {"elem": "C", "x": -3.63, "y": 2.85, "z": 1.1}, {"elem": "C", "x": -3.79, "y": 3.52, "z": -0.11}, {"elem": "C", "x": -3.77, "y": 2.8, "z": -1.3}, {"elem": "C", "x": -3.58, "y": 1.41, "z": -1.29}, {"elem": "Cl", "x": -3.54, "y": 0.6, "z": -2.81}, {"elem": "H", "x": -6.22, "y": -3.32, "z": 0.86}, {"elem": "H", "x": -5.2, "y": -4.75, "z": 0.85}, {"elem": "H", "x": -5.78, "y": -4.08, "z": -0.69}, {"elem": "H", "x": -5.32, "y": -1.12, "z": 0.14}, {"elem": "H", "x": -0.83, "y": -3.21, "z": -0.01}, {"elem": "H", "x": -2.8, "y": -4.6, "z": 0.21}, {"elem": "H", "x": -0.97, "y": 0.51, "z": -0.23}, {"elem": "H", "x": 0.9, "y": 0.96, "z": -0.97}, {"elem": "H", "x": 3.14, "y": -1.41, "z": 0.89}, {"elem": "H", "x": 5.56, "y": -1.09, "z": 0.98}, {"elem": "H", "x": 5.2, "y": 2.51, "z": -1.37}, {"elem": "H", "x": 2.77, "y": 2.19, "z": -1.48}, {"elem": "H", "x": 8.04, "y": 1.13, "z": 1.99}, {"elem": "H", "x": 7.9, "y": 2.65, "z": 1.21}, {"elem": "H", "x": -3.32, "y": 0.96, "z": 2.08}, {"elem": "H", "x": -3.66, "y": 3.41, "z": 2.04}, {"elem": "H", "x": -3.95, "y": 4.59, "z": -0.12}, {"elem": "H", "x": -3.9, "y": 3.33, "z": -2.25}], "bonds": [[0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [4, 7], [7, 8], [8, 9], [8, 10], [10, 11], [11, 12], [12, 13], [13, 14], [14, 15], [15, 16], [14, 17], [17, 18], [17, 19], [17, 20], [3, 21], [21, 22], [22, 23], [23, 24], [24, 25], [25, 26], [26, 27], [6, 1], [16, 11], [26, 21], [0, 28], [0, 29], [0, 30], [2, 31], [5, 32], [6, 33], [7, 34], [10, 35], [12, 36], [13, 37], [15, 38], [16, 39], [20, 40], [20, 41], [22, 42], [23, 43], [24, 44], [25, 45]]}, "MVA-CGS-02": {"atoms": [{"elem": "F", "x": -9.42, "y": 1.7, "z": 2.01}, {"elem": "C", "x": -8.29, "y": 1.32, "z": 1.41}, {"elem": "C", "x": -7.27, "y": 0.76, "z": 2.18}, {"elem": "C", "x": -6.08, "y": 0.37, "z": 1.56}, {"elem": "C", "x": -5.92, "y": 0.54, "z": 0.18}, {"elem": "C", "x": -6.96, "y": 1.1, "z": -0.58}, {"elem": "C", "x": -8.14, "y": 1.49, "z": 0.04}, {"elem": "C", "x": -4.67, "y": 0.13, "z": -0.52}, {"elem": "O", "x": -4.77, "y": -0.31, "z": -1.66}, {"elem": "N", "x": -3.5, "y": 0.34, "z": 0.19}, {"elem": "C", "x": -2.19, "y": 0.01, "z": -0.2}, {"elem": "C", "x": -1.15, "y": 0.39, "z": 0.66}, {"elem": "C", "x": 0.18, "y": 0.09, "z": 0.34}, {"elem": "C", "x": 0.51, "y": -0.6, "z": -0.84}, {"elem": "C", "x": -0.54, "y": -0.97, "z": -1.69}, {"elem": "C", "x": -1.87, "y": -0.67, "z": -1.37}, {"elem": "C", "x": 1.91, "y": -0.89, "z": -1.14}, {"elem": "C", "x": 2.34, "y": -1.81, "z": -2.07}, {"elem": "S", "x": 4.05, "y": -1.85, "z": -2.11}, {"elem": "C", "x": 4.1, "y": -0.66, "z": -0.89}, {"elem": "N", "x": 2.93, "y": -0.24, "z": -0.45}, {"elem": "N", "x": 5.26, "y": -0.16, "z": -0.37}, {"elem": "C", "x": 6.54, "y": -0.5, "z": -0.72}, {"elem": "O", "x": 6.92, "y": -1.29, "z": -1.57}, {"elem": "C", "x": 7.56, "y": 0.26, "z": 0.05}, {"elem": "C", "x": 8.63, "y": -0.5, "z": 0.81}, {"elem": "C", "x": 7.57, "y": 0.25, "z": 1.57}, {"elem": "H", "x": -7.41, "y": 0.63, "z": 3.25}, {"elem": "H", "x": -5.31, "y": -0.11, "z": 2.16}, {"elem": "H", "x": -6.85, "y": 1.22, "z": -1.66}, {"elem": "H", "x": -8.96, "y": 1.92, "z": -0.54}, {"elem": "H", "x": -3.58, "y": 0.84, "z": 1.07}, {"elem": "H", "x": -1.35, "y": 0.92, "z": 1.58}, {"elem": "H", "x": 0.97, "y": 0.4, "z": 1.03}, {"elem": "H", "x": -0.35, "y": -1.49, "z": -2.63}, {"elem": "H", "x": -2.64, "y": -0.99, "z": -2.07}, {"elem": "H", "x": 1.77, "y": -2.45, "z": -2.72}, {"elem": "H", "x": 5.12, "y": 0.53, "z": 0.35}, {"elem": "H", "x": 7.9, "y": 1.16, "z": -0.45}, {"elem": "H", "x": 9.64, "y": -0.1, "z": 0.8}, {"elem": "H", "x": 8.59, "y": -1.58, "z": 0.81}, {"elem": "H", "x": 7.87, "y": 1.16, "z": 2.08}, {"elem": "H", "x": 6.84, "y": -0.34, "z": 2.1}], "bonds": [[0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [4, 7], [7, 8], [7, 9], [9, 10], [10, 11], [11, 12], [12, 13], [13, 14], [14, 15], [13, 16], [16, 17], [17, 18], [18, 19], [19, 20], [19, 21], [21, 22], [22, 23], [22, 24], [24, 25], [25, 26], [6, 1], [15, 10], [20, 16], [26, 24], [2, 27], [3, 28], [5, 29], [6, 30], [9, 31], [11, 32], [12, 33], [14, 34], [15, 35], [17, 36], [21, 37], [24, 38], [25, 39], [25, 40], [26, 41], [26, 42]]}, "MVA-CGS-03": {"atoms": [{"elem": "O", "x": -0.54, "y": -0.23, "z": 1.54}, {"elem": "C", "x": -0.88, "y": -0.5, "z": 0.4}, {"elem": "N", "x": -0.06, "y": -0.74, "z": -0.69}, {"elem": "C", "x": 1.35, "y": -0.66, "z": -0.72}, {"elem": "C", "x": 2.14, "y": -0.22, "z": 0.34}, {"elem": "C", "x": 3.53, "y": -0.17, "z": 0.22}, {"elem": "C", "x": 4.18, "y": -0.55, "z": -0.96}, {"elem": "C", "x": 3.38, "y": -0.98, "z": -2.03}, {"elem": "C", "x": 1.99, "y": -1.04, "z": -1.91}, {"elem": "C", "x": 5.66, "y": -0.46, "z": -1.02}, {"elem": "N", "x": 6.41, "y": -0.08, "z": -0.01}, {"elem": "C", "x": 7.76, "y": -0.09, "z": -0.34}, {"elem": "C", "x": 8.01, "y": -0.5, "z": -1.64}, {"elem": "S", "x": 6.55, "y": -0.86, "z": -2.45}, {"elem": "C", "x": 8.78, "y": 0.29, "z": 0.63}, {"elem": "C", "x": 8.45, "y": 0.33, "z": 1.99}, {"elem": "C", "x": 9.4, "y": 0.68, "z": 2.96}, {"elem": "C", "x": 10.69, "y": 1.01, "z": 2.57}, {"elem": "C", "x": 11.04, "y": 0.99, "z": 1.22}, {"elem": "C", "x": 10.09, "y": 0.63, "z": 0.25}, {"elem": "C", "x": -2.34, "y": -0.62, "z": 0.11}, {"elem": "C", "x": -2.89, "y": -0.16, "z": -1.1}, {"elem": "C", "x": -4.26, "y": -0.28, "z": -1.33}, {"elem": "C", "x": -5.08, "y": -0.85, "z": -0.35}, {"elem": "S", "x": -6.82, "y": -0.99, "z": -0.66}, {"elem": "O", "x": -7.45, "y": -1.59, "z": 0.5}, {"elem": "O", "x": -6.96, "y": -1.58, "z": -1.97}, {"elem": "N", "x": -7.31, "y": 0.63, "z": -0.75}, {"elem": "C", "x": -7.23, "y": 1.44, "z": 0.51}, {"elem": "C", "x": -8.46, "y": 1.26, "z": 1.4}, {"elem": "O", "x": -9.67, "y": 1.53, "z": 0.69}, {"elem": "C", "x": -9.8, "y": 0.65, "z": -0.44}, {"elem": "C", "x": -8.64, "y": 0.86, "z": -1.42}, {"elem": "C", "x": -4.54, "y": -1.3, "z": 0.86}, {"elem": "C", "x": -3.17, "y": -1.17, "z": 1.09}, {"elem": "H", "x": -0.49, "y": -1.08, "z": -1.53}, {"elem": "H", "x": 1.7, "y": 0.09, "z": 1.29}, {"elem": "H", "x": 4.11, "y": 0.18, "z": 1.07}, {"elem": "H", "x": 3.82, "y": -1.3, "z": -2.97}, {"elem": "H", "x": 1.41, "y": -1.39, "z": -2.76}, {"elem": "H", "x": 8.96, "y": -0.61, "z": -2.15}, {"elem": "H", "x": 7.44, "y": 0.07, "z": 2.32}, {"elem": "H", "x": 9.12, "y": 0.7, "z": 4.01}, {"elem": "H", "x": 11.43, "y": 1.29, "z": 3.31}, {"elem": "H", "x": 12.05, "y": 1.26, "z": 0.91}, {"elem": "H", "x": 10.39, "y": 0.64, "z": -0.79}, {"elem": "H", "x": -2.27, "y": 0.31, "z": -1.86}, {"elem": "H", "x": -4.69, "y": 0.07, "z": -2.27}, {"elem": "H", "x": -6.31, "y": 1.21, "z": 1.06}, {"elem": "H", "x": -7.15, "y": 2.5, "z": 0.2}, {"elem": "H", "x": -8.41, "y": 1.97, "z": 2.24}, {"elem": "H", "x": -8.51, "y": 0.26, "z": 1.83}, {"elem": "H", "x": -9.86, "y": -0.38, "z": -0.09}, {"elem": "H", "x": -10.74, "y": 0.89, "z": -0.94}, {"elem": "H", "x": -8.64, "y": 1.9, "z": -1.78}, {"elem": "H", "x": -8.75, "y": 0.22, "z": -2.3}, {"elem": "H", "x": -5.18, "y": -1.74, "z": 1.63}, {"elem": "H", "x": -2.75, "y": -1.51, "z": 2.03}], "bonds": [[0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [6, 9], [9, 10], [10, 11], [11, 12], [12, 13], [11, 14], [14, 15], [15, 16], [16, 17], [17, 18], [18, 19], [1, 20], [20, 21], [21, 22], [22, 23], [23, 24], [24, 25], [24, 26], [24, 27], [27, 28], [28, 29], [29, 30], [30, 31], [31, 32], [23, 33], [33, 34], [8, 3], [13, 9], [19, 14], [34, 20], [32, 27], [2, 35], [4, 36], [5, 37], [7, 38], [8, 39], [12, 40], [15, 41], [16, 42], [17, 43], [18, 44], [19, 45], [21, 46], [22, 47], [28, 48], [28, 49], [29, 50], [29, 51], [31, 52], [31, 53], [32, 54], [32, 55], [33, 56], [34, 57]]}, "MVA-CGS-04": {"atoms": [{"elem": "C", "x": -6.83, "y": -2.45, "z": -1.29}, {"elem": "N", "x": -6.55, "y": -1.26, "z": -0.49}, {"elem": "C", "x": -7.63, "y": -0.41, "z": -0.19}, {"elem": "C", "x": -8.96, "y": -0.86, "z": -0.17}, {"elem": "C", "x": -10.03, "y": -0.01, "z": 0.14}, {"elem": "C", "x": -9.79, "y": 1.32, "z": 0.47}, {"elem": "C", "x": -8.48, "y": 1.79, "z": 0.49}, {"elem": "C", "x": -7.41, "y": 0.94, "z": 0.18}, {"elem": "C", "x": -6.01, "y": 1.52, "z": 0.21}, {"elem": "C", "x": -4.97, "y": 0.42, "z": 0.33}, {"elem": "C", "x": -5.26, "y": -0.61, "z": -0.75}, {"elem": "C", "x": -3.55, "y": 0.96, "z": 0.15}, {"elem": "O", "x": -3.34, "y": 2.06, "z": -0.34}, {"elem": "N", "x": -2.59, "y": 0.06, "z": 0.59}, {"elem": "C", "x": -1.19, "y": 0.2, "z": 0.54}, {"elem": "C", "x": -0.54, "y": 1.28, "z": -0.03}, {"elem": "C", "x": 0.87, "y": 1.34, "z": -0.04}, {"elem": "C", "x": 1.67, "y": 0.33, "z": 0.52}, {"elem": "C", "x": 0.98, "y": -0.76, "z": 1.07}, {"elem": "C", "x": -0.42, "y": -0.83, "z": 1.09}, {"elem": "N", "x": 3.05, "y": 0.4, "z": 0.49}, {"elem": "C", "x": 3.89, "y": -0.77, "z": 0.78}, {"elem": "C", "x": 5.3, "y": -0.61, "z": 0.19}, {"elem": "N", "x": 5.97, "y": 0.64, "z": 0.58}, {"elem": "C", "x": 5.1, "y": 1.67, "z": 1.16}, {"elem": "C", "x": 3.72, "y": 1.72, "z": 0.49}, {"elem": "C", "x": 7.29, "y": 0.97, "z": 0.29}, {"elem": "O", "x": 7.78, "y": 2.07, "z": 0.49}, {"elem": "C", "x": 8.14, "y": -0.04, "z": -0.36}, {"elem": "C", "x": 8.54, "y": 0.16, "z": -1.69}, {"elem": "C", "x": 9.38, "y": -0.77, "z": -2.31}, {"elem": "C", "x": 9.82, "y": -1.89, "z": -1.6}, {"elem": "C", "x": 9.43, "y": -2.08, "z": -0.27}, {"elem": "C", "x": 8.6, "y": -1.15, "z": 0.34}, {"elem": "F", "x": 8.24, "y": -1.35, "z": 1.62}, {"elem": "H", "x": -7.3, "y": -2.19, "z": -2.25}, {"elem": "H", "x": -5.9, "y": -2.99, "z": -1.52}, {"elem": "H", "x": -7.47, "y": -3.16, "z": -0.75}, {"elem": "H", "x": -9.21, "y": -1.89, "z": -0.41}, {"elem": "H", "x": -11.04, "y": -0.39, "z": 0.14}, {"elem": "H", "x": -10.62, "y": 1.98, "z": 0.71}, {"elem": "H", "x": -8.3, "y": 2.83, "z": 0.75}, {"elem": "H", "x": -5.91, "y": 2.21, "z": 1.06}, {"elem": "H", "x": -5.87, "y": 2.11, "z": -0.7}, {"elem": "H", "x": -5.04, "y": -0.04, "z": 1.32}, {"elem": "H", "x": -5.26, "y": -0.16, "z": -1.75}, {"elem": "H", "x": -4.48, "y": -1.38, "z": -0.75}, {"elem": "H", "x": -2.93, "y": -0.79, "z": 1.04}, {"elem": "H", "x": -1.07, "y": 2.11, "z": -0.49}, {"elem": "H", "x": 1.33, "y": 2.2, "z": -0.52}, {"elem": "H", "x": 1.52, "y": -1.58, "z": 1.54}, {"elem": "H", "x": -0.89, "y": -1.69, "z": 1.55}, {"elem": "H", "x": 3.96, "y": -0.91, "z": 1.87}, {"elem": "H", "x": 3.46, "y": -1.68, "z": 0.35}, {"elem": "H", "x": 5.92, "y": -1.46, "z": 0.48}, {"elem": "H", "x": 5.25, "y": -0.6, "z": -0.91}, {"elem": "H", "x": 5.57, "y": 2.66, "z": 1.11}, {"elem": "H", "x": 4.99, "y": 1.42, "z": 2.23}, {"elem": "H", "x": 3.12, "y": 2.46, "z": 1.03}, {"elem": "H", "x": 3.83, "y": 2.05, "z": -0.55}, {"elem": "H", "x": 8.21, "y": 1.04, "z": -2.23}, {"elem": "H", "x": 9.69, "y": -0.62, "z": -3.34}, {"elem": "H", "x": 10.47, "y": -2.62, "z": -2.08}, {"elem": "H", "x": 9.78, "y": -2.94, "z": 0.29}], "bonds": [[0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [9, 10], [9, 11], [11, 12], [11, 13], [13, 14], [14, 15], [15, 16], [16, 17], [17, 18], [18, 19], [17, 20], [20, 21], [21, 22], [22, 23], [23, 24], [24, 25], [23, 26], [26, 27], [26, 28], [28, 29], [29, 30], [30, 31], [31, 32], [32, 33], [33, 34], [10, 1], [7, 2], [19, 14], [25, 20], [33, 28], [0, 35], [0, 36], [0, 37], [3, 38], [4, 39], [5, 40], [6, 41], [8, 42], [8, 43], [9, 44], [10, 45], [10, 46], [13, 47], [15, 48], [16, 49], [18, 50], [19, 51], [21, 52], [21, 53], [22, 54], [22, 55], [24, 56], [24, 57], [25, 58], [25, 59], [29, 60], [30, 61], [31, 62], [32, 63]]}, "MVA-CGS-05": {"atoms": [{"elem": "C", "x": 9.71, "y": 0.9, "z": 0.51}, {"elem": "C", "x": 8.56, "y": 0.0, "z": 0.21}, {"elem": "N", "x": 7.3, "y": 0.36, "z": 0.26}, {"elem": "C", "x": 6.48, "y": -0.7, "z": -0.09}, {"elem": "C", "x": 7.15, "y": -1.87, "z": -0.4}, {"elem": "S", "x": 8.85, "y": -1.63, "z": -0.26}, {"elem": "C", "x": 5.02, "y": -0.55, "z": -0.11}, {"elem": "C", "x": 4.44, "y": 0.57, "z": 0.51}, {"elem": "C", "x": 3.06, "y": 0.76, "z": 0.51}, {"elem": "C", "x": 2.21, "y": -0.18, "z": -0.09}, {"elem": "N", "x": 0.82, "y": 0.08, "z": -0.05}, {"elem": "C", "x": -0.19, "y": -0.74, "z": -0.5}, {"elem": "O", "x": -0.07, "y": -1.88, "z": -0.94}, {"elem": "C", "x": -1.56, "y": -0.2, "z": -0.39}, {"elem": "C", "x": -1.87, "y": 1.13, "z": -0.49}, {"elem": "N", "x": -3.13, "y": 1.62, "z": -0.38}, {"elem": "C", "x": -4.13, "y": 0.73, "z": -0.18}, {"elem": "N", "x": -5.4, "y": 1.28, "z": -0.08}, {"elem": "C", "x": -6.68, "y": 0.75, "z": 0.11}, {"elem": "C", "x": -6.96, "y": -0.62, "z": 0.24}, {"elem": "C", "x": -8.27, "y": -1.07, "z": 0.42}, {"elem": "C", "x": -9.33, "y": -0.17, "z": 0.48}, {"elem": "C", "x": -9.08, "y": 1.19, "z": 0.36}, {"elem": "C", "x": -7.77, "y": 1.63, "z": 0.17}, {"elem": "F", "x": -7.54, "y": 2.95, "z": 0.05}, {"elem": "N", "x": -3.91, "y": -0.59, "z": -0.1}, {"elem": "C", "x": -2.64, "y": -1.03, "z": -0.21}, {"elem": "C", "x": 2.78, "y": -1.29, "z": -0.71}, {"elem": "C", "x": 4.17, "y": -1.47, "z": -0.72}, {"elem": "H", "x": 9.35, "y": 1.89, "z": 0.79}, {"elem": "H", "x": 10.37, "y": 1.0, "z": -0.35}, {"elem": "H", "x": 10.3, "y": 0.5, "z": 1.35}, {"elem": "H", "x": 6.76, "y": -2.83, "z": -0.68}, {"elem": "H", "x": 5.08, "y": 1.32, "z": 0.99}, {"elem": "H", "x": 2.66, "y": 1.64, "z": 1.0}, {"elem": "H", "x": 0.57, "y": 0.93, "z": 0.44}, {"elem": "H", "x": -1.12, "y": 1.89, "z": -0.68}, {"elem": "H", "x": -5.35, "y": 2.28, "z": -0.17}, {"elem": "H", "x": -6.16, "y": -1.36, "z": 0.2}, {"elem": "H", "x": -8.46, "y": -2.14, "z": 0.52}, {"elem": "H", "x": -10.35, "y": -0.53, "z": 0.63}, {"elem": "H", "x": -9.89, "y": 1.92, "z": 0.4}, {"elem": "H", "x": -2.51, "y": -2.11, "z": -0.15}, {"elem": "H", "x": 2.17, "y": -2.04, "z": -1.21}, {"elem": "H", "x": 4.56, "y": -2.35, "z": -1.23}], "bonds": [[0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [3, 6], [6, 7], [7, 8], [8, 9], [9, 10], [10, 11], [11, 12], [11, 13], [13, 14], [14, 15], [15, 16], [16, 17], [17, 18], [18, 19], [19, 20], [20, 21], [21, 22], [22, 23], [23, 24], [16, 25], [25, 26], [9, 27], [27, 28], [5, 1], [28, 6], [26, 13], [23, 18], [0, 29], [0, 30], [0, 31], [4, 32], [7, 33], [8, 34], [10, 35], [14, 36], [17, 37], [19, 38], [20, 39], [21, 40], [22, 41], [26, 42], [27, 43], [28, 44]]}, "MVA-AMP-01": {"atoms": [{"elem": "N", "x": 4.11, "y": 2.06, "z": -1.21}, {"elem": "C", "x": 3.36, "y": 1.95, "z": 0.09}, {"elem": "C", "x": 1.83, "y": 1.61, "z": -0.2}, {"elem": "O", "x": 1.05, "y": 1.53, "z": 0.73}, {"elem": "C", "x": 3.61, "y": 3.24, "z": 0.9}, {"elem": "C", "x": 2.86, "y": 3.21, "z": 2.24}, {"elem": "C", "x": 5.1, "y": 3.46, "z": 1.2}, {"elem": "N", "x": 1.47, "y": 1.43, "z": -1.52}, {"elem": "C", "x": 0.14, "y": 1.14, "z": -1.9}, {"elem": "C", "x": 0.22, "y": -0.15, "z": -2.82}, {"elem": "O", "x": 1.28, "y": -0.4, "z": -3.4}, {"elem": "C", "x": -0.53, "y": 2.28, "z": -2.68}, {"elem": "N", "x": -0.92, "y": -0.91, "z": -2.92}, {"elem": "C", "x": -1.07, "y": -2.12, "z": -3.73}, {"elem": "C", "x": -0.06, "y": -3.22, "z": -3.32}, {"elem": "O", "x": -0.2, "y": -4.36, "z": -3.76}, {"elem": "C", "x": -1.21, "y": -1.86, "z": -5.19}, {"elem": "C", "x": -1.22, "y": -3.12, "z": -6.05}, {"elem": "C", "x": -2.57, "y": -1.19, "z": -5.42}, {"elem": "N", "x": 0.91, "y": -2.95, "z": -2.36}, {"elem": "C", "x": 2.09, "y": -3.78, "z": -2.22}, {"elem": "C", "x": 1.94, "y": -5.13, "z": -1.45}, {"elem": "O", "x": 2.85, "y": -6.01, "z": -1.44}, {"elem": "C", "x": 3.2, "y": -2.91, "z": -1.63}, {"elem": "C", "x": 4.56, "y": -3.57, "z": -1.2}, {"elem": "C", "x": 4.48, "y": -4.26, "z": 0.16}, {"elem": "C", "x": 5.68, "y": -2.54, "z": -1.18}, {"elem": "N", "x": 0.78, "y": -5.26, "z": -0.75}, {"elem": "C", "x": 0.86, "y": -6.34, "z": 0.19}, {"elem": "C", "x": 0.76, "y": -7.62, "z": -0.65}, {"elem": "O", "x": 0.25, "y": -7.52, "z": -1.78}, {"elem": "N", "x": 1.34, "y": -8.73, "z": -0.17}, {"elem": "C", "x": 1.72, "y": -9.86, "z": -1.04}, {"elem": "C", "x": 2.96, "y": -9.53, "z": -2.04}, {"elem": "O", "x": 3.72, "y": -10.44, "z": -2.36}, {"elem": "C", "x": 0.58, "y": -10.61, "z": -1.73}, {"elem": "N", "x": 2.94, "y": -8.28, "z": -2.71}, {"elem": "C", "x": 3.99, "y": -7.76, "z": -3.6}, {"elem": "C", "x": 3.34, "y": -6.74, "z": -4.56}, {"elem": "O", "x": 2.19, "y": -6.92, "z": -5.03}, {"elem": "C", "x": 4.7, "y": -8.8, "z": -4.52}, {"elem": "O", "x": 5.67, "y": -9.58, "z": -3.76}, {"elem": "N", "x": 4.14, "y": -5.66, "z": -5.0}, {"elem": "C", "x": 3.54, "y": -4.82, "z": -6.0}, {"elem": "C", "x": 4.32, "y": -3.54, "z": -6.33}, {"elem": "O", "x": 5.33, "y": -3.19, "z": -5.75}, {"elem": "N", "x": 3.7, "y": -2.82, "z": -7.37}, {"elem": "C", "x": 4.2, "y": -1.5, "z": -7.75}, {"elem": "C", "x": 4.02, "y": -0.5, "z": -6.61}, {"elem": "O", "x": 3.36, "y": -0.8, "z": -5.61}, {"elem": "N", "x": 4.66, "y": 0.71, "z": -6.76}, {"elem": "C", "x": 4.69, "y": 1.62, "z": -5.61}, {"elem": "C", "x": 3.56, "y": 2.67, "z": -5.74}, {"elem": "O", "x": 3.04, "y": 2.93, "z": -6.81}, {"elem": "C", "x": 6.11, "y": 2.25, "z": -5.61}, {"elem": "C", "x": 6.35, "y": 3.1, "z": -6.89}, {"elem": "C", "x": 6.41, "y": 3.07, "z": -4.34}, {"elem": "C", "x": 7.87, "y": 3.5, "z": -4.26}, {"elem": "N", "x": 3.24, "y": 3.3, "z": -4.56}, {"elem": "C", "x": 2.2, "y": 4.38, "z": -4.51}, {"elem": "C", "x": 1.88, "y": 4.78, "z": -3.06}, {"elem": "O", "x": 2.29, "y": 4.08, "z": -2.11}, {"elem": "N", "x": 1.07, "y": 5.87, "z": -2.91}, {"elem": "C", "x": 0.68, "y": 6.35, "z": -1.59}, {"elem": "C", "x": -0.86, "y": 6.22, "z": -1.36}, {"elem": "O", "x": -1.52, "y": 6.02, "z": -2.4}, {"elem": "C", "x": 1.05, "y": 7.87, "z": -1.54}, {"elem": "C", "x": 0.22, "y": 8.68, "z": -2.52}, {"elem": "C", "x": 0.76, "y": 10.05, "z": -2.73}, {"elem": "O", "x": 1.8, "y": 10.5, "z": -2.22}, {"elem": "N", "x": -0.03, "y": 10.85, "z": -3.56}, {"elem": "N", "x": -1.43, "y": 6.44, "z": -0.14}, {"elem": "C", "x": -0.92, "y": 6.52, "z": 1.2}, {"elem": "C", "x": -1.22, "y": 5.2, "z": 1.98}, {"elem": "O", "x": -1.49, "y": 4.16, "z": 1.38}, {"elem": "C", "x": -1.7, "y": 7.7, "z": 1.77}, {"elem": "C", "x": -3.02, "y": 7.71, "z": 0.99}, {"elem": "C", "x": -2.87, "y": 6.62, "z": -0.08}, {"elem": "N", "x": -1.18, "y": 5.27, "z": 3.38}, {"elem": "C", "x": -1.38, "y": 3.99, "z": 4.21}, {"elem": "C", "x": -2.54, "y": 4.15, "z": 5.16}, {"elem": "O", "x": -2.67, "y": 5.12, "z": 5.91}, {"elem": "C", "x": -0.02, "y": 3.83, "z": 4.92}, {"elem": "C", "x": 0.13, "y": 2.58, "z": 5.81}, {"elem": "C", "x": 1.6, "y": 2.47, "z": 6.33}, {"elem": "C", "x": -0.75, "y": 2.59, "z": 7.06}, {"elem": "N", "x": -3.48, "y": 3.09, "z": 5.12}, {"elem": "C", "x": -4.81, "y": 3.22, "z": 5.77}, {"elem": "C", "x": -5.59, "y": 2.01, "z": 5.25}, {"elem": "O", "x": -5.89, "y": 1.87, "z": 4.06}, {"elem": "C", "x": -5.52, "y": 4.6, "z": 5.48}, {"elem": "O", "x": -6.76, "y": 4.67, "z": 6.12}, {"elem": "N", "x": -5.78, "y": 0.99, "z": 6.19}, {"elem": "C", "x": -5.69, "y": -0.41, "z": 5.65}, {"elem": "C", "x": -4.27, "y": -0.67, "z": 5.0}, {"elem": "O", "x": -3.48, "y": 0.32, "z": 4.91}, {"elem": "C", "x": -6.92, "y": -0.8, "z": 4.88}, {"elem": "C", "x": -7.03, "y": -2.34, "z": 4.53}, {"elem": "C", "x": -7.49, "y": -3.21, "z": 5.71}, {"elem": "C", "x": -8.06, "y": -2.52, "z": 3.43}, {"elem": "N", "x": -3.79, "y": -1.91, "z": 5.3}, {"elem": "C", "x": -2.49, "y": -1.96, "z": 6.03}, {"elem": "C", "x": -1.47, "y": -1.53, "z": 4.92}, {"elem": "O", "x": -0.5, "y": -0.89, "z": 5.18}, {"elem": "C", "x": -2.16, "y": -3.4, "z": 6.52}, {"elem": "C", "x": -0.91, "y": -3.72, "z": 7.4}, {"elem": "C", "x": -0.9, "y": -5.22, "z": 7.85}, {"elem": "C", "x": 0.48, "y": -3.49, "z": 6.82}, {"elem": "N", "x": -1.91, "y": -2.09, "z": 3.68}, {"elem": "C", "x": -1.57, "y": -1.37, "z": 2.45}, {"elem": "C", "x": -3.0, "y": -1.18, "z": 1.73}, {"elem": "O", "x": -3.97, "y": -1.9, "z": 1.99}, {"elem": "C", "x": -0.7, "y": -2.15, "z": 1.44}, {"elem": "C", "x": 0.68, "y": -2.57, "z": 1.92}, {"elem": "C", "x": 0.65, "y": -3.52, "z": 3.1}, {"elem": "C", "x": 1.59, "y": -1.38, "z": 2.24}, {"elem": "N", "x": -3.02, "y": -0.19, "z": 0.8}, {"elem": "C", "x": -4.2, "y": 0.15, "z": 0.02}, {"elem": "C", "x": -4.28, "y": -0.76, "z": -1.2}, {"elem": "O", "x": -3.22, "y": -1.07, "z": -1.74}, {"elem": "C", "x": -4.02, "y": 1.59, "z": -0.57}, {"elem": "C", "x": -5.14, "y": 1.95, "z": -1.59}, {"elem": "C", "x": -6.57, "y": 2.09, "z": -1.07}, {"elem": "C", "x": -6.76, "y": 3.29, "z": -0.13}, {"elem": "N", "x": -5.96, "y": 3.2, "z": 1.07}, {"elem": "O", "x": -5.52, "y": -1.07, "z": -1.59}, {"elem": "H", "x": 4.01, "y": 3.04, "z": -1.52}, {"elem": "H", "x": 5.1, "y": 1.94, "z": -0.99}, {"elem": "H", "x": 3.77, "y": 1.09, "z": 0.67}, {"elem": "H", "x": 3.23, "y": 4.11, "z": 0.35}, {"elem": "H", "x": 3.16, "y": 4.1, "z": 2.82}, {"elem": "H", "x": 3.09, "y": 2.32, "z": 2.83}, {"elem": "H", "x": 1.75, "y": 3.32, "z": 2.05}, {"elem": "H", "x": 5.61, "y": 3.62, "z": 0.25}, {"elem": "H", "x": 5.19, "y": 4.34, "z": 1.83}, {"elem": "H", "x": 5.49, "y": 2.61, "z": 1.74}, {"elem": "H", "x": 2.19, "y": 1.57, "z": -2.23}, {"elem": "H", "x": -0.5, "y": 0.92, "z": -1.04}, {"elem": "H", "x": -1.53, "y": 1.97, "z": -3.04}, {"elem": "H", "x": -0.62, "y": 3.17, "z": -2.03}, {"elem": "H", "x": 0.03, "y": 2.52, "z": -3.59}, {"elem": "H", "x": -1.78, "y": -0.63, "z": -2.48}, {"elem": "H", "x": -1.99, "y": -2.59, "z": -3.35}, {"elem": "H", "x": -0.45, "y": -1.2, "z": -5.58}, {"elem": "H", "x": -1.79, "y": -2.92, "z": -6.98}, {"elem": "H", "x": -1.74, "y": -3.93, "z": -5.54}, {"elem": "H", "x": -0.2, "y": -3.42, "z": -6.3}, {"elem": "H", "x": -2.79, "y": -0.43, "z": -4.63}, {"elem": "H", "x": -2.57, "y": -0.59, "z": -6.37}, {"elem": "H", "x": -3.41, "y": -1.93, "z": -5.41}, {"elem": "H", "x": 1.07, "y": -1.94, "z": -2.23}, {"elem": "H", "x": 2.34, "y": -4.12, "z": -3.27}, {"elem": "H", "x": 2.87, "y": -2.32, "z": -0.72}, {"elem": "H", "x": 3.43, "y": -2.15, "z": -2.45}, {"elem": "H", "x": 4.9, "y": -4.31, "z": -1.94}, {"elem": "H", "x": 3.48, "y": -4.12, "z": 0.66}, {"elem": "H", "x": 5.24, "y": -3.84, "z": 0.85}, {"elem": "H", "x": 4.7, "y": -5.33, "z": 0.07}, {"elem": "H", "x": 6.61, "y": -3.02, "z": -0.91}, {"elem": "H", "x": 5.48, "y": -1.75, "z": -0.42}, {"elem": "H", "x": 5.8, "y": -2.1, "z": -2.17}, {"elem": "H", "x": 0.08, "y": -4.48, "z": -0.69}, {"elem": "H", "x": 0.07, "y": -6.28, "z": 0.92}, {"elem": "H", "x": 1.83, "y": -6.23, "z": 0.68}, {"elem": "H", "x": 1.38, "y": -8.92, "z": 0.83}, {"elem": "H", "x": 2.2, "y": -10.56, "z": -0.31}, {"elem": "H", "x": -0.38, "y": -10.49, "z": -1.13}, {"elem": "H", "x": 0.42, "y": -10.22, "z": -2.77}, {"elem": "H", "x": 0.87, "y": -11.67, "z": -1.82}, {"elem": "H", "x": 2.38, "y": -7.51, "z": -2.33}, {"elem": "H", "x": 4.82, "y": -7.32, "z": -2.93}, {"elem": "H", "x": 5.22, "y": -8.27, "z": -5.35}, {"elem": "H", "x": 4.0, "y": -9.5, "z": -5.01}, {"elem": "H", "x": 5.18, "y": -9.89, "z": -2.93}, {"elem": "H", "x": 5.13, "y": -5.56, "z": -4.69}, {"elem": "H", "x": 2.49, "y": -4.59, "z": -5.69}, {"elem": "H", "x": 3.49, "y": -5.45, "z": -6.93}, {"elem": "H", "x": 2.74, "y": -3.04, "z": -7.61}, {"elem": "H", "x": 3.59, "y": -1.17, "z": -8.63}, {"elem": "H", "x": 5.25, "y": -1.59, "z": -8.04}, {"elem": "H", "x": 4.91, "y": 1.04, "z": -7.68}, {"elem": "H", "x": 4.54, "y": 1.01, "z": -4.73}, {"elem": "H", "x": 6.84, "y": 1.4, "z": -5.64}, {"elem": "H", "x": 5.43, "y": 3.18, "z": -7.5}, {"elem": "H", "x": 6.74, "y": 4.09, "z": -6.67}, {"elem": "H", "x": 7.08, "y": 2.56, "z": -7.49}, {"elem": "H", "x": 6.18, "y": 2.44, "z": -3.45}, {"elem": "H", "x": 5.8, "y": 3.97, "z": -4.32}, {"elem": "H", "x": 8.54, "y": 2.64, "z": -4.47}, {"elem": "H", "x": 8.07, "y": 3.87, "z": -3.25}, {"elem": "H", "x": 8.06, "y": 4.3, "z": -4.97}, {"elem": "H", "x": 3.66, "y": 3.03, "z": -3.64}, {"elem": "H", "x": 2.67, "y": 5.26, "z": -4.98}, {"elem": "H", "x": 1.3, "y": 4.05, "z": -5.13}, {"elem": "H", "x": 0.51, "y": 6.21, "z": -3.72}, {"elem": "H", "x": 1.23, "y": 5.79, "z": -0.82}, {"elem": "H", "x": 2.14, "y": 7.96, "z": -1.74}, {"elem": "H", "x": 0.87, "y": 8.28, "z": -0.51}, {"elem": "H", "x": -0.79, "y": 8.79, "z": -2.12}, {"elem": "H", "x": 0.12, "y": 8.2, "z": -3.5}, {"elem": "H", "x": 0.3, "y": 11.81, "z": -3.7}, {"elem": "H", "x": -1.05, "y": 10.77, "z": -3.41}, {"elem": "H", "x": 0.16, "y": 6.73, "z": 1.23}, {"elem": "H", "x": -1.85, "y": 7.68, "z": 2.85}, {"elem": "H", "x": -1.14, "y": 8.65, "z": 1.54}, {"elem": "H", "x": -3.88, "y": 7.56, "z": 1.64}, {"elem": "H", "x": -3.13, "y": 8.7, "z": 0.5}, {"elem": "H", "x": -3.33, "y": 6.94, "z": -1.01}, {"elem": "H", "x": -3.32, "y": 5.67, "z": 0.28}, {"elem": "H", "x": -0.81, "y": 6.06, "z": 3.89}, {"elem": "H", "x": -1.51, "y": 3.15, "z": 3.51}, {"elem": "H", "x": 0.78, "y": 3.76, "z": 4.15}, {"elem": "H", "x": 0.19, "y": 4.73, "z": 5.55}, {"elem": "H", "x": -0.07, "y": 1.67, "z": 5.23}, {"elem": "H", "x": 2.27, "y": 2.34, "z": 5.48}, {"elem": "H", "x": 1.85, "y": 3.35, "z": 6.92}, {"elem": "H", "x": 1.64, "y": 1.57, "z": 6.96}, {"elem": "H", "x": -1.58, "y": 1.86, "z": 6.92}, {"elem": "H", "x": -0.2, "y": 2.29, "z": 7.97}, {"elem": "H", "x": -1.17, "y": 3.59, "z": 7.27}, {"elem": "H", "x": -3.36, "y": 2.28, "z": 4.47}, {"elem": "H", "x": -4.69, "y": 3.16, "z": 6.85}, {"elem": "H", "x": -5.64, "y": 4.65, "z": 4.39}, {"elem": "H", "x": -4.91, "y": 5.4, "z": 5.88}, {"elem": "H", "x": -6.69, "y": 4.88, "z": 7.07}, {"elem": "H", "x": -5.71, "y": 1.25, "z": 7.18}, {"elem": "H", "x": -5.79, "y": -1.07, "z": 6.51}, {"elem": "H", "x": -6.97, "y": -0.2, "z": 3.95}, {"elem": "H", "x": -7.84, "y": -0.55, "z": 5.46}, {"elem": "H", "x": -6.12, "y": -2.8, "z": 4.13}, {"elem": "H", "x": -7.3, "y": -4.27, "z": 5.51}, {"elem": "H", "x": -8.58, "y": -3.09, "z": 5.86}, {"elem": "H", "x": -7.0, "y": -2.92, "z": 6.64}, {"elem": "H", "x": -7.94, "y": -1.75, "z": 2.67}, {"elem": "H", "x": -7.96, "y": -3.51, "z": 2.98}, {"elem": "H", "x": -9.08, "y": -2.43, "z": 3.83}, {"elem": "H", "x": -4.35, "y": -2.74, "z": 5.06}, {"elem": "H", "x": -2.55, "y": -1.23, "z": 6.83}, {"elem": "H", "x": -3.06, "y": -3.74, "z": 7.06}, {"elem": "H", "x": -2.08, "y": -4.05, "z": 5.58}, {"elem": "H", "x": -1.01, "y": -3.18, "z": 8.35}, {"elem": "H", "x": -0.08, "y": -5.29, "z": 8.56}, {"elem": "H", "x": -1.82, "y": -5.5, "z": 8.38}, {"elem": "H", "x": -0.68, "y": -5.92, "z": 7.0}, {"elem": "H", "x": 0.64, "y": -2.45, "z": 6.6}, {"elem": "H", "x": 1.19, "y": -3.69, "z": 7.67}, {"elem": "H", "x": 0.72, "y": -4.15, "z": 5.99}, {"elem": "H", "x": -2.78, "y": -2.6, "z": 3.68}, {"elem": "H", "x": -1.17, "y": -0.39, "z": 2.64}, {"elem": "H", "x": -0.58, "y": -1.51, "z": 0.56}, {"elem": "H", "x": -1.21, "y": -3.08, "z": 1.14}, {"elem": "H", "x": 1.13, "y": -3.11, "z": 1.06}, {"elem": "H", "x": 1.43, "y": -4.31, "z": 2.96}, {"elem": "H", "x": -0.3, "y": -4.06, "z": 3.15}, {"elem": "H", "x": 0.9, "y": -3.01, "z": 4.04}, {"elem": "H", "x": 2.42, "y": -1.69, "z": 2.9}, {"elem": "H", "x": 1.05, "y": -0.51, "z": 2.67}, {"elem": "H", "x": 2.05, "y": -1.06, "z": 1.31}, {"elem": "H", "x": -2.11, "y": 0.15, "z": 0.43}, {"elem": "H", "x": -5.15, "y": 0.07, "z": 0.6}, {"elem": "H", "x": -3.92, "y": 2.36, "z": 0.2}, {"elem": "H", "x": -3.11, "y": 1.6, "z": -1.15}, {"elem": "H", "x": -4.84, "y": 2.91, "z": -2.11}, {"elem": "H", "x": -5.2, "y": 1.22, "z": -2.43}, {"elem": "H", "x": -7.25, "y": 2.24, "z": -1.91}, {"elem": "H", "x": -6.86, "y": 1.16, "z": -0.56}, {"elem": "H", "x": -6.48, "y": 4.24, "z": -0.69}, {"elem": "H", "x": -7.87, "y": 3.34, "z": 0.11}, {"elem": "H", "x": -5.37, "y": 4.02, "z": 1.17}, {"elem": "H", "x": -6.58, "y": 3.12, "z": 1.86}, {"elem": "H", "x": -5.5, "y": -1.74, "z": -2.35}], "bonds": [[0, 1], [1, 2], [1, 4], [2, 3], [2, 7], [4, 5], [4, 6], [7, 8], [8, 9], [8, 11], [9, 10], [9, 12], [12, 13], [13, 14], [13, 16], [14, 15], [14, 19], [16, 17], [16, 18], [19, 20], [20, 21], [20, 23], [21, 22], [21, 27], [23, 24], [24, 25], [24, 26], [27, 28], [28, 29], [29, 30], [29, 31], [31, 32], [32, 33], [32, 35], [33, 34], [33, 36], [36, 37], [37, 38], [37, 40], [38, 39], [38, 42], [40, 41], [42, 43], [43, 44], [44, 45], [44, 46], [46, 47], [47, 48], [48, 49], [48, 50], [50, 51], [51, 52], [51, 54], [52, 53], [52, 58], [54, 55], [54, 56], [56, 57], [58, 59], [59, 60], [60, 61], [60, 62], [62, 63], [63, 64], [63, 66], [64, 65], [64, 71], [66, 67], [67, 68], [68, 69], [68, 70], [71, 72], [71, 77], [72, 73], [72, 75], [73, 74], [73, 78], [75, 76], [76, 77], [78, 79], [79, 80], [79, 82], [80, 81], [80, 86], [82, 83], [83, 84], [83, 85], [86, 87], [87, 88], [87, 90], [88, 89], [88, 92], [90, 91], [92, 93], [93, 94], [93, 96], [94, 95], [94, 100], [96, 97], [97, 98], [97, 99], [100, 101], [101, 102], [101, 104], [102, 103], [102, 108], [104, 105], [105, 106], [105, 107], [108, 109], [109, 110], [109, 112], [110, 111], [110, 116], [112, 113], [113, 114], [113, 115], [116, 117], [117, 118], [117, 120], [118, 119], [118, 125], [120, 121], [121, 122], [122, 123], [123, 124], [126, 127], [138, 140], [200, 201], [244, 245], [255, 257], [260, 261], [268, 269]]}, "MVA-AMP-12": {"atoms": [{"elem": "N", "x": -2.81, "y": 3.79, "z": -5.1}, {"elem": "C", "x": -2.14, "y": 3.07, "z": -3.97}, {"elem": "C", "x": -2.44, "y": 1.56, "z": -4.1}, {"elem": "O", "x": -2.63, "y": 0.81, "z": -3.15}, {"elem": "C", "x": -2.5, "y": 3.64, "z": -2.57}, {"elem": "C", "x": -2.03, "y": 5.09, "z": -2.44}, {"elem": "C", "x": -4.0, "y": 3.55, "z": -2.24}, {"elem": "C", "x": -4.3, "y": 3.82, "z": -0.78}, {"elem": "N", "x": -2.46, "y": 1.15, "z": -5.41}, {"elem": "C", "x": -2.81, "y": -0.2, "z": -5.84}, {"elem": "C", "x": -4.3, "y": -0.49, "z": -5.52}, {"elem": "O", "x": -4.75, "y": -1.61, "z": -5.32}, {"elem": "C", "x": -1.84, "y": -1.28, "z": -5.34}, {"elem": "C", "x": -0.37, "y": -0.99, "z": -5.69}, {"elem": "C", "x": 0.53, "y": -2.05, "z": -5.07}, {"elem": "C", "x": -0.13, "y": -0.94, "z": -7.2}, {"elem": "N", "x": -5.08, "y": 0.65, "z": -5.64}, {"elem": "C", "x": -6.54, "y": 0.64, "z": -5.65}, {"elem": "C", "x": -7.15, "y": 0.35, "z": -4.25}, {"elem": "O", "x": -8.3, "y": -0.04, "z": -4.1}, {"elem": "C", "x": -7.16, "y": -0.15, "z": -6.81}, {"elem": "C", "x": -7.2, "y": 0.64, "z": -8.15}, {"elem": "C", "x": -7.96, "y": -0.15, "z": -9.21}, {"elem": "C", "x": -5.82, "y": 1.01, "z": -8.68}, {"elem": "N", "x": -6.34, "y": 0.8, "z": -3.23}, {"elem": "C", "x": -6.7, "y": 1.12, "z": -1.84}, {"elem": "C", "x": -5.74, "y": 0.42, "z": -0.86}, {"elem": "O", "x": -5.49, "y": 0.87, "z": 0.26}, {"elem": "C", "x": -8.15, "y": 0.85, "z": -1.39}, {"elem": "C", "x": -9.15, "y": 1.91, "z": -1.91}, {"elem": "C", "x": -9.04, "y": 3.23, "z": -1.14}, {"elem": "C", "x": -10.58, "y": 1.37, "z": -1.79}, {"elem": "N", "x": -5.33, "y": -0.84, "z": -1.26}, {"elem": "C", "x": -5.38, "y": -1.87, "z": -0.23}, {"elem": "C", "x": -4.19, "y": -1.95, "z": 0.75}, {"elem": "O", "x": -4.38, "y": -2.4, "z": 1.88}, {"elem": "C", "x": -5.53, "y": -3.27, "z": -0.86}, {"elem": "S", "x": -6.93, "y": -3.38, "z": -2.03}, {"elem": "N", "x": -2.9, "y": -1.77, "z": 0.25}, {"elem": "C", "x": -1.8, "y": -2.52, "z": 0.86}, {"elem": "C", "x": -0.41, "y": -1.93, "z": 1.13}, {"elem": "O", "x": 0.33, "y": -2.54, "z": 1.93}, {"elem": "C", "x": -1.55, "y": -3.89, "z": 0.15}, {"elem": "C", "x": -1.55, "y": -3.77, "z": -1.38}, {"elem": "C", "x": -2.5, "y": -4.98, "z": 0.63}, {"elem": "N", "x": 0.08, "y": -0.87, "z": 0.4}, {"elem": "C", "x": 1.44, "y": -0.47, "z": 0.8}, {"elem": "C", "x": 2.24, "y": 0.64, "z": 0.11}, {"elem": "O", "x": 3.28, "y": 1.06, "z": 0.64}, {"elem": "N", "x": 1.87, "y": 1.03, "z": -1.15}, {"elem": "C", "x": 2.78, "y": 1.86, "z": -1.93}, {"elem": "C", "x": 2.18, "y": 3.18, "z": -2.42}, {"elem": "O", "x": 0.98, "y": 3.35, "z": -2.58}, {"elem": "C", "x": 3.39, "y": 1.07, "z": -3.1}, {"elem": "C", "x": 4.37, "y": 0.01, "z": -2.6}, {"elem": "C", "x": 5.22, "y": -0.52, "z": -3.72}, {"elem": "O", "x": 4.98, "y": -0.45, "z": -4.91}, {"elem": "O", "x": 6.35, "y": -1.09, "z": -3.26}, {"elem": "N", "x": 3.16, "y": 4.12, "z": -2.73}, {"elem": "C", "x": 2.89, "y": 5.54, "z": -3.01}, {"elem": "C", "x": 2.62, "y": 6.27, "z": -1.68}, {"elem": "O", "x": 2.88, "y": 5.75, "z": -0.58}, {"elem": "C", "x": 1.87, "y": 5.75, "z": -4.12}, {"elem": "N", "x": 2.19, "y": 7.58, "z": -1.77}, {"elem": "C", "x": 1.79, "y": 8.28, "z": -0.55}, {"elem": "C", "x": 0.4, "y": 7.76, "z": -0.19}, {"elem": "O", "x": -0.42, "y": 7.46, "z": -1.07}, {"elem": "N", "x": 0.16, "y": 7.57, "z": 1.15}, {"elem": "C", "x": -0.85, "y": 6.62, "z": 1.59}, {"elem": "C", "x": -1.86, "y": 7.2, "z": 2.61}, {"elem": "O", "x": -1.79, "y": 8.34, "z": 3.08}, {"elem": "C", "x": -0.2, "y": 5.33, "z": 2.07}, {"elem": "C", "x": 0.55, "y": 5.52, "z": 3.36}, {"elem": "O", "x": 0.86, "y": 6.58, "z": 3.88}, {"elem": "O", "x": 0.9, "y": 4.34, "z": 3.9}, {"elem": "N", "x": -2.9, "y": 6.34, "z": 2.89}, {"elem": "C", "x": -3.93, "y": 6.6, "z": 3.9}, {"elem": "C", "x": -3.78, "y": 5.5, "z": 4.97}, {"elem": "O", "x": -2.67, "y": 5.13, "z": 5.34}, {"elem": "C", "x": -5.31, "y": 6.76, "z": 3.24}, {"elem": "O", "x": -6.32, "y": 6.92, "z": 4.24}, {"elem": "C", "x": -5.72, "y": 5.6, "z": 2.34}, {"elem": "N", "x": -4.92, "y": 4.9, "z": 5.44}, {"elem": "C", "x": -5.01, "y": 4.24, "z": 6.76}, {"elem": "C", "x": -3.92, "y": 3.18, "z": 7.15}, {"elem": "O", "x": -3.76, "y": 2.85, "z": 8.33}, {"elem": "C", "x": -6.44, "y": 3.62, "z": 6.89}, {"elem": "C", "x": -6.63, "y": 2.7, "z": 8.1}, {"elem": "C", "x": -7.52, "y": 4.71, "z": 6.98}, {"elem": "N", "x": -3.25, "y": 2.53, "z": 6.13}, {"elem": "C", "x": -2.21, "y": 1.54, "z": 6.48}, {"elem": "C", "x": -0.81, "y": 2.2, "z": 6.57}, {"elem": "O", "x": -0.58, "y": 3.31, "z": 6.08}, {"elem": "C", "x": -2.23, "y": 0.33, "z": 5.53}, {"elem": "C", "x": -1.84, "y": 0.62, "z": 4.08}, {"elem": "C", "x": -0.35, "y": 0.82, "z": 3.92}, {"elem": "O", "x": 0.51, "y": 0.18, "z": 4.53}, {"elem": "N", "x": -0.01, "y": 1.77, "z": 3.0}, {"elem": "N", "x": 0.18, "y": 1.46, "z": 7.18}, {"elem": "C", "x": 1.48, "y": 2.07, "z": 7.46}, {"elem": "C", "x": 2.69, "y": 1.11, "z": 7.33}, {"elem": "O", "x": 3.85, "y": 1.54, "z": 7.31}, {"elem": "C", "x": 1.44, "y": 2.63, "z": 8.9}, {"elem": "C", "x": 2.52, "y": 3.63, "z": 9.25}, {"elem": "C", "x": 2.5, "y": 4.91, "z": 8.67}, {"elem": "C", "x": 3.53, "y": 3.32, "z": 10.17}, {"elem": "C", "x": 3.46, "y": 5.86, "z": 9.02}, {"elem": "C", "x": 4.48, "y": 4.27, "z": 10.52}, {"elem": "C", "x": 4.45, "y": 5.54, "z": 9.95}, {"elem": "N", "x": 2.43, "y": -0.24, "z": 7.41}, {"elem": "C", "x": 3.48, "y": -1.19, "z": 7.77}, {"elem": "C", "x": 3.63, "y": -2.37, "z": 6.8}, {"elem": "O", "x": 4.07, "y": -3.47, "z": 7.15}, {"elem": "C", "x": 3.22, "y": -1.7, "z": 9.19}, {"elem": "N", "x": 3.39, "y": -2.1, "z": 5.48}, {"elem": "C", "x": 3.46, "y": -3.13, "z": 4.46}, {"elem": "C", "x": 3.96, "y": -2.51, "z": 3.13}, {"elem": "O", "x": 3.75, "y": -1.35, "z": 2.82}, {"elem": "C", "x": 2.1, "y": -3.81, "z": 4.24}, {"elem": "C", "x": 1.72, "y": -4.8, "z": 5.34}, {"elem": "C", "x": 1.09, "y": -4.17, "z": 6.56}, {"elem": "O", "x": 0.75, "y": -3.01, "z": 6.73}, {"elem": "O", "x": 0.91, "y": -5.06, "z": 7.55}, {"elem": "N", "x": 4.69, "y": -3.38, "z": 2.32}, {"elem": "C", "x": 5.51, "y": -2.83, "z": 1.23}, {"elem": "C", "x": 5.96, "y": -3.96, "z": 0.26}, {"elem": "O", "x": 6.81, "y": -3.81, "z": -0.62}, {"elem": "C", "x": 6.75, "y": -2.12, "z": 1.83}, {"elem": "C", "x": 7.52, "y": -1.24, "z": 0.89}, {"elem": "C", "x": 7.04, "y": 0.03, "z": 0.54}, {"elem": "C", "x": 8.75, "y": -1.67, "z": 0.35}, {"elem": "C", "x": 7.77, "y": 0.86, "z": -0.31}, {"elem": "C", "x": 9.47, "y": -0.84, "z": -0.51}, {"elem": "C", "x": 8.98, "y": 0.41, "z": -0.83}, {"elem": "O", "x": 9.72, "y": 1.19, "z": -1.67}, {"elem": "N", "x": 5.31, "y": -5.17, "z": 0.41}, {"elem": "C", "x": 5.7, "y": -6.33, "z": -0.4}, {"elem": "C", "x": 4.96, "y": -6.4, "z": -1.75}, {"elem": "O", "x": 5.33, "y": -7.16, "z": -2.65}, {"elem": "C", "x": 5.56, "y": -7.64, "z": 0.41}, {"elem": "C", "x": 4.09, "y": -7.97, "z": 0.74}, {"elem": "C", "x": 6.19, "y": -8.89, "z": -0.25}, {"elem": "C", "x": 7.65, "y": -8.72, "z": -0.66}, {"elem": "N", "x": 3.77, "y": -5.71, "z": -1.81}, {"elem": "C", "x": 3.03, "y": -5.68, "z": -3.07}, {"elem": "C", "x": 3.45, "y": -4.43, "z": -3.85}, {"elem": "O", "x": 3.74, "y": -3.37, "z": -3.27}, {"elem": "C", "x": 1.52, "y": -5.65, "z": -2.82}, {"elem": "C", "x": 1.0, "y": -6.93, "z": -2.17}, {"elem": "C", "x": 1.23, "y": -8.15, "z": -3.02}, {"elem": "O", "x": 1.48, "y": -8.11, "z": -4.22}, {"elem": "N", "x": 1.13, "y": -9.34, "z": -2.36}, {"elem": "N", "x": 3.39, "y": -4.55, "z": -5.21}, {"elem": "C", "x": 3.81, "y": -3.49, "z": -6.12}, {"elem": "C", "x": 3.01, "y": -3.52, "z": -7.42}, {"elem": "O", "x": 3.11, "y": -2.72, "z": -8.34}, {"elem": "C", "x": 5.32, "y": -3.56, "z": -6.4}, {"elem": "C", "x": 5.76, "y": -4.82, "z": -7.15}, {"elem": "C", "x": 7.28, "y": -4.99, "z": -7.23}, {"elem": "C", "x": 7.98, "y": -3.87, "z": -7.99}, {"elem": "N", "x": 9.41, "y": -4.15, "z": -8.12}, {"elem": "O", "x": 2.15, "y": -4.56, "z": -7.52}, {"elem": "H", "x": -2.38, "y": 4.71, "z": -5.17}, {"elem": "H", "x": -3.78, "y": 3.99, "z": -4.84}, {"elem": "H", "x": -1.06, "y": 3.17, "z": -4.13}, {"elem": "H", "x": -1.95, "y": 3.04, "z": -1.83}, {"elem": "H", "x": -2.09, "y": 5.41, "z": -1.39}, {"elem": "H", "x": -2.65, "y": 5.78, "z": -3.03}, {"elem": "H", "x": -1.0, "y": 5.2, "z": -2.75}, {"elem": "H", "x": -4.36, "y": 2.55, "z": -2.48}, {"elem": "H", "x": -4.59, "y": 4.25, "z": -2.86}, {"elem": "H", "x": -3.77, "y": 3.12, "z": -0.13}, {"elem": "H", "x": -5.38, "y": 3.72, "z": -0.58}, {"elem": "H", "x": -4.02, "y": 4.84, "z": -0.5}, {"elem": "H", "x": -2.38, "y": 1.9, "z": -6.1}, {"elem": "H", "x": -2.77, "y": -0.18, "z": -6.94}, {"elem": "H", "x": -1.94, "y": -1.39, "z": -4.25}, {"elem": "H", "x": -2.13, "y": -2.25, "z": -5.76}, {"elem": "H", "x": -0.08, "y": -0.02, "z": -5.27}, {"elem": "H", "x": 1.58, "y": -1.79, "z": -5.26}, {"elem": "H", "x": 0.34, "y": -3.04, "z": -5.5}, {"elem": "H", "x": 0.4, "y": -2.11, "z": -3.99}, {"elem": "H", "x": 0.93, "y": -0.78, "z": -7.42}, {"elem": "H", "x": -0.44, "y": -1.87, "z": -7.69}, {"elem": "H", "x": -0.67, "y": -0.11, "z": -7.66}, {"elem": "H", "x": -4.6, "y": 1.52, "z": -5.86}, {"elem": "H", "x": -6.8, "y": 1.7, "z": -5.81}, {"elem": "H", "x": -8.2, "y": -0.42, "z": -6.56}, {"elem": "H", "x": -6.64, "y": -1.09, "z": -6.97}, {"elem": "H", "x": -7.76, "y": 1.58, "z": -7.98}, {"elem": "H", "x": -7.47, "y": -1.1, "z": -9.43}, {"elem": "H", "x": -8.98, "y": -0.37, "z": -8.87}, {"elem": "H", "x": -8.04, "y": 0.42, "z": -10.14}, {"elem": "H", "x": -5.89, "y": 1.45, "z": -9.68}, {"elem": "H", "x": -5.33, "y": 1.75, "z": -8.04}, {"elem": "H", "x": -5.17, "y": 0.13, "z": -8.74}, {"elem": "H", "x": -5.36, "y": 0.91, "z": -3.47}, {"elem": "H", "x": -6.5, "y": 2.19, "z": -1.75}, {"elem": "H", "x": -8.45, "y": -0.16, "z": -1.69}, {"elem": "H", "x": -8.19, "y": 0.84, "z": -0.3}, {"elem": "H", "x": -8.95, "y": 2.12, "z": -2.96}, {"elem": "H", "x": -9.35, "y": 3.11, "z": -0.1}, {"elem": "H", "x": -8.02, "y": 3.62, "z": -1.15}, {"elem": "H", "x": -9.69, "y": 3.98, "z": -1.6}, {"elem": "H", "x": -10.7, "y": 0.46, "z": -2.37}, {"elem": "H", "x": -10.83, "y": 1.16, "z": -0.75}, {"elem": "H", "x": -11.3, "y": 2.1, "z": -2.17}, {"elem": "H", "x": -5.74, "y": -1.11, "z": -2.15}, {"elem": "H", "x": -6.27, "y": -1.67, "z": 0.38}, {"elem": "H", "x": -5.67, "y": -4.03, "z": -0.08}, {"elem": "H", "x": -4.63, "y": -3.53, "z": -1.41}, {"elem": "H", "x": -7.92, "y": -3.31, "z": -1.12}, {"elem": "H", "x": -2.82, "y": -1.42, "z": -0.71}, {"elem": "H", "x": -2.13, "y": -2.75, "z": 1.89}, {"elem": "H", "x": -0.55, "y": -4.25, "z": 0.42}, {"elem": "H", "x": -0.82, "y": -3.04, "z": -1.71}, {"elem": "H", "x": -2.52, "y": -3.48, "z": -1.77}, {"elem": "H", "x": -1.3, "y": -4.74, "z": -1.83}, {"elem": "H", "x": -3.53, "y": -4.81, "z": 0.32}, {"elem": "H", "x": -2.48, "y": -5.05, "z": 1.73}, {"elem": "H", "x": -2.18, "y": -5.96, "z": 0.24}, {"elem": "H", "x": -0.59, "y": -0.15, "z": 0.18}, {"elem": "H", "x": 2.07, "y": -1.37, "z": 0.71}, {"elem": "H", "x": 1.4, "y": -0.21, "z": 1.86}, {"elem": "H", "x": 0.98, "y": 0.75, "z": -1.53}, {"elem": "H", "x": 3.61, "y": 2.16, "z": -1.28}, {"elem": "H", "x": 2.6, "y": 0.6, "z": -3.7}, {"elem": "H", "x": 3.92, "y": 1.76, "z": -3.77}, {"elem": "H", "x": 5.04, "y": 0.46, "z": -1.85}, {"elem": "H", "x": 3.84, "y": -0.82, "z": -2.14}, {"elem": "H", "x": 6.81, "y": -1.49, "z": -4.03}, {"elem": "H", "x": 4.04, "y": 3.98, "z": -2.25}, {"elem": "H", "x": 3.85, "y": 5.93, "z": -3.37}, {"elem": "H", "x": 0.85, "y": 5.57, "z": -3.78}, {"elem": "H", "x": 2.09, "y": 5.09, "z": -4.97}, {"elem": "H", "x": 1.92, "y": 6.78, "z": -4.49}, {"elem": "H", "x": 1.64, "y": 7.81, "z": -2.59}, {"elem": "H", "x": 2.51, "y": 8.09, "z": 0.24}, {"elem": "H", "x": 1.74, "y": 9.35, "z": -0.77}, {"elem": "H", "x": 0.81, "y": 7.92, "z": 1.85}, {"elem": "H", "x": -1.46, "y": 6.36, "z": 0.72}, {"elem": "H", "x": 0.52, "y": 4.96, "z": 1.33}, {"elem": "H", "x": -0.97, "y": 4.57, "z": 2.23}, {"elem": "H", "x": 1.24, "y": 4.54, "z": 4.8}, {"elem": "H", "x": -2.85, "y": 5.4, "z": 2.55}, {"elem": "H", "x": -3.7, "y": 7.53, "z": 4.43}, {"elem": "H", "x": -5.3, "y": 7.68, "z": 2.64}, {"elem": "H", "x": -7.11, "y": 7.3, "z": 3.8}, {"elem": "H", "x": -6.71, "y": 5.78, "z": 1.91}, {"elem": "H", "x": -5.01, "y": 5.47, "z": 1.51}, {"elem": "H", "x": -5.78, "y": 4.65, "z": 2.89}, {"elem": "H", "x": -5.74, "y": 5.46, "z": 5.22}, {"elem": "H", "x": -4.89, "y": 5.05, "z": 7.5}, {"elem": "H", "x": -6.64, "y": 3.02, "z": 5.99}, {"elem": "H", "x": -6.34, "y": 3.2, "z": 9.03}, {"elem": "H", "x": -7.68, "y": 2.4, "z": 8.2}, {"elem": "H", "x": -6.05, "y": 1.78, "z": 8.0}, {"elem": "H", "x": -7.56, "y": 5.32, "z": 6.08}, {"elem": "H", "x": -8.52, "y": 4.26, "z": 7.09}, {"elem": "H", "x": -7.35, "y": 5.36, "z": 7.84}, {"elem": "H", "x": -2.98, "y": 3.19, "z": 5.39}, {"elem": "H", "x": -2.44, "y": 1.16, "z": 7.48}, {"elem": "H", "x": -1.59, "y": -0.46, "z": 5.93}, {"elem": "H", "x": -3.25, "y": -0.08, "z": 5.53}, {"elem": "H", "x": -2.1, "y": -0.24, "z": 3.46}, {"elem": "H", "x": -2.39, "y": 1.48, "z": 3.69}, {"elem": "H", "x": 0.98, "y": 2.03, "z": 3.04}, {"elem": "H", "x": -0.6, "y": 2.59, "z": 2.95}, {"elem": "H", "x": -0.09, "y": 0.62, "z": 7.67}, {"elem": "H", "x": 1.65, "y": 2.87, "z": 6.74}, {"elem": "H", "x": 0.48, "y": 3.13, "z": 9.08}, {"elem": "H", "x": 1.47, "y": 1.8, "z": 9.62}, {"elem": "H", "x": 1.72, "y": 5.18, "z": 7.96}, {"elem": "H", "x": 3.57, "y": 2.33, "z": 10.62}, {"elem": "H", "x": 3.43, "y": 6.85, "z": 8.58}, {"elem": "H", "x": 5.25, "y": 4.02, "z": 11.25}, {"elem": "H", "x": 5.19, "y": 6.28, "z": 10.23}, {"elem": "H", "x": 1.54, "y": -0.59, "z": 7.06}, {"elem": "H", "x": 4.45, "y": -0.68, "z": 7.77}, {"elem": "H", "x": 3.16, "y": -0.86, "z": 9.9}, {"elem": "H", "x": 2.28, "y": -2.25, "z": 9.25}, {"elem": "H", "x": 4.02, "y": -2.37, "z": 9.53}, {"elem": "H", "x": 3.0, "y": -1.19, "z": 5.21}, {"elem": "H", "x": 4.2, "y": -3.88, "z": 4.77}, {"elem": "H", "x": 2.13, "y": -4.36, "z": 3.29}, {"elem": "H", "x": 1.32, "y": -3.05, "z": 4.14}, {"elem": "H", "x": 0.98, "y": -5.51, "z": 4.94}, {"elem": "H", "x": 2.6, "y": -5.38, "z": 5.65}, {"elem": "H", "x": 0.56, "y": -4.55, "z": 8.31}, {"elem": "H", "x": 5.07, "y": -4.2, "z": 2.77}, {"elem": "H", "x": 4.9, "y": -2.12, "z": 0.65}, {"elem": "H", "x": 6.46, "y": -1.5, "z": 2.68}, {"elem": "H", "x": 7.42, "y": -2.88, "z": 2.25}, {"elem": "H", "x": 6.09, "y": 0.39, "z": 0.94}, {"elem": "H", "x": 9.14, "y": -2.66, "z": 0.59}, {"elem": "H", "x": 7.38, "y": 1.84, "z": -0.56}, {"elem": "H", "x": 10.42, "y": -1.19, "z": -0.92}, {"elem": "H", "x": 9.27, "y": 2.04, "z": -1.79}, {"elem": "H", "x": 4.4, "y": -5.14, "z": 0.85}, {"elem": "H", "x": 6.76, "y": -6.19, "z": -0.65}, {"elem": "H", "x": 6.07, "y": -7.49, "z": 1.37}, {"elem": "H", "x": 4.03, "y": -8.84, "z": 1.4}, {"elem": "H", "x": 3.52, "y": -8.19, "z": -0.17}, {"elem": "H", "x": 3.6, "y": -7.14, "z": 1.26}, {"elem": "H", "x": 5.6, "y": -9.21, "z": -1.12}, {"elem": "H", "x": 6.15, "y": -9.72, "z": 0.47}, {"elem": "H", "x": 8.06, "y": -9.68, "z": -0.99}, {"elem": "H", "x": 8.26, "y": -8.34, "z": 0.17}, {"elem": "H", "x": 7.75, "y": -8.03, "z": -1.51}, {"elem": "H", "x": 3.79, "y": -4.82, "z": -1.32}, {"elem": "H", "x": 3.31, "y": -6.55, "z": -3.67}, {"elem": "H", "x": 1.27, "y": -4.8, "z": -2.18}, {"elem": "H", "x": 0.99, "y": -5.48, "z": -3.77}, {"elem": "H", "x": 1.45, "y": -7.08, "z": -1.18}, {"elem": "H", "x": -0.09, "y": -6.85, "z": -2.02}, {"elem": "H", "x": 1.26, "y": -10.19, "z": -2.89}, {"elem": "H", "x": 0.85, "y": -9.42, "z": -1.4}, {"elem": "H", "x": 3.07, "y": -5.42, "z": -5.63}, {"elem": "H", "x": 3.59, "y": -2.54, "z": -5.64}, {"elem": "H", "x": 5.86, "y": -3.5, "z": -5.45}, {"elem": "H", "x": 5.61, "y": -2.68, "z": -6.99}, {"elem": "H", "x": 5.35, "y": -5.7, "z": -6.64}, {"elem": "H", "x": 5.34, "y": -4.82, "z": -8.16}, {"elem": "H", "x": 7.68, "y": -5.05, "z": -6.21}, {"elem": "H", "x": 7.49, "y": -5.95, "z": -7.71}, {"elem": "H", "x": 7.55, "y": -3.76, "z": -8.99}, {"elem": "H", "x": 7.85, "y": -2.91, "z": -7.47}, {"elem": "H", "x": 9.82, "y": -4.25, "z": -7.2}, {"elem": "H", "x": 9.87, "y": -3.36, "z": -8.56}, {"elem": "H", "x": 1.75, "y": -4.46, "z": -8.41}], "bonds": [[0, 1], [1, 2], [1, 4], [2, 3], [2, 8], [4, 5], [4, 6], [6, 7], [8, 9], [9, 10], [9, 12], [10, 11], [10, 16], [12, 13], [13, 14], [13, 15], [16, 17], [17, 18], [17, 20], [18, 19], [18, 24], [20, 21], [21, 22], [21, 23], [24, 25], [25, 26], [25, 28], [26, 27], [26, 32], [28, 29], [29, 30], [29, 31], [32, 33], [33, 34], [33, 36], [34, 35], [34, 38], [38, 39], [39, 40], [39, 42], [40, 41], [40, 45], [42, 43], [42, 44], [45, 46], [46, 47], [47, 48], [47, 49], [49, 50], [50, 51], [50, 53], [51, 52], [51, 58], [53, 54], [54, 55], [55, 56], [55, 57], [58, 59], [59, 60], [59, 62], [60, 61], [60, 63], [63, 64], [64, 65], [65, 66], [65, 67], [67, 68], [68, 69], [68, 71], [69, 70], [69, 75], [71, 72], [72, 73], [72, 74], [75, 76], [76, 77], [76, 79], [77, 78], [77, 82], [79, 80], [79, 81], [82, 83], [83, 84], [83, 86], [84, 85], [84, 89], [86, 87], [86, 88], [89, 90], [90, 91], [90, 93], [91, 92], [91, 98], [93, 94], [94, 95], [95, 96], [95, 97], [98, 99], [99, 100], [99, 102], [100, 101], [100, 109], [102, 103], [103, 104], [103, 105], [104, 106], [105, 107], [106, 108], [107, 108], [109, 110], [110, 111], [110, 113], [111, 112], [111, 114], [114, 115], [115, 116], [115, 118], [116, 117], [116, 123], [118, 119], [119, 120], [120, 121], [120, 122], [123, 124], [124, 125], [124, 127], [125, 126], [127, 128], [128, 129], [128, 130], [129, 131], [130, 132], [131, 133], [132, 133], [133, 134], [135, 136], [136, 137], [136, 139], [137, 138], [137, 143], [139, 140], [139, 141], [141, 142], [143, 144], [144, 145], [144, 147], [145, 146], [145, 152], [147, 148], [148, 149], [149, 150], [149, 151], [152, 153], [153, 154], [153, 156], [154, 155], [154, 161], [156, 157], [157, 158], [158, 159], [159, 160], [162, 163], [176, 177], [187, 188], [198, 199], [262, 263], [266, 267], [270, 271], [291, 292], [315, 316], [327, 328]]}, "MVA-AMP-13": {"atoms": [{"elem": "N", "x": 1.63, "y": -7.76, "z": 1.04}, {"elem": "C", "x": 0.73, "y": -8.56, "z": 0.17}, {"elem": "C", "x": -0.73, "y": -8.41, "z": 0.68}, {"elem": "O", "x": -1.63, "y": -9.21, "z": 0.47}, {"elem": "C", "x": 1.14, "y": -10.04, "z": 0.09}, {"elem": "C", "x": 0.85, "y": -10.67, "z": -1.25}, {"elem": "C", "x": -0.19, "y": -11.61, "z": -1.39}, {"elem": "C", "x": 1.6, "y": -10.33, "z": -2.38}, {"elem": "C", "x": -0.45, "y": -12.2, "z": -2.62}, {"elem": "C", "x": 1.34, "y": -10.92, "z": -3.62}, {"elem": "C", "x": 0.32, "y": -11.86, "z": -3.74}, {"elem": "N", "x": -0.93, "y": -7.22, "z": 1.35}, {"elem": "C", "x": -2.26, "y": -6.67, "z": 1.5}, {"elem": "C", "x": -2.6, "y": -5.84, "z": 0.26}, {"elem": "O", "x": -1.74, "y": -5.31, "z": -0.46}, {"elem": "N", "x": -3.96, "y": -5.67, "z": 0.05}, {"elem": "C", "x": -4.45, "y": -5.29, "z": -1.28}, {"elem": "C", "x": -4.83, "y": -3.81, "z": -1.44}, {"elem": "O", "x": -5.22, "y": -3.36, "z": -2.52}, {"elem": "C", "x": -5.68, "y": -6.14, "z": -1.62}, {"elem": "N", "x": -4.83, "y": -3.03, "z": -0.3}, {"elem": "C", "x": -5.53, "y": -1.74, "z": -0.25}, {"elem": "C", "x": -4.62, "y": -0.51, "z": -0.08}, {"elem": "O", "x": -5.05, "y": 0.64, "z": -0.19}, {"elem": "C", "x": -6.56, "y": -1.78, "z": 0.87}, {"elem": "C", "x": -7.46, "y": -0.57, "z": 0.91}, {"elem": "O", "x": -7.49, "y": 0.2, "z": 1.86}, {"elem": "N", "x": -8.28, "y": -0.39, "z": -0.16}, {"elem": "N", "x": -3.31, "y": -0.77, "z": 0.23}, {"elem": "C", "x": -2.38, "y": 0.33, "z": 0.5}, {"elem": "C", "x": -1.04, "y": 0.12, "z": -0.26}, {"elem": "O", "x": -0.94, "y": -0.66, "z": -1.21}, {"elem": "C", "x": -2.25, "y": 0.51, "z": 2.01}, {"elem": "N", "x": -0.03, "y": 0.96, "z": 0.11}, {"elem": "C", "x": 1.31, "y": 1.0, "z": -0.52}, {"elem": "C", "x": 2.25, "y": 1.4, "z": 0.63}, {"elem": "O", "x": 1.89, "y": 2.25, "z": 1.44}, {"elem": "C", "x": 1.27, "y": 2.04, "z": -1.65}, {"elem": "C", "x": 2.47, "y": 2.16, "z": -2.62}, {"elem": "C", "x": 3.63, "y": 2.96, "z": -2.04}, {"elem": "C", "x": 2.94, "y": 0.8, "z": -3.14}, {"elem": "N", "x": 3.45, "y": 0.73, "z": 0.69}, {"elem": "C", "x": 4.46, "y": 0.9, "z": 1.76}, {"elem": "C", "x": 4.1, "y": -0.01, "z": 2.95}, {"elem": "O", "x": 3.21, "y": 0.24, "z": 3.76}, {"elem": "C", "x": 4.67, "y": 2.36, "z": 2.22}, {"elem": "C", "x": 5.87, "y": 2.57, "z": 3.17}, {"elem": "C", "x": 5.95, "y": 4.04, "z": 3.56}, {"elem": "C", "x": 7.2, "y": 2.13, "z": 2.56}, {"elem": "N", "x": 4.75, "y": -1.24, "z": 2.92}, {"elem": "C", "x": 4.41, "y": -2.31, "z": 3.86}, {"elem": "C", "x": 3.26, "y": -3.2, "z": 3.35}, {"elem": "O", "x": 2.93, "y": -4.26, "z": 3.88}, {"elem": "N", "x": 2.61, "y": -2.67, "z": 2.27}, {"elem": "C", "x": 1.43, "y": -3.17, "z": 1.61}, {"elem": "C", "x": 1.75, "y": -2.78, "z": 0.13}, {"elem": "O", "x": 2.58, "y": -1.91, "z": -0.13}, {"elem": "C", "x": 0.17, "y": -2.48, "z": 2.17}, {"elem": "C", "x": 0.1, "y": -2.53, "z": 3.7}, {"elem": "C", "x": -1.09, "y": -3.13, "z": 1.63}, {"elem": "N", "x": 1.13, "y": -3.51, "z": -0.87}, {"elem": "C", "x": 1.95, "y": -3.81, "z": -2.05}, {"elem": "C", "x": 1.66, "y": -3.08, "z": -3.37}, {"elem": "O", "x": 2.47, "y": -3.2, "z": -4.3}, {"elem": "C", "x": 1.96, "y": -5.32, "z": -2.35}, {"elem": "O", "x": 3.22, "y": -5.73, "z": -2.89}, {"elem": "N", "x": 0.47, "y": -2.42, "z": -3.53}, {"elem": "C", "x": 0.07, "y": -2.02, "z": -4.89}, {"elem": "C", "x": -0.86, "y": -0.81, "z": -5.13}, {"elem": "O", "x": -1.14, "y": -0.47, "z": -6.29}, {"elem": "C", "x": -0.41, "y": -3.23, "z": -5.75}, {"elem": "C", "x": -1.7, "y": -3.99, "z": -5.36}, {"elem": "C", "x": -1.51, "y": -4.91, "z": -4.15}, {"elem": "C", "x": -2.94, "y": -3.12, "z": -5.17}, {"elem": "N", "x": -1.43, "y": -0.2, "z": -4.04}, {"elem": "C", "x": -2.63, "y": 0.6, "z": -4.27}, {"elem": "C", "x": -2.36, "y": 2.1, "z": -4.59}, {"elem": "O", "x": -2.75, "y": 2.59, "z": -5.64}, {"elem": "C", "x": -3.58, "y": 0.49, "z": -3.09}, {"elem": "N", "x": -1.79, "y": 2.84, "z": -3.56}, {"elem": "C", "x": -1.91, "y": 4.3, "z": -3.57}, {"elem": "C", "x": -0.57, "y": 5.03, "z": -3.3}, {"elem": "O", "x": 0.27, "y": 5.2, "z": -4.19}, {"elem": "C", "x": -3.13, "y": 4.8, "z": -2.74}, {"elem": "C", "x": -3.32, "y": 4.1, "z": -1.38}, {"elem": "C", "x": -4.43, "y": 4.63, "z": -3.55}, {"elem": "N", "x": -0.31, "y": 5.45, "z": -2.01}, {"elem": "C", "x": 0.87, "y": 6.26, "z": -1.7}, {"elem": "C", "x": 1.18, "y": 6.22, "z": -0.19}, {"elem": "O", "x": 2.31, "y": 6.05, "z": 0.24}, {"elem": "C", "x": 0.75, "y": 7.71, "z": -2.2}, {"elem": "S", "x": -0.82, "y": 8.53, "z": -1.75}, {"elem": "N", "x": 0.08, "y": 6.49, "z": 0.62}, {"elem": "C", "x": 0.25, "y": 6.74, "z": 2.06}, {"elem": "C", "x": 1.03, "y": 8.07, "z": 2.26}, {"elem": "O", "x": 1.2, "y": 8.89, "z": 1.36}, {"elem": "C", "x": 0.82, "y": 5.53, "z": 2.82}, {"elem": "C", "x": -0.08, "y": 4.3, "z": 2.76}, {"elem": "C", "x": -1.48, "y": 4.46, "z": 3.37}, {"elem": "C", "x": -1.52, "y": 5.0, "z": 4.8}, {"elem": "N", "x": -0.82, "y": 4.16, "z": 5.76}, {"elem": "N", "x": 1.43, "y": 8.34, "z": 3.56}, {"elem": "C", "x": 2.09, "y": 9.6, "z": 3.9}, {"elem": "C", "x": 3.09, "y": 9.41, "z": 5.06}, {"elem": "O", "x": 3.47, "y": 10.33, "z": 5.78}, {"elem": "C", "x": 1.06, "y": 10.68, "z": 4.23}, {"elem": "N", "x": 3.61, "y": 8.15, "z": 5.15}, {"elem": "C", "x": 4.59, "y": 7.77, "z": 6.16}, {"elem": "C", "x": 4.49, "y": 6.3, "z": 6.53}, {"elem": "O", "x": 5.2, "y": 5.71, "z": 7.33}, {"elem": "O", "x": 3.51, "y": 5.63, "z": 5.87}, {"elem": "H", "x": 2.59, "y": -7.84, "z": 0.68}, {"elem": "H", "x": 1.67, "y": -8.21, "z": 1.96}, {"elem": "H", "x": 0.75, "y": -8.09, "z": -0.82}, {"elem": "H", "x": 0.66, "y": -10.62, "z": 0.89}, {"elem": "H", "x": 2.22, "y": -10.15, "z": 0.26}, {"elem": "H", "x": -0.8, "y": -11.88, "z": -0.53}, {"elem": "H", "x": 2.41, "y": -9.6, "z": -2.31}, {"elem": "H", "x": -1.25, "y": -12.93, "z": -2.72}, {"elem": "H", "x": 1.93, "y": -10.65, "z": -4.49}, {"elem": "H", "x": 0.11, "y": -12.33, "z": -4.7}, {"elem": "H", "x": -0.12, "y": -6.6, "z": 1.35}, {"elem": "H", "x": -2.26, "y": -6.03, "z": 2.39}, {"elem": "H", "x": -2.98, "y": -7.48, "z": 1.64}, {"elem": "H", "x": -4.57, "y": -6.26, "z": 0.6}, {"elem": "H", "x": -3.67, "y": -5.5, "z": -2.01}, {"elem": "H", "x": -6.04, "y": -5.93, "z": -2.63}, {"elem": "H", "x": -5.44, "y": -7.21, "z": -1.56}, {"elem": "H", "x": -6.5, "y": -5.94, "z": -0.93}, {"elem": "H", "x": -4.49, "y": -3.46, "z": 0.56}, {"elem": "H", "x": -6.04, "y": -1.59, "z": -1.21}, {"elem": "H", "x": -7.2, "y": -2.66, "z": 0.78}, {"elem": "H", "x": -6.06, "y": -1.86, "z": 1.85}, {"elem": "H", "x": -8.25, "y": -0.95, "z": -1.0}, {"elem": "H", "x": -8.82, "y": 0.47, "z": -0.18}, {"elem": "H", "x": -2.94, "y": -1.68, "z": -0.03}, {"elem": "H", "x": -2.79, "y": 1.26, "z": 0.09}, {"elem": "H", "x": -1.79, "y": -0.36, "z": 2.48}, {"elem": "H", "x": -1.64, "y": 1.38, "z": 2.26}, {"elem": "H", "x": -3.23, "y": 0.66, "z": 2.47}, {"elem": "H", "x": -0.13, "y": 1.6, "z": 0.89}, {"elem": "H", "x": 1.53, "y": 0.01, "z": -0.92}, {"elem": "H", "x": 1.06, "y": 3.03, "z": -1.23}, {"elem": "H", "x": 0.41, "y": 1.8, "z": -2.28}, {"elem": "H", "x": 2.1, "y": 2.72, "z": -3.48}, {"elem": "H", "x": 4.35, "y": 3.2, "z": -2.84}, {"elem": "H", "x": 3.28, "y": 3.91, "z": -1.61}, {"elem": "H", "x": 4.17, "y": 2.41, "z": -1.27}, {"elem": "H", "x": 3.39, "y": 0.19, "z": -2.35}, {"elem": "H", "x": 2.1, "y": 0.24, "z": -3.58}, {"elem": "H", "x": 3.69, "y": 0.93, "z": -3.93}, {"elem": "H", "x": 3.48, "y": -0.14, "z": 0.16}, {"elem": "H", "x": 5.38, "y": 0.54, "z": 1.3}, {"elem": "H", "x": 4.79, "y": 3.0, "z": 1.33}, {"elem": "H", "x": 3.78, "y": 2.72, "z": 2.75}, {"elem": "H", "x": 5.7, "y": 1.98, "z": 4.09}, {"elem": "H", "x": 5.01, "y": 4.38, "z": 4.02}, {"elem": "H", "x": 6.15, "y": 4.68, "z": 2.69}, {"elem": "H", "x": 6.75, "y": 4.22, "z": 4.29}, {"elem": "H", "x": 8.03, "y": 2.37, "z": 3.23}, {"elem": "H", "x": 7.38, "y": 2.62, "z": 1.6}, {"elem": "H", "x": 7.23, "y": 1.04, "z": 2.4}, {"elem": "H", "x": 5.36, "y": -1.46, "z": 2.16}, {"elem": "H", "x": 5.3, "y": -2.93, "z": 3.98}, {"elem": "H", "x": 4.12, "y": -1.88, "z": 4.83}, {"elem": "H", "x": 2.96, "y": -1.78, "z": 1.93}, {"elem": "H", "x": 1.39, "y": -4.26, "z": 1.71}, {"elem": "H", "x": 0.18, "y": -1.43, "z": 1.87}, {"elem": "H", "x": 0.91, "y": -1.94, "z": 4.15}, {"elem": "H", "x": -0.83, "y": -2.1, "z": 4.07}, {"elem": "H", "x": 0.18, "y": -3.55, "z": 4.08}, {"elem": "H", "x": -2.0, "y": -2.71, "z": 2.07}, {"elem": "H", "x": -1.17, "y": -3.0, "z": 0.54}, {"elem": "H", "x": -1.08, "y": -4.2, "z": 1.85}, {"elem": "H", "x": 0.43, "y": -4.2, "z": -0.62}, {"elem": "H", "x": 2.98, "y": -3.52, "z": -1.81}, {"elem": "H", "x": 1.82, "y": -5.9, "z": -1.43}, {"elem": "H", "x": 1.17, "y": -5.61, "z": -3.05}, {"elem": "H", "x": 3.37, "y": -5.19, "z": -3.69}, {"elem": "H", "x": -0.2, "y": -2.38, "z": -2.77}, {"elem": "H", "x": 1.0, "y": -1.68, "z": -5.37}, {"elem": "H", "x": -0.56, "y": -2.88, "z": -6.78}, {"elem": "H", "x": 0.4, "y": -3.96, "z": -5.81}, {"elem": "H", "x": -1.92, "y": -4.66, "z": -6.2}, {"elem": "H", "x": -0.66, "y": -5.57, "z": -4.3}, {"elem": "H", "x": -1.37, "y": -4.34, "z": -3.22}, {"elem": "H", "x": -2.39, "y": -5.54, "z": -4.01}, {"elem": "H", "x": -2.88, "y": -2.53, "z": -4.25}, {"elem": "H", "x": -3.08, "y": -2.45, "z": -6.02}, {"elem": "H", "x": -3.84, "y": -3.75, "z": -5.09}, {"elem": "H", "x": -1.15, "y": -0.46, "z": -3.1}, {"elem": "H", "x": -3.17, "y": 0.2, "z": -5.13}, {"elem": "H", "x": -3.85, "y": -0.56, "z": -2.91}, {"elem": "H", "x": -3.11, "y": 0.87, "z": -2.18}, {"elem": "H", "x": -4.49, "y": 1.06, "z": -3.26}, {"elem": "H", "x": -1.51, "y": 2.38, "z": -2.73}, {"elem": "H", "x": -2.12, "y": 4.61, "z": -4.6}, {"elem": "H", "x": -3.01, "y": 5.87, "z": -2.55}, {"elem": "H", "x": -2.53, "y": 4.34, "z": -0.67}, {"elem": "H", "x": -4.27, "y": 4.42, "z": -0.92}, {"elem": "H", "x": -3.37, "y": 3.01, "z": -1.48}, {"elem": "H", "x": -5.28, "y": 5.07, "z": -3.01}, {"elem": "H", "x": -4.35, "y": 5.12, "z": -4.52}, {"elem": "H", "x": -4.66, "y": 3.57, "z": -3.71}, {"elem": "H", "x": -0.89, "y": 5.16, "z": -1.23}, {"elem": "H", "x": 1.73, "y": 5.79, "z": -2.2}, {"elem": "H", "x": 0.81, "y": 7.74, "z": -3.29}, {"elem": "H", "x": 1.57, "y": 8.32, "z": -1.81}, {"elem": "H", "x": -0.46, "y": 9.77, "z": -2.12}, {"elem": "H", "x": -0.61, "y": 7.09, "z": 0.17}, {"elem": "H", "x": -0.76, "y": 6.96, "z": 2.43}, {"elem": "H", "x": 0.99, "y": 5.79, "z": 3.87}, {"elem": "H", "x": 1.81, "y": 5.26, "z": 2.44}, {"elem": "H", "x": -0.19, "y": 3.97, "z": 1.73}, {"elem": "H", "x": 0.43, "y": 3.48, "z": 3.29}, {"elem": "H", "x": -2.09, "y": 5.11, "z": 2.72}, {"elem": "H", "x": -1.98, "y": 3.49, "z": 3.35}, {"elem": "H", "x": -2.56, "y": 5.09, "z": 5.12}, {"elem": "H", "x": -1.1, "y": 6.02, "z": 4.84}, {"elem": "H", "x": -1.28, "y": 3.26, "z": 5.81}, {"elem": "H", "x": 0.14, "y": 3.97, "z": 5.44}, {"elem": "H", "x": 1.04, "y": 7.81, "z": 4.33}, {"elem": "H", "x": 2.68, "y": 9.93, "z": 3.03}, {"elem": "H", "x": 0.35, "y": 10.81, "z": 3.41}, {"elem": "H", "x": 1.55, "y": 11.64, "z": 4.42}, {"elem": "H", "x": 0.5, "y": 10.41, "z": 5.13}, {"elem": "H", "x": 3.34, "y": 7.45, "z": 4.47}, {"elem": "H", "x": 5.58, "y": 7.96, "z": 5.73}, {"elem": "H", "x": 4.44, "y": 8.37, "z": 7.06}, {"elem": "H", "x": 3.57, "y": 4.72, "z": 6.22}], "bonds": [[0, 1], [1, 2], [1, 4], [2, 3], [2, 11], [4, 5], [5, 6], [5, 7], [6, 8], [7, 9], [8, 10], [9, 10], [11, 12], [12, 13], [13, 14], [13, 15], [15, 16], [16, 17], [16, 19], [17, 18], [17, 20], [20, 21], [21, 22], [21, 24], [22, 23], [22, 28], [24, 25], [25, 26], [25, 27], [28, 29], [29, 30], [29, 32], [30, 31], [30, 33], [33, 34], [34, 35], [34, 37], [35, 36], [35, 41], [37, 38], [38, 39], [38, 40], [41, 42], [42, 43], [42, 45], [43, 44], [43, 49], [45, 46], [46, 47], [46, 48], [49, 50], [50, 51], [51, 52], [51, 53], [53, 54], [54, 55], [54, 57], [55, 56], [55, 60], [57, 58], [57, 59], [60, 61], [61, 62], [61, 64], [62, 63], [62, 66], [64, 65], [66, 67], [67, 68], [67, 70], [68, 69], [68, 74], [70, 71], [71, 72], [71, 73], [74, 75], [75, 76], [75, 78], [76, 77], [76, 79], [79, 80], [80, 81], [80, 83], [81, 82], [81, 86], [83, 84], [83, 85], [86, 87], [87, 88], [87, 90], [88, 89], [88, 92], [92, 93], [93, 94], [93, 96], [94, 95], [94, 101], [96, 97], [97, 98], [98, 99], [99, 100], [101, 102], [102, 103], [102, 105], [103, 104], [103, 106], [106, 107], [107, 108], [108, 109], [108, 110], [111, 112], [114, 115], [133, 134], [142, 143], [168, 169], [181, 182], [211, 212], [213, 214], [215, 216], [219, 220]]}, "MVA-GEN-01": {"atoms": [{"elem": "P", "x": 7.0, "y": 0.0, "z": -30.8}, {"elem": "N", "x": -7.28, "y": 5.29, "z": -30.8}, {"elem": "C", "x": 5.86, "y": 3.84, "z": -28.6}, {"elem": "P", "x": -8.99, "y": 0.43, "z": -28.6}, {"elem": "O", "x": 2.8, "y": 6.42, "z": -26.4}, {"elem": "N", "x": -7.76, "y": -4.56, "z": -26.4}, {"elem": "P", "x": -1.18, "y": 6.9, "z": -24.2}, {"elem": "O", "x": -3.99, "y": -8.07, "z": -24.2}, {"elem": "O", "x": -4.77, "y": 5.13, "z": -22.0}, {"elem": "N", "x": 1.09, "y": -8.93, "z": -22.0}, {"elem": "C", "x": -6.8, "y": 1.67, "z": -19.8}, {"elem": "P", "x": 5.8, "y": -6.88, "z": -19.8}, {"elem": "P", "x": -6.6, "y": -2.32, "z": -17.6}, {"elem": "N", "x": 8.62, "y": -2.57, "z": -17.6}, {"elem": "C", "x": -4.25, "y": -5.56, "z": -15.4}, {"elem": "P", "x": 8.62, "y": 2.57, "z": -15.4}, {"elem": "O", "x": -0.51, "y": -6.98, "z": -13.2}, {"elem": "N", "x": 5.8, "y": 6.88, "z": -13.2}, {"elem": "P", "x": 3.4, "y": -6.12, "z": -11.0}, {"elem": "O", "x": 1.08, "y": 8.93, "z": -11.0}, {"elem": "O", "x": 6.2, "y": -3.25, "z": -8.8}, {"elem": "N", "x": -3.99, "y": 8.07, "z": -8.8}, {"elem": "C", "x": 6.97, "y": 0.68, "z": -6.6}, {"elem": "P", "x": -7.76, "y": 4.56, "z": -6.6}, {"elem": "P", "x": 5.46, "y": 4.38, "z": -4.4}, {"elem": "N", "x": -8.99, "y": -0.44, "z": -4.4}, {"elem": "C", "x": 2.16, "y": 6.66, "z": -2.2}, {"elem": "P", "x": -7.28, "y": -5.29, "z": -2.2}, {"elem": "O", "x": -1.84, "y": 6.75, "z": 0.0}, {"elem": "N", "x": -3.19, "y": -8.42, "z": 0.0}, {"elem": "P", "x": -5.24, "y": 4.64, "z": 2.2}, {"elem": "O", "x": 1.94, "y": -8.79, "z": 2.2}, {"elem": "O", "x": -6.93, "y": 1.01, "z": 4.4}, {"elem": "N", "x": 6.44, "y": -6.29, "z": 4.4}, {"elem": "C", "x": -6.35, "y": -2.95, "z": 6.6}, {"elem": "P", "x": 8.83, "y": -1.73, "z": 6.6}, {"elem": "P", "x": -3.69, "y": -5.95, "z": 8.8}, {"elem": "N", "x": 8.33, "y": 3.4, "z": 8.8}, {"elem": "C", "x": 0.17, "y": -7.0, "z": 11.0}, {"elem": "P", "x": 5.11, "y": 7.41, "z": 11.0}, {"elem": "O", "x": 3.98, "y": -5.76, "z": 13.2}, {"elem": "N", "x": 0.22, "y": 9.0, "z": 13.2}, {"elem": "P", "x": 6.48, "y": -2.64, "z": 15.4}, {"elem": "O", "x": -4.75, "y": 7.64, "z": 15.4}, {"elem": "O", "x": 6.87, "y": 1.35, "z": 17.6}, {"elem": "N", "x": -8.16, "y": 3.79, "z": 17.6}, {"elem": "C", "x": 5.01, "y": 4.89, "z": 19.8}, {"elem": "P", "x": -8.91, "y": -1.3, "z": 19.8}, {"elem": "P", "x": 1.51, "y": 6.84, "z": 22.0}, {"elem": "N", "x": -6.73, "y": -5.97, "z": 22.0}, {"elem": "C", "x": -2.48, "y": 6.54, "z": 24.2}, {"elem": "P", "x": -2.36, "y": -8.68, "z": 24.2}, {"elem": "O", "x": -5.66, "y": 4.11, "z": 26.4}, {"elem": "N", "x": 2.78, "y": -8.56, "z": 26.4}, {"elem": "P", "x": -6.99, "y": 0.34, "z": 28.6}, {"elem": "O", "x": 7.02, "y": -5.63, "z": 28.6}, {"elem": "N", "x": 12.0, "y": 0.0, "z": 0.0}, {"elem": "C", "x": 3.61, "y": 13.01, "z": 6.73}, {"elem": "C", "x": -12.85, "y": 7.73, "z": 7.27}, {"elem": "N", "x": -11.98, "y": -11.35, "z": 1.13}, {"elem": "O", "x": 5.62, "y": -10.6, "z": -6.05}, {"elem": "C", "x": 13.18, "y": 2.9, "z": -7.67}, {"elem": "N", "x": 0.81, "y": 14.98, "z": -2.24}, {"elem": "C", "x": -15.64, "y": 5.27, "z": 5.26}, {"elem": "O", "x": -6.73, "y": -9.93, "z": 7.91}, {"elem": "N", "x": 8.74, "y": -10.29, "z": 3.3}, {"elem": "C", "x": 13.61, "y": 6.3, "z": -4.35}, {"elem": "C", "x": -2.67, "y": 16.28, "z": -8.0}, {"elem": "N", "x": -11.93, "y": 1.29, "z": -4.29}, {"elem": "C", "x": -4.99, "y": -12.54, "z": 3.36}, {"elem": "C", "x": 11.95, "y": -9.07, "z": 7.92}, {"elem": "N", "x": 13.13, "y": 9.99, "z": 5.2}, {"elem": "O", "x": -4.45, "y": 11.15, "z": -2.3}, {"elem": "C", "x": -13.42, "y": -1.47, "z": -7.69}, {"elem": "N", "x": -2.42, "y": -14.8, "z": -6.01}, {"elem": "C", "x": 14.98, "y": -6.92, "z": 1.2}, {"elem": "O", "x": 7.76, "y": 9.15, "z": 7.3}, {"elem": "N", "x": -7.58, "y": 11.17, "z": 6.69}, {"elem": "C", "x": -14.21, "y": -4.8, "z": -0.07}, {"elem": "C", "x": 0.9, "y": -16.48, "z": -6.77}, {"elem": "N", "x": 11.72, "y": -2.57, "z": -7.24}], "bonds": [[0, 1], [0, 2], [1, 3], [2, 3], [2, 4], [3, 5], [4, 5], [4, 6], [5, 7], [6, 7], [6, 8], [7, 9], [8, 9], [8, 10], [9, 11], [10, 11], [10, 12], [11, 13], [12, 13], [12, 14], [13, 15], [14, 15], [14, 16], [15, 17], [16, 17], [16, 18], [17, 19], [18, 19], [18, 20], [19, 21], [20, 21], [20, 22], [21, 23], [22, 23], [22, 24], [23, 25], [24, 25], [24, 26], [25, 27], [26, 27], [26, 28], [27, 29], [28, 29], [28, 30], [29, 31], [30, 31], [30, 32], [31, 33], [32, 33], [32, 34], [33, 35], [34, 35], [34, 36], [35, 37], [36, 37], [36, 38], [37, 39], [38, 39], [38, 40], [39, 41], [40, 41], [40, 42], [41, 43], [42, 43], [42, 44], [43, 45], [44, 45], [44, 46], [45, 47], [46, 47], [46, 48], [47, 49], [48, 49], [48, 50], [49, 51], [50, 51], [50, 52], [51, 53], [52, 53], [52, 54], [53, 55], [54, 55], [56, 57], [57, 58], [58, 59], [59, 60], [60, 61], [61, 62], [62, 63], [63, 64], [64, 65], [65, 66], [66, 67], [67, 68], [68, 69], [69, 70], [70, 71], [71, 72], [72, 73], [73, 74], [74, 75], [75, 76], [76, 77], [77, 78], [78, 79], [79, 80]]}};
+
+    // CPK Elements Colors
+    const CPK_COLORS = {
+      'C': '#94a3b8',
+      'N': '#3b82f6',
+      'O': '#ef4444',
+      'S': '#eab308',
+      'P': '#f97316',
+      'F': '#10b981',
+      'CL': '#22c55e',
+      'BR': '#7c2d12',
+      'H': '#e2e8f0'
+    };
+
+    // Active Renderers Map
+    const activeViewers = {};
+
+    // 3D Engine Class
+    class MolViewer3D {
+      constructor(canvas, molData, isLarge = false) {
+        this.canvas = canvas;
+        this.ctx = canvas.getContext('2d');
+        this.molData = molData || { atoms: [], bonds: [] };
+        this.isLarge = isLarge;
+        this.rotX = 0.3;
+        this.rotY = 0.4;
+        this.autoRotate = true;
+        this.isDragging = false;
+        this.lastMouseX = 0;
+        this.lastMouseY = 0;
+        
+        // Auto-scale computation
+        this.scale = this.computeScale();
+
+        this.initEvents();
+        this.render();
+      }
+
+      computeScale() {
+        if (!this.molData.atoms || this.molData.atoms.length === 0) return 12;
+        let maxDist = 1;
+        this.molData.atoms.forEach(a => {
+          const d = Math.sqrt(a.x*a.x + a.y*a.y + a.z*a.z);
+          if (d > maxDist) maxDist = d;
+        });
+        const baseH = this.canvas.height || 180;
+        return (baseH * 0.38) / maxDist;
+      }
+
+      initEvents() {
+        const c = this.canvas;
+        c.addEventListener('mousedown', (e) => {
+          this.isDragging = true;
+          this.autoRotate = false;
+          this.lastMouseX = e.clientX;
+          this.lastMouseY = e.clientY;
+        });
+        window.addEventListener('mouseup', () => {
+          this.isDragging = false;
+        });
+        window.addEventListener('mousemove', (e) => {
+          if (!this.isDragging) return;
+          const dx = e.clientX - this.lastMouseX;
+          const dy = e.clientY - this.lastMouseY;
+          this.rotY += dx * 0.012;
+          this.rotX += dy * 0.012;
+          this.lastMouseX = e.clientX;
+          this.lastMouseY = e.clientY;
+        });
+
+        // Touch support
+        c.addEventListener('touchstart', (e) => {
+          if (e.touches.length === 1) {
+            this.isDragging = true;
+            this.autoRotate = false;
+            this.lastMouseX = e.touches[0].clientX;
+            this.lastMouseY = e.touches[0].clientY;
+          }
+        });
+        window.addEventListener('touchend', () => { this.isDragging = false; });
+        window.addEventListener('touchmove', (e) => {
+          if (!this.isDragging || e.touches.length !== 1) return;
+          const dx = e.touches[0].clientX - this.lastMouseX;
+          const dy = e.touches[0].clientY - this.lastMouseY;
+          this.rotY += dx * 0.012;
+          this.rotX += dy * 0.012;
+          this.lastMouseX = e.touches[0].clientX;
+          this.lastMouseY = e.touches[0].clientY;
+        });
+      }
+
+      render() {
+        if (this.autoRotate && !this.isDragging) {
+          this.rotY += 0.012;
+          this.rotX += 0.004;
+        }
+
+        const w = this.canvas.width = this.canvas.clientWidth;
+        const h = this.canvas.height = this.canvas.clientHeight;
+        const ctx = this.ctx;
+        ctx.clearRect(0, 0, w, h);
+
+        const cosX = Math.cos(this.rotX), sinX = Math.sin(this.rotX);
+        const cosY = Math.cos(this.rotY), sinY = Math.sin(this.rotY);
+
+        const atoms = this.molData.atoms;
+        const bonds = this.molData.bonds;
+
+        // Transform atoms
+        const proj = atoms.map((a, idx) => {
+          // Rotate Y
+          const x1 = a.x * cosY + a.z * sinY;
+          const z1 = -a.x * sinY + a.z * cosY;
+          // Rotate X
+          const y2 = a.y * cosX - z1 * sinX;
+          const z2 = a.y * sinX + z1 * cosX;
+
+          const fov = 300;
+          const perspective = fov / (fov + z2);
+          const px = w/2 + x1 * this.scale * perspective;
+          const py = h/2 + y2 * this.scale * perspective;
+          return { x: px, y: py, z: z2, elem: a.elem, idx: idx };
+        });
+
+        // Sort by Z for Painter's algorithm
+        const depthElements = [];
+
+        // Add bonds
+        bonds.forEach(b => {
+          const p1 = proj[b[0]], p2 = proj[b[1]];
+          if (p1 && p2) {
+            const avgZ = (p1.z + p2.z) / 2;
+            depthElements.push({ type: 'bond', z: avgZ, p1: p1, p2: p2 });
+          }
+        });
+
+        // Add atoms
+        proj.forEach(p => {
+          depthElements.push({ type: 'atom', z: p.z, p: p });
+        });
+
+        depthElements.sort((a, b) => a.z - b.z);
+
+        // Draw
+        depthElements.forEach(el => {
+          if (el.type === 'bond') {
+            ctx.beginPath();
+            ctx.moveTo(el.p1.x, el.p1.y);
+            ctx.lineTo(el.p2.x, el.p2.y);
+            ctx.strokeStyle = 'rgba(148, 163, 184, 0.45)';
+            ctx.lineWidth = this.isLarge ? 3.5 : 2.2;
+            ctx.lineCap = 'round';
+            ctx.stroke();
+          } else {
+            const p = el.p;
+            const radius = (this.isLarge ? 7.5 : 5.0) * (300 / (300 + p.z));
+            const color = CPK_COLORS[p.elem.toUpperCase()] || '#94a3b8';
+
+            const grad = ctx.createRadialGradient(
+              p.x - radius*0.3, p.y - radius*0.3, radius*0.1,
+              p.x, p.y, radius
+            );
+            grad.addColorStop(0, '#ffffff');
+            grad.addColorStop(0.3, color);
+            grad.addColorStop(1, '#0f172a');
+
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, Math.max(2, radius), 0, Math.PI * 2);
+            ctx.fillStyle = grad;
+            ctx.shadowColor = color;
+            ctx.shadowBlur = this.isLarge ? 8 : 4;
+            ctx.fill();
+            ctx.shadowBlur = 0;
+          }
+        });
+
+        requestAnimationFrame(() => this.render());
+      }
+    }
+
+    // Render Cards
+    const cardsGrid = document.getElementById('cardsGrid');
+    const searchInput = document.getElementById('searchInput');
+    const filterButtons = document.querySelectorAll('.btn-filter');
+    const statTotal = document.getElementById('stat-total');
+
+    let currentFilter = 'all';
+    let currentSearch = '';
+
+    function renderCards() {
+      cardsGrid.innerHTML = '';
+      
+      const filtered = molecules.filter(m => {
+        let matchesFilter = true;
+        if (currentFilter === 'insignia') {
+          matchesFilter = m.Is_Insignia === true;
+        } else if (currentFilter !== 'all') {
+          matchesFilter = m.Axis.includes(currentFilter) || m.Pillar.includes(currentFilter);
+        }
+
+        let matchesSearch = true;
+        if (currentSearch.trim() !== '') {
+          const q = currentSearch.toLowerCase();
+          matchesSearch = m.Code.toLowerCase().includes(q) ||
+                          m.Name.toLowerCase().includes(q) ||
+                          m.Primary_Target.toLowerCase().includes(q) ||
+                          m.Mechanism.toLowerCase().includes(q) ||
+                          (m.Target_PDB && m.Target_PDB.toLowerCase().includes(q));
+        }
+
+        return matchesFilter && matchesSearch;
+      });
+
+      statTotal.textContent = filtered.length;
+
+      filtered.forEach(m => {
+        const card = document.createElement('div');
+        card.className = `card ${m.Is_Insignia ? 'insignia-card' : ''}`;
+        
+        const isHighAff = m.Affinity_kcal_mol <= -9.0;
+        const c3d = coords3D[m.Code];
+        const numAtoms = c3d ? c3d.atoms.length : 0;
+
+        card.innerHTML = `
+          <div>
+            <!-- 3D INTERACTIVE VIEWPORT ON CARD -->
+            <div class="viewport-3d-card" id="vp-${m.Code}">
+              <canvas id="c3d-${m.Code}"></canvas>
+              <button class="btn-fullscreen-3d" onclick="openStudio3D('${m.Code}')">⛶ 3D Studio</button>
+              <div class="tag-3d-rotate">🔄 3D Interactivo (${numAtoms} átomos)</div>
+            </div>
+
+            <div class="card-badges">
+              <span class="badge-code">${m.Code}</span>
+              <span class="badge-cat">${m.Category.split(' ')[0]}</span>
+              <span class="badge-pillar">${m.Pillar.split(':')[0]}</span>
+            </div>
+            
+            <div class="mol-name">${m.Name}</div>
+            <div class="mol-target">
+              <span>🎯 ${m.Primary_Target}</span>
+              ${m.Target_PDB ? `<span class="pdb-tag">${m.Target_PDB}</span>` : ''}
+            </div>
+
+            <div class="metrics-row">
+              <div class="metric-item">
+                <span class="metric-val ${isHighAff ? 'high-aff' : ''}">${m.Affinity_kcal_mol} kcal/mol</span>
+                <span class="metric-lbl">Afinidad (ΔG)</span>
+              </div>
+              <div class="metric-item">
+                <span class="metric-val ${m.Ki_nM < 100 ? 'high-aff' : ''}">${m.Ki_nM} nM</span>
+                <span class="metric-lbl">Ki Predicha</span>
+              </div>
+            </div>
+
+            <div class="biochem-props">
+              <span>MW: <strong>${m.Molecular_Weight_Da.toLocaleString()} Da</strong></span>
+              <span>cLogP: <strong>${m.cLogP}</strong></span>
+              <span>QED: <strong>${m.QED_Score}</strong></span>
+            </div>
+
+            <div class="mol-mechanism">${m.Mechanism}</div>
+          </div>
+
+          <div class="sequence-box">
+            <span class="sequence-text" title="${m.SMILES_or_Sequence}">${m.SMILES_or_Sequence}</span>
+            <button class="btn-copy" onclick="copyToClipboard('${m.SMILES_or_Sequence}', this)">Copiar</button>
+          </div>
+        `;
+
+        cardsGrid.appendChild(card);
+
+        // Initialize 3D Canvas
+        setTimeout(() => {
+          const canvas = document.getElementById(`c3d-${m.Code}`);
+          if (canvas && c3d) {
+            new MolViewer3D(canvas, c3d, false);
+          }
+        }, 50);
+      });
+    }
+
+    function copyToClipboard(text, btn) {
+      navigator.clipboard.writeText(text).then(() => {
+        const orig = btn.textContent;
+        btn.textContent = '✓ Copiado';
+        btn.style.background = '#10b981';
+        btn.style.color = '#000';
+        setTimeout(() => {
+          btn.textContent = orig;
+          btn.style.background = '';
+          btn.style.color = '';
+        }, 1800);
+      });
+    }
+
+    // MODAL STUDIO 3D
+    let modalViewer = null;
+    function openStudio3D(code) {
+      const m = molecules.find(x => x.Code === code);
+      if (!m) return;
+
+      document.getElementById('modalCode').textContent = m.Code;
+      document.getElementById('modalName').textContent = m.Name;
+      
+      const modalBody = document.getElementById('modalBody');
+      modalBody.innerHTML = `
+        <div style="display: flex; gap: 12px; margin-bottom: 16px; flex-wrap: wrap;">
+          <span class="badge-cat">${m.Category}</span>
+          <span class="badge-pillar">${m.Pillar}</span>
+          <span class="pdb-tag">Target: ${m.Primary_Target} (${m.Target_PDB})</span>
+        </div>
+        <div class="metrics-row" style="margin-bottom: 16px;">
+          <div>
+            <div class="metric-val high-aff">${m.Affinity_kcal_mol} kcal/mol</div>
+            <div class="metric-lbl">Energía Libre de Gibbs (ΔG)</div>
+          </div>
+          <div>
+            <div class="metric-val high-aff">${m.Ki_nM} nM</div>
+            <div class="metric-lbl">Constante de Disociación Ki</div>
+          </div>
+          <div>
+            <div class="metric-val">${m.Molecular_Weight_Da.toLocaleString()} Da</div>
+            <div class="metric-lbl">Peso Molecular</div>
+          </div>
+          <div>
+            <div class="metric-val">${m.QED_Score}</div>
+            <div class="metric-lbl">Score QED de Drogabilidad</div>
+          </div>
+        </div>
+        <p style="font-size: 14px; color: #cbd5e1; line-height: 1.6; margin-bottom: 16px;">
+          <strong>Mecanismo Farmacológico:</strong> ${m.Mechanism}
+        </p>
+        <div class="sequence-box">
+          <span class="sequence-text" style="max-width: 480px;">${m.SMILES_or_Sequence}</span>
+          <button class="btn-copy" onclick="copyToClipboard('${m.SMILES_or_Sequence}', this)">Copiar Secuencia</button>
+        </div>
+      `;
+
+      document.getElementById('modalOverlay').style.display = 'flex';
+
+      const canvas = document.getElementById('modalCanvas');
+      const c3d = coords3D[code];
+      if (canvas && c3d) {
+        setTimeout(() => {
+          modalViewer = new MolViewer3D(canvas, c3d, true);
+        }, 60);
+      }
+    }
+
+    document.getElementById('btnCloseModal').addEventListener('click', () => {
+      document.getElementById('modalOverlay').style.display = 'none';
+    });
+
+    document.getElementById('modalOverlay').addEventListener('click', (e) => {
+      if (e.target === document.getElementById('modalOverlay')) {
+        document.getElementById('modalOverlay').style.display = 'none';
+      }
+    });
+
+    // Filters
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentFilter = btn.getAttribute('data-filter');
+        renderCards();
+      });
+    });
+
+    // Search
+    searchInput.addEventListener('input', (e) => {
+      currentSearch = e.target.value;
+      renderCards();
+    });
+
+    // Initial Render
+    renderCards();
+  </script>
+</body>
+</html>
