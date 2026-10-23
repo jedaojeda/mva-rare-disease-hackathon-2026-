@@ -2,14 +2,16 @@
 
 [![License: CC-BY 4.0](https://img.shields.io/badge/License-CC--BY--4.0-blue.svg)](LICENSE)
 [![Hackathon: Sage Bionetworks 2026](https://img.shields.io/badge/Hackathon-Sage_Bionetworks_2026-blueviolet.svg)](https://synapse.org)
-[![Principal Investigator: Dr. Daniel Antonio Ojeda, MD](https://img.shields.io/badge/Investigator-Dr._Daniel_Antonio_Ojeda,_MD-059669.svg)](https://orcid.org/0009-0004-9457-3023)
+[![Principal Investigator: Dr. Daniel Antonio Ojeda, MD](https://img.shields.io/badge/Investigator-Dr._Daniel_Antonio_Ojeda,_MD-059669.svg)](https://orcid.org/0000-0003-3839-3703)
 [![Physician-Researcher](https://img.shields.io/badge/Physician--Researcher-Internal_Medicine_%26_Genomics-1E3A8A.svg)](#-principal-investigator--the-researchers-journey)
 [![Kaggle Cloud Audited](https://img.shields.io/badge/Kaggle-GPU_Kernels_Verified-20BEFF.svg)](kaggle_notebooks/KAGGLE_NOTEBOOKS_LINKS.md)
 [![FutureHouse AI Driven](https://img.shields.io/badge/Chemoinformatics-FutureHouse_PaperQA2%20%2F%20ChemCrow-FF6F00.svg)](#-chemoinformatic-discovery-pipeline--emphasis-on-futurehouse-ai)
 
 ---
 
-![3D Lead Molecular Panel](figures/Panel%204%20Lead%20Molecules%203D%20MVA%20English.png)
+<p align="center">
+  <img src="figures/Official%20Workflow%20and%20Technology%20Suite%20MVA%202026%20Vertical.png" alt="Official Workflow and Technology Suite MVA 2026" width="950">
+</p>
 
 Official submission and open-source computational repository for the **Rare Disease Global Hackathon 2026**, organized by **Sage Bionetworks**, **MVA Society**, **Hugging Face**, and **BEACON**, with prize sponsorship from the **AWS Imagine Grant** and **Anthropic**.
 
@@ -23,7 +25,7 @@ Official submission and open-source computational repository for the **Rare Dise
 * **Staff Attending Physician**, Adult Emergency Department (*Médico Adjunto de la Emergencia de Adultos*), IAHULA.  
 * **Invited Lecturer of Medical Semiology** (*Profesor Invitado de Semiología Médica*), Department of Internal Medicine, ULA.  
 * **Location**: Mérida, Venezuela  
-* **ORCID**: [0009-0004-9457-3023](https://orcid.org/0009-0004-9457-3023)  
+* **ORCID**: [0000-0003-3839-3703](https://orcid.org/0000-0003-3839-3703)  
 * **Direct Contact**: `jedaojeda@gmail.com`  
 
 > **The Researcher's Motivation**:  
@@ -60,6 +62,11 @@ This unified repository delivers end-to-end computational and clinical solutions
 ---
 
 ## 🧬 De Novo Molecular Nomenclature & Mechanistic Rationale
+
+### 🔬 3D Conformational Catalog of Lead Therapeutic Candidates
+<p align="center">
+  <img src="figures/Panel%204%20Lead%20Molecules%203D%20MVA%20English.png" alt="3D Structural Catalog of the 4 De Novo Lead Molecules in MVA Syndrome" width="950">
+</p>
 
 Every molecule, PROTAC, and peptide in this therapeutic library was conceived, engineered, and named by **Dr. Daniel Antonio Ojeda, MD** based on precise pathophysiological targets, structural bioisosterism, and mechanism of action:
 
