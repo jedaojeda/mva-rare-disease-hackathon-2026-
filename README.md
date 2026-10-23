@@ -65,7 +65,7 @@ This unified repository delivers end-to-end computational and clinical solutions
 
 ### 🔬 3D Conformational Catalog of Lead Therapeutic Candidates
 <p align="center">
-  <img src="figures/Panel%204%20Lead%20Molecules%203D%20MVA%20English.png" alt="3D Structural Catalog of the 4 De Novo Lead Molecules in MVA Syndrome" width="950">
+  <img src="figures/Panel%208%20Insignia%20Lead%20Molecules%20and%20Peptides%203D%20MVA.png" alt="3D Structural Catalog of the 4 De Novo Lead Molecules in MVA Syndrome" width="950">
 </p>
 
 Every molecule, PROTAC, and peptide in this therapeutic library was conceived, engineered, and named by **Dr. Daniel Antonio Ojeda, MD** based on precise pathophysiological targets, structural bioisosterism, and mechanism of action:
@@ -165,8 +165,9 @@ All primary computational pipelines were executed on public **Kaggle Cloud GPUs 
 │           └── De_Novo_20_Molecules_Library_MVA.csv / .sdf
 │
 └── figures/
-    ├── Panel 4 Lead Molecules 3D MVA English.png     # 300 DPI 3D molecular catalog (English)
-    └── Official Workflow and Technology Suite MVA 2026 Vertical.png # 300 DPI architecture & FutureHouse suite
+    ├── Official Workflow and Technology Suite MVA 2026 Vertical.png # 300 DPI architecture & FutureHouse suite (Primary Banner)
+    ├── Panel 8 Insignia Lead Molecules and Peptides 3D MVA.png       # Complete 8-candidate 3D structural catalog (English)
+    └── Panel 4 Lead Molecules 3D MVA English.png                     # 4-lead core small-molecule benchmark panel
 
 ---
 
