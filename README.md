@@ -9,7 +9,7 @@
 
 ---
 
-![3D Lead Molecular Panel](pitch_video_and_storyboard/Panel%204%20Moleculas%20Lideres%203D%20MVA.png)
+![3D Lead Molecular Panel](figures/Panel%204%20Moleculas%20Lideres%203D%20MVA.png)
 
 Official submission and open-source computational repository for the **Rare Disease Global Hackathon 2026**, organized by **Sage Bionetworks**, **MVA Society**, **Hugging Face**, and **BEACON**, with prize sponsorship from the **AWS Imagine Grant** and **Anthropic**.
 
@@ -165,12 +165,9 @@ All primary computational pipelines were executed on public **Kaggle Cloud GPUs 
 │           ├── docking_validation_results.csv / .json
 │           └── De_Novo_20_Molecules_Library_MVA.csv / .sdf
 │
-└── pitch_video_and_storyboard/
+└── figures/
     ├── Official Workflow and Technology Suite MVA 2026 Vertical.png # 300 DPI high-resolution architecture
-    ├── Panel 4 Moleculas Lideres 3D MVA.png                      # 300 DPI 3D molecular catalog
-    ├── Master Script and Storyboard 3-Minute Video Pitch MVA.md  # Complete 3-minute video pitch script (English)
-    ├── Master Script 3-Minute Video Pitch MVA English.docx
-    └── VIDEO_SUBMISSION_GUIDE.md                     # Step-by-step submission guide
+    └── Panel 4 Moleculas Lideres 3D MVA.png                      # 300 DPI 3D molecular catalog
 
 ---
 
