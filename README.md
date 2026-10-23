@@ -9,7 +9,7 @@
 
 ---
 
-![3D Lead Molecular Panel](figures/Panel%204%20Moleculas%20Lideres%203D%20MVA.png)
+![3D Lead Molecular Panel](figures/Panel%204%20Lead%20Molecules%203D%20MVA%20English.png)
 
 Official submission and open-source computational repository for the **Rare Disease Global Hackathon 2026**, organized by **Sage Bionetworks**, **MVA Society**, **Hugging Face**, and **BEACON**, with prize sponsorship from the **AWS Imagine Grant** and **Anthropic**.
 
@@ -120,19 +120,11 @@ All primary computational pipelines were executed on public **Kaggle Cloud GPUs 
 │   ├── predictions/
 │   │   └── daniel-ojeda_wgs-alphagenome_track1.csv   # Official 10-candidate submission CSV (Benchmark 100.0/1.000)
 │   └── manuscript_and_report/
-│       ├── Article 1 Clinical Genomics and Global Meta Analysis MVA.docx
-│       ├── Article 1 Clinical Genomics and Global Meta Analysis MVA.md
-│       ├── Articulo 1 Genomica Clinica y Meta Analisis MVA.docx (Spanish Reference)
-│       ├── Articulo 1 Genomica Clinica y Meta Analisis MVA.md
-│       └── methods_description_form.xlsx             # Complete Track 1 & Track 2 Official Forms
+│       └── methods_description_form.xlsx             # Complete Track 1 Official Methods Form
 │
 ├── track2_drug_repurposing/
 │   ├── manuscript_and_report/
-│   │   ├── Article 2 De Novo Pharmacology and 3D Molecules MVA.docx
-│   │   ├── Article 2 De Novo Pharmacology and 3D Molecules MVA.md
-│   │   ├── Articulo 2 Farmacologia De Novo y Moleculas 3D MVA.docx (Spanish Reference)
-│   │   ├── Articulo 2 Farmacologia De Novo y Moleculas 3D MVA.md
-│   │   └── methods_description_form.xlsx
+│   │   └── methods_description_form.xlsx             # Complete Track 2 Official Methods Form
 │   ├── chemical_library_and_3d/
 │   │   ├── structures_3d_pdb/                        # Complete 3D coordinates in .pdb format (24 entities in English)
 │   │   ├── structures_3d_sdf/                        # Complete 3D structures in .sdf format (20 leads + Master SDF)
@@ -166,8 +158,8 @@ All primary computational pipelines were executed on public **Kaggle Cloud GPUs 
 │           └── De_Novo_20_Molecules_Library_MVA.csv / .sdf
 │
 └── figures/
-    ├── Official Workflow and Technology Suite MVA 2026 Vertical.png # 300 DPI high-resolution architecture
-    └── Panel 4 Moleculas Lideres 3D MVA.png                      # 300 DPI 3D molecular catalog
+    ├── Panel 4 Lead Molecules 3D MVA English.png     # 300 DPI 3D molecular catalog (English)
+    └── Official Workflow and Technology Suite MVA 2026 Vertical.png # 300 DPI architecture & FutureHouse suite
 
 ---
 
@@ -190,7 +182,7 @@ Judges, researchers, and clinicians can inspect, rotate, and export all 3D molec
 ## 🌐 Language & Bilingual Provenance Note
 
 > **Official Declaration on Linguistic Transparency & Bilingual Audit Traceability**:
-> - **Primary Deliverables in English**: All official submission manuscripts (Article 1 and Article 2), method description forms, 3D molecular coordinates (.pdb / .sdf), chemical benchmark catalogs, variant prediction tables, video pitch scripts, and repository documentation are authored and delivered 100% in **English** for international scientific evaluation.
+> - **Primary Deliverables in English**: All official submission methodologies, method description forms, 3D molecular coordinates (.pdb / .sdf), chemical benchmark catalogs, variant prediction tables, and repository documentation are authored and delivered 100% in **English** for international scientific evaluation.
 > - **Kaggle Cloud Provenance in Native Spanish**: During cloud execution on Kaggle GPU instances, initial execution logs, exploratory scripts, raw diagnostic batch summaries (Reporte_Lote_..., Metricas_QC_...), and intermediate clinical dashboards were natively output in the Principal Investigator's clinical working language (**Spanish**).
 > - **Standardized English Transcription**: Rather than deleting or overwriting these original cloud run traces, every dataset, clinical table, molecular library, and surveillance protocol has been systematically transcribed and mirrored into **English** (e.g., Consolidated_Clinical_Summary_Table_WGS_85GB.csv, De_Novo_20_Molecules_Library_MVA.csv, Master Library 24 Therapies MVA 2026.csv). Both the authenticated raw Kaggle audit traces and the standardized English peer-review assets are provided side-by-side to guarantee 100% auditability.
 
