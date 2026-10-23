@@ -1,4 +1,4 @@
-﻿proband_id,chrom_1,pos_1,ref_1,alt_1,chrom_2,pos_2,ref_2,alt_2,epcr,finding_type,notes
+proband_id,chrom_1,pos_1,ref_1,alt_1,chrom_2,pos_2,ref_2,alt_2,epcr,finding_type,notes
 PROBAND01,chr15,40209701,T,G,chr15,40220612,T,G,1.00,primary,"BUB1B biallelic compound heterozygous SAC failure (c.1833C>T / p.Arg407Ter truncating defect + missense modifier near BUB3-binding domain). Loss of BUBR1 checkpoint fidelity and direct driver of Mosaic Variegated Aneuploidy (MVA1)."
 PROBAND01,chr4,103138883,G,A,,,,,0.95,secondary,"CENPE Kinesin-7 motor stalk disruption (p.Arg1079Gln, IPI: 0.8016). Destabilizes kinetochore tension and triggers mitotic spindle collapse."
 PROBAND01,chr11,32408514,T,TA,,,,,0.85,secondary,"WT1 homozygous zinc-finger ZF2 insertion (chr11:32408514_dupA, c.1180dupA, p.Arg394fs, IPI: 0.7256). Direct pathogenic driver of congenital medullary nephrocalcinosis via loss of TRPV5/calbindin-D28k transactivation."
