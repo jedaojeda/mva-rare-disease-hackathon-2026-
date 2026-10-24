@@ -7,7 +7,7 @@
 [![Principal Investigator: Dr. Daniel Antonio Ojeda, MD](https://img.shields.io/badge/Investigator-Dr._Daniel_Antonio_Ojeda,_MD-059669.svg)](https://orcid.org/0000-0003-3839-3703)
 [![Physician-Researcher](https://img.shields.io/badge/Physician--Researcher-Internal_Medicine_%26_Genomics-1E3A8A.svg)](#-principal-investigator--the-researchers-journey)
 [![Kaggle Cloud Audited](https://img.shields.io/badge/Kaggle-GPU_Kernels_Verified-20BEFF.svg)](kaggle_notebooks/KAGGLE_NOTEBOOKS_LINKS.md)
-[![FutureHouse AI Driven](https://img.shields.io/badge/Chemoinformatics-FutureHouse_PaperQA2%20%2F%20ChemCrow-FF6F00.svg)](#-chemoinformatic-discovery-pipeline--emphasis-on-futurehouse-ai)
+[![Chemoinformatics AI Architecture](https://img.shields.io/badge/Chemoinformatics-PaperQA2%20%2F%20ChemCrow%20Architectures-FF6F00.svg)](#-chemoinformatic-discovery-pipeline--emphasis-on-futurehouse-ai)
 
 ---
 
@@ -96,14 +96,14 @@ Every molecule, PROTAC, and peptide in this therapeutic library was conceived, e
 
 ---
 
-## 🤖 Chemoinformatic Discovery Pipeline & Emphasis on FutureHouse AI
+## 🤖 Chemoinformatic Discovery Pipeline & Open Science AI Frameworks
 
-The *de novo* pharmacology and molecular design were powered by the agentic integration of **FutureHouse AI** scientific tools orchestrated by Dr. Ojeda:
+The *de novo* pharmacology and molecular design were powered by a custom agentic pipeline implementing the methodologies of **PaperQA2** and **ChemCrow** (FutureHouse open science frameworks), orchestrated and executed locally under direct human physician direction by Dr. Ojeda:
 
-1. **FutureHouse PaperQA2 (Automated Literature Mining & Scientific Verification)**:
-   - Deployed to scour over 50,000 peer-reviewed biomedical, pharmacological, and rare-disease manuscripts across PubMed, PubMed Central, and ChemRxiv.
+1. **Custom PaperQA2 Methodology (Automated Literature Mining & Scientific Verification)**:
+   - Implemented to scour over 50,000 peer-reviewed biomedical, pharmacological, and rare-disease manuscripts across PubMed, PubMed Central, and ChemRxiv.
    - Verified experimental nanomolar affinities ($K_i$, $IC_{50}$) for kinase inhibitors, BCL-2/BCL-xL degraders, and STING modulators, ensuring zero chemical hallucination.
-2. **FutureHouse ChemCrow (Agentic Chemical Synthesis Reasoning)**:
+2. **Custom ChemCrow Methodology (Agentic Chemical Synthesis Reasoning)**:
    - Evaluated the synthetic accessibility score (**SAScore < 4.2**) for all proposed small molecules.
    - Verified retrosynthetic pathways, reactive functional group tolerances, and bioisosteric substitutions to ensure that every molecule can be feasibly synthesized by commercial peptide/small-molecule CROs.
 3. **RDKit MMFF94 & 3D Conformer Generation**:
@@ -234,7 +234,7 @@ Judges, researchers, and clinicians can inspect, rotate, and export all 3D molec
 > *"This work was made possible through the Hackathon, organized by Sage Bionetworks in partnership with the MVA Society, Hugging Face, and BEACON (The Benchmarking, Evaluation, and Assessment Consortium for Science), with prize sponsorship from AWS and Anthropic. We are deeply grateful to the child and their family who generously contributed their data and their story to advance research into this rare disease. We acknowledge their trust in making this Hackathon possible."*
 
 ### ICMJE AI Assistance Disclosure
-In accordance with ICMJE recommendations and Hackathon rules: Google Antigravity (Google DeepMind) deploying foundational reasoning models **gemini-3.8-flash** and **gemini-4-argon** within a secure local environment, coupled with the FutureHouse agentic framework (PaperQA2/ChemCrow) and Kaggle Cloud GPUs, was utilized for automated code orchestration, syntax refactoring, data transformation, and hardware acceleration under commercial terms with zero data retention on customer content. All diagnostic decisions, clinical deductions, variant classifications, and medical writing were conceived, directed, and validated under strict human physician oversight by **Dr. Daniel Antonio Ojeda, MD**.
+In accordance with ICMJE recommendations and Hackathon rules: Google Antigravity (Google DeepMind) deploying foundational reasoning models **gemini-3.8-flash** and **gemini-4-argon** within a secure local environment, coupled with a custom local implementation of the PaperQA2 and ChemCrow agentic methodologies (FutureHouse open science frameworks) and Kaggle Cloud GPUs, was utilized for automated code orchestration, syntax refactoring, data transformation, and hardware acceleration under commercial terms with zero data retention on customer content. All diagnostic decisions, clinical deductions, variant classifications, and medical writing were conceived, directed, and validated under strict human physician oversight by **Dr. Daniel Antonio Ojeda, MD**.
 
 ---
 *Mérida, Venezuela | Dr. Daniel Antonio Ojeda, MD*

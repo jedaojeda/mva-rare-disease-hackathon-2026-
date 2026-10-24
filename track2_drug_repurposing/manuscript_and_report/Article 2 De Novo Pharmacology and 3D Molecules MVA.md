@@ -32,7 +32,7 @@ Unchecked mitotic entry triggers fulminant bone marrow aplasia and early death. 
 
 2. Chemogenomic Mining, Reverse Engineering of Gene Networks, and Autonomous AI Agents
 
-To overcome human cognitive bias and explore bioactive chemical space with maximal speed and mechanistic rigor, the author deployed the automated scientific literature synthesis workflow powered by the FutureHouse autonomous agent (PaperQA2 and ChemCrow) [10, 11], orchestrated and supervised within the Google Antigravity platform (Google DeepMind) [12]. FutureHouse recursively queried the global indexed biomedical literature, interfacing in real time with foundational biological and chemical repositories:
+To overcome human cognitive bias and explore bioactive chemical space with maximal speed and mechanistic rigor, the author deployed an automated scientific literature synthesis workflow implementing the methodologies of PaperQA2 and ChemCrow [10, 11] (FutureHouse open science frameworks), orchestrated and supervised within the Google Antigravity platform (Google DeepMind) [12]. The pipeline queried the global indexed biomedical literature, interfacing in real time with foundational biological and chemical repositories:
 
 1. ChEMBL Database (v34): Bioactivity data for >12,000 compounds targeting mitotic kinases and BCL-2 family proteins [13, 14].
 2. STRING Database (v12.0): Kinetochore interactome network centrality validating BUB1B-CENPE physical binding (score 0.999) [15].
@@ -137,7 +137,7 @@ Daniel Antonio Ojeda, MD conceived the de novo molecular design, formulated the 
 
 7.2 ICMJE Artificial Intelligence and Computational Assistance Declaration
 
-In accordance with ICMJE guidelines and Sage Bionetworks Hackathon 2026 rules, Google Antigravity (Google DeepMind) deploying the foundational models gemini-3.8-flash and gemini-4-argon within this local and secure execution environment, coupled with the FutureHouse agentic framework (PaperQA2/ChemCrow), was utilized for code automation, mathematical formulation, and chemoinformatic workflow orchestration under commercial terms with zero data retention on customer content. All molecular design decisions, therapeutic hypotheses, and medical deductions were conceived, directed, and finalized under direct physician oversight by Dr. Daniel Antonio Ojeda, MD.
+In accordance with ICMJE guidelines and Sage Bionetworks Hackathon 2026 rules, Google Antigravity (Google DeepMind) deploying the foundational models gemini-3.8-flash and gemini-4-argon within this local and secure execution environment, coupled with a custom local implementation of the PaperQA2 and ChemCrow agentic methodologies (FutureHouse open science frameworks), was utilized for code automation, mathematical formulation, and chemoinformatic workflow orchestration under commercial terms with zero data retention on customer content. All molecular design decisions, therapeutic hypotheses, and medical deductions were conceived, directed, and finalized under direct physician oversight by Dr. Daniel Antonio Ojeda, MD.
 
 7.3 Bioethical Preclinical In Silico Disclaimer and Regulatory Notice
 

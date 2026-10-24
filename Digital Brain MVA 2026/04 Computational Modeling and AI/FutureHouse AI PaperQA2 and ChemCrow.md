@@ -7,7 +7,7 @@ date: 2026-10-23
 
 # 🧪 FutureHouse AI: PaperQA2 and ChemCrow in Chemoinformatics
 
-To accelerate discovery for Track 2, the scientific multi-agent stack from **FutureHouse AI** was deployed:
+To accelerate discovery for Track 2, a custom local implementation of the open-science multi-agent methodologies from **PaperQA2** and **ChemCrow** (FutureHouse frameworks) was deployed:
 
 1. **PaperQA2**:
    - High-precision mining across $>300$ peer-reviewed articles covering spindle checkpoint biology, *BUB1B*, nephrocalcinosis, and aneuploidy.
