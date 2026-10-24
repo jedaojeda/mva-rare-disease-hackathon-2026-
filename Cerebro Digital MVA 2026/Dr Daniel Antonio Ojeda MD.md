@@ -1,38 +1,38 @@
 ---
-aliases: [Dr. Daniel Antonio Ojeda, Dr Ojeda, Investigador Principal]
-tags: [investigador, perfil-medico, internista, ula, iahula]
-autor: Dr. Daniel Antonio Ojeda, MD
-fecha: 2026-10-23
+aliases: [Dr. Daniel Antonio Ojeda, Dr Ojeda, Principal Investigator]
+tags: [investigator, physician-profile, internist, ula, iahula]
+author: Daniel Antonio Ojeda, MD
+date: 2026-10-23
 ---
 
-# 👨‍⚕️ Dr. Daniel Antonio Ojeda, MD
+# 👨‍⚕️ Daniel Antonio Ojeda, MD
 
-**Médico Especialista en Medicina Interna | Investigador en Genómica Clínica y Bioinformática**
+**Specialist in Internal Medicine | Clinical Genomics and Bioinformatic Researcher**
 
 ---
 
-## 🏥 Credenciales Académicas y Asistenciales
+## 🏥 Clinical and Academic Appointments
 
-* **Especialista en Medicina Interna**: Egresado de la Universidad de Los Andes (ULA) y del Instituto Autónomo Hospital Universitario de Los Andes (IAHULA).
-* **Médico Adjunto**: Departamento de Emergencia de Adultos, IAHULA (Mérida, Venezuela).
-* **Profesor Invitado de Semiología Médica**: Departamento de Medicina Interna, Facultad de Medicina, Universidad de Los Andes (ULA).
-* **Credenciales Oficiales**:
+* **Specialist in Internal Medicine**: Universidad de Los Andes (ULA) & Instituto Autónomo Hospital Universitario de Los Andes (IAHULA).
+* **Staff Attending Physician**: Adult Emergency Department, IAHULA (Mérida, Venezuela).
+* **Invited Lecturer in Medical Semiology**: Department of Internal Medicine, Faculty of Medicine, Universidad de Los Andes (ULA).
+* **Official Credentials**:
   - C.I.: 24.135.187
   - MPPS: 152.340
   - CMC: 6.249
   - ORCID: [0000-0003-3839-3703](https://orcid.org/0000-0003-3839-3703)
-* **Contacto Directo**: `dr.ojedainternista@gmail.com`
+* **Direct Inquiries**: `dr.ojedainternista@gmail.com`
 
 ---
 
-## 🎯 Filosofía en el MVA Hackathon 2026
+## 🎯 Hackathon Philosophy and Vision
 
-> *"A pesar de mi formación y práctica médica diaria como especialista en Medicina Interna en la emergencia hospitalaria, la genética médica y el cómputo de frontera siempre han sido mi gran pasión fuera de la cabecera del paciente. Asumí este desafío internacional no solo como un científico computacional, sino como médico y como padre, con la convicción de que la inteligencia artificial guiada por el razonamiento clínico humano puede iluminar respuestas para enfermedades ultra-raras donde la medicina convencional se queda corta."*  
+> *"Despite my daily clinical hospital practice as an internal medicine emergency attending, medical genetics and frontier computing have always been my greatest passion outside bedside care. I took on this global challenge not merely as a computational modeler, but as a physician and as a father, guided by the conviction that human clinical reasoning coupled with artificial intelligence can illuminate answers for ultra-rare diseases where conventional medicine falls short."*  
 > — **Dr. Daniel Antonio Ojeda, MD**
 
 ---
 
-## 🔗 Enlace al Proyecto
-* [[Indice General MVA 2026]]
-* [[Benchmark Oficial 100 de 100 SageBio]]
-* [[Estrategia Terapeutica Multiaxial 4 Ejes]]
+## 🔗 Project Navigation
+* [[General Index MVA 2026]]
+* [[Official 100 out of 100 SageBio Benchmark]]
+* [[Multiaxial Therapeutic Strategy 4 Axes]]
