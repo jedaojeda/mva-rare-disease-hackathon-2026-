@@ -24,3 +24,14 @@ The two master research manuscripts developed for the hackathon are permanently 
 * **Official PDF File**: `daniel-ojeda_track2_report.pdf`
 * **Full Markdown**: `Article 2 De Novo Pharmacology and 3D Molecules MVA.md`
 * **Submission Status**: Formally received and queued for expert panel review.
+
+
+---
+
+## 🏛️ Permanent Scientific Archive & DOI (CERN Zenodo)
+
+* **Official Digital Object Identifier (DOI)**: [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23624308.svg)](https://doi.org/10.5281/zenodo.23624308) [**10.5281/zenodo.23624308**](https://doi.org/10.5281/zenodo.23624308)
+* **Permanent Resolver**: `https://doi.org/10.5281/zenodo.23624308`
+* **Zenodo Record**: `https://zenodo.org/records/23624308`
+* **Release Version**: `v1.0.1`
+* **Archival Authority**: CERN / OpenAIRE / European Commission Open Science Framework

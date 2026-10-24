@@ -1,11 +1,14 @@
-Genomic Characterization, Trimodal Artificial Intelligence Modeling, and Global Meta-Analysis of Mosaic Variegated Aneuploidy Syndrome (MVA)
+# Genomic Characterization, Trimodal Artificial Intelligence Modeling, and Global Meta-Analysis of Mosaic Variegated Aneuploidy Syndrome (MVA)
 
-Unraveling BUB1B/CENPE Kinetochore Motor Failure and the Molecular Basis of Medullary Nephrocalcinosis Guided by Homozygous Insertion in WT1
+### Unraveling BUB1B/CENPE Kinetochore Motor Failure and the Molecular Basis of Medullary Nephrocalcinosis Guided by Homozygous Insertion in WT1
 
-Daniel Antonio Ojeda, MD
+**Author**: **Daniel Antonio Ojeda, MD**  
+*Specialist in Internal Medicine (ULA - IAHULA) | Attending Physician, Adult Emergency Department, Instituto Autónomo Hospital Universitario de los Andes (IAHULA) | Visiting Professor of Medical Semiology, Universidad de Los Andes (ULA), Mérida, Venezuela.*  
+**Principal Investigator**: ORCID: [0000-0003-3839-3703](https://orcid.org/0000-0003-3839-3703)  
+**Permanent Scientific Archive**: [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23624308.svg)](https://doi.org/10.5281/zenodo.23624308) **DOI**: [10.5281/zenodo.23624308](https://doi.org/10.5281/zenodo.23624308)  
+**Official Repository**: [GitHub (Sage Bionetworks MVA Hackathon 2026)](https://github.com/jedaojeda/mva-rare-disease-hackathon-2026-)
 
-Specialist in Internal Medicine (ULA - IAHULA) | Attending Physician, Adult Emergency Department, Instituto Autónomo Hospital Universitario de los Andes (IAHULA) | Visiting Professor of Medical Semiology, Universidad de Los Andes (ULA), Mérida, Venezuela.
-
+---
 
 ## Structured Abstract
 

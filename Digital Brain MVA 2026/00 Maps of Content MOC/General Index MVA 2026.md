@@ -43,6 +43,8 @@ Digital Brain MVA 2026/
 
 * **Official SageBio Track 1 Score**: **100.0 / 100 Rank Points | F-max: 1.000 | Full match at rank 1**
 * **Principal Investigator**: [[Dr Daniel Antonio Ojeda MD]]
+* **Permanent Scientific Archive (Zenodo DOI)**: [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23624308.svg)](https://doi.org/10.5281/zenodo.23624308) [**10.5281/zenodo.23624308**](https://doi.org/10.5281/zenodo.23624308)
+
 * **Official GitHub Repository**: [[GitHub Repository and Open Science Audit]]
 * **GPU Cloud Kernels on Kaggle**: [[Kaggle GPU Cloud Notebooks]]
 * **Official Manuscripts and PDF Reports**: [[Official Manuscripts and PDFs]]

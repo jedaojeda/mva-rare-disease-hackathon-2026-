@@ -1,11 +1,14 @@
-De Novo Molecular Pharmacology, Synthetic Lethality, and 3D Conformational Modeling in Mosaic Variegated Aneuploidy: Rational Design of Targeted Degraders (anti-BCL-xL PROTACs), Kinetochore Rescue, and Nephroprotection
+# De Novo Molecular Pharmacology, Synthetic Lethality, and 3D Conformational Modeling in Mosaic Variegated Aneuploidy: Rational Design of Targeted Degraders (anti-BCL-xL PROTACs), Kinetochore Rescue, and Nephroprotection
 
-Daniel Antonio Ojeda, MD
+**Author**: **Daniel Antonio Ojeda, MD**  
+*Specialist in Internal Medicine (ULA - IAHULA) | Attending Physician, Adult Emergency Department, Instituto Autónomo Hospital Universitario de Los Andes (IAHULA) | Visiting Professor of Medical Semiology (ULA)*  
+**Principal Investigator**: ORCID: [0000-0003-3839-3703](https://orcid.org/0000-0003-3839-3703) | Mérida, Venezuela  
+**Permanent Scientific Archive**: [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23624308.svg)](https://doi.org/10.5281/zenodo.23624308) **DOI**: [10.5281/zenodo.23624308](https://doi.org/10.5281/zenodo.23624308)  
+**Official Repository**: [GitHub (Sage Bionetworks MVA Hackathon 2026)](https://github.com/jedaojeda/mva-rare-disease-hackathon-2026-)
 
-Specialist in Internal Medicine (ULA - IAHULA) | Attending Physician, Adult Emergency Department, Instituto Autónomo Hospital Universitario de Los Andes (IAHULA) | Visiting Professor of Medical Semiology (ULA)
-Principal Investigator, Pediatric Rare Disease Hackathon 2026 | Mérida, Venezuela
+---
 
-Structured Abstract
+## Structured Abstract
 
 Background: Conventional DNA-damaging chemotherapy is contraindicated in Mosaic Variegated Aneuploidy Syndrome (MVA; OMIM #257300, #614114) because constitutional Spindle Assembly Checkpoint (SAC) incompetence triggers fulminant bone marrow aplasia. Across 138 MVA cohorts, patients exhibit 81.0% growth failure, 77.1% microcephaly, 31.4% embryonal tumors, and 18.3% renal anomalies accelerated in the proband by a homozygous WT1 insertion.
 
