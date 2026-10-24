@@ -1,6 +1,6 @@
 # Precision Genomics, Trimodal Foundation AI Modeling, and De Novo Multiaxial Pharmacology in Mosaic Variegated Aneuploidy (MVA) Syndrome
 
-[![Obsidian Vault: Cerebro Digital](https://img.shields.io/badge/Knowledge_Base-Obsidian_Cerebro_Digital-7C3AED.svg?logo=obsidian)](#-cerebro-digital--obsidian-knowledge-base)
+[![Obsidian Vault: Digital Brain](https://img.shields.io/badge/Knowledge_Base-Obsidian_Digital_Brain-7C3AED.svg?logo=obsidian)](#-digital-brain--obsidian-knowledge-base)
 [![License: CC-BY 4.0](https://img.shields.io/badge/License-CC--BY--4.0-blue.svg)](LICENSE)
 [![Hackathon: Sage Bionetworks 2026](https://img.shields.io/badge/Hackathon-Sage_Bionetworks_2026-blueviolet.svg)](https://synapse.org)
 [![Principal Investigator: Dr. Daniel Antonio Ojeda, MD](https://img.shields.io/badge/Investigator-Dr._Daniel_Antonio_Ojeda,_MD-059669.svg)](https://orcid.org/0000-0003-3839-3703)
@@ -129,32 +129,32 @@ All primary computational pipelines were executed on public **Kaggle Cloud GPUs 
 ---
 
 
-## 🧠 Cerebro Digital — Obsidian Knowledge Base
+## 🧠 Digital Brain — Obsidian Knowledge Base
 
-The repository includes a comprehensive, production-grade **Digital Brain (Obsidian Vault)** located in the [`Cerebro Digital MVA 2026/`](Cerebro%20Digital%20MVA%202026/) directory. Designed under strict scientific knowledge management principles (Zero Underscores, clean natural spaces, bidirectional `[[wikilinks]]`, and YAML metadata frontmatter), it houses **40 high-density clinical and computational notes**:
+The repository includes a comprehensive, production-grade **Digital Brain (Obsidian Vault)** located in the [`Digital Brain MVA 2026/`](Digital%20Brain%20MVA%202026/) directory. Designed under strict scientific knowledge management principles (Zero Underscores, clean natural spaces, bidirectional `[[wikilinks]]`, and YAML metadata frontmatter), it houses **40 high-density clinical and computational notes**:
 
-* 🗺️ **`00 Mapa de Contenidos MOC/`**: Central Maps of Content (Genomics, Pharmacology, AI Algorithms, Clinical Protocols).
-* 👶 **`01 Caso Clinico y Fenotipo/`**: Comprehensive clinical trajectory of `PROBAND01`, HPO ontology mapping, and congenital nephrocalcinosis pathophysiology.
-* 🧬 **`02 Genomica y Track 1/`**: Detailed molecular dissections of the maternal (`chr15:40209701`) and paternal (`chr15:40220612`) *BUB1B* compound-heterozygous pair, *CENPE* stalk disruption, *WT1* ZF2 insertion, and the official 100/100 benchmark audit.
-* 💊 **`03 Farmacologia y Track 2/`**: Deep dives into the 4-tier multiaxial therapeutic strategy, 8 flagship 3D candidates, Axolotl bio-inspired peptides (`MVA-AMP-01/12/13`), and senolytic PROTACs.
-* 🤖 **`04 Modelado Computacional e Inteligencia Artificial/`**: Mathematical formulations (IPI Index, Evo 2 $\Delta LLR$), AlphaGenome epigenomic scoring, AlphaMissense calibration, and AutoDock Vina / MMFF94 forcefield protocols.
-* 📋 **`05 Protocolo Clinico y Guia de Manejo/`**: Pragmatic bedside guidelines for the treating pediatric team, including Anderson-Carr nephrocalcinosis staging, Wilms/rhabdomyosarcoma screening intervals, and reproductive genetic counseling.
-* 🌐 **`06 Recursos y Enlaces Nube/`**: Direct access hubs for manuscripts, Kaggle GPU kernels, and multilingual pitch presentations.
+* 🗺️ **`00 Maps of Content MOC/`**: Central Maps of Content (Genomics, Pharmacology, AI Algorithms, Clinical Protocols).
+* 👶 **`01 Clinical Case and Phenotype/`**: Comprehensive clinical trajectory of `PROBAND01`, HPO ontology mapping, and congenital nephrocalcinosis pathophysiology.
+* 🧬 **`02 Genomics and Track 1/`**: Detailed molecular dissections of the maternal (`chr15:40209701`) and paternal (`chr15:40220612`) *BUB1B* compound-heterozygous pair, *CENPE* stalk disruption, *WT1* ZF2 insertion, and the official 100/100 benchmark audit.
+* 💊 **`03 Pharmacology and Track 2/`**: Deep dives into the 4-tier multiaxial therapeutic strategy, 8 flagship 3D candidates, Axolotl bio-inspired peptides (`MVA-AMP-01/12/13`), and senolytic PROTACs.
+* 🤖 **`04 Computational Modeling and AI/`**: Mathematical formulations (IPI Index, Evo 2 $\Delta LLR$), AlphaGenome epigenomic scoring, AlphaMissense calibration, and AutoDock Vina / MMFF94 forcefield protocols.
+* 📋 **`05 Clinical Protocols and Management/`**: Pragmatic bedside guidelines for the treating pediatric team, including Anderson-Carr nephrocalcinosis staging, Wilms/rhabdomyosarcoma screening intervals, and reproductive genetic counseling.
+* 🌐 **`06 Cloud Resources and Links/`**: Direct access hubs for manuscripts, Kaggle GPU kernels, and multilingual pitch presentations.
 
-> **Obsidian Ready**: Simply open the `Cerebro Digital MVA 2026` folder directly as an Obsidian Vault or explore natively in GitHub Markdown.
+> **Obsidian Ready**: Simply open the `Digital Brain MVA 2026` folder directly as an Obsidian Vault or explore natively in GitHub Markdown.
 
 ## 📂 Repository Architecture & 3D Molecule Assets
 
 ```
 .
-├── Cerebro Digital MVA 2026/                       # Complete 40-Note Obsidian Knowledge Base
-│   ├── 00 Mapa de Contenidos MOC/                    # Maps of Content (Genomics, Pharma, AI, Protocols)
-│   ├── 01 Caso Clinico y Fenotipo/                   # Proband phenotype, HPO mapping, nephrocalcinosis
-│   ├── 02 Genomica y Track 1/                        # BUB1B compound-het, CENPE, WT1, 100/100 benchmark
-│   ├── 03 Farmacologia y Track 2/                    # 4-tier strategy, 24 therapies, Axolotl peptides
-│   ├── 04 Modelado Computacional e IA/               # AlphaGenome, AlphaMissense, Evo 2, IPI index, Vina
-│   ├── 05 Protocolo Clinico y Guia de Manejo/        # Anderson-Carr renal surveillance, Wilms screening
-│   └── 06 Recursos y Enlaces Nube/                   # Official manuscripts, Kaggle GPU links, videos
+├── Digital Brain MVA 2026/                       # Complete 40-Note Obsidian Knowledge Base
+│   ├── 00 Maps of Content MOC/                    # Maps of Content (Genomics, Pharma, AI, Protocols)
+│   ├── 01 Clinical Case and Phenotype/                   # Proband phenotype, HPO mapping, nephrocalcinosis
+│   ├── 02 Genomics and Track 1/                        # BUB1B compound-het, CENPE, WT1, 100/100 benchmark
+│   ├── 03 Pharmacology and Track 2/                    # 4-tier strategy, 24 therapies, Axolotl peptides
+│   ├── 04 Computational Modeling and AI/               # AlphaGenome, AlphaMissense, Evo 2, IPI index, Vina
+│   ├── 05 Clinical Protocols and Management/        # Anderson-Carr renal surveillance, Wilms screening
+│   └── 06 Cloud Resources and Links/                   # Official manuscripts, Kaggle GPU links, videos
 │
 ├── track1_variant_identification/
 │   ├── predictions/

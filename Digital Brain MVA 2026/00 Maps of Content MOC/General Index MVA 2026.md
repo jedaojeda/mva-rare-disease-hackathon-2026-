@@ -26,7 +26,7 @@ This Obsidian-native knowledge vault interconnects the entire clinical, genomic,
 ## 🏛️ Digital Brain Architecture
 
 ```
-Cerebro Digital MVA 2026/
+Digital Brain MVA 2026/
 ├── Dr Daniel Antonio Ojeda MD.md                       # Principal Investigator bio and vision
 ├── 00 Maps of Content MOC/                             # Central navigational maps
 ├── 01 Clinical Case and Phenotype/                     # Deep clinical trajectory and HPO mapping

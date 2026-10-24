@@ -20,4 +20,4 @@ All computational scripts, 3D structures, master manuscripts, and this Digital B
 * `figures/`: 4K 8-panel plate and vertical workflow technology suites.
 * `kaggle_notebooks/`: Reproducible Jupyter notebooks and GPU run outputs.
 * `methods_description_form.xlsx`: Official methods documentation form.
-* `Cerebro Digital MVA 2026/`: English-language Obsidian Knowledge Vault.
+* `Digital Brain MVA 2026/`: English-language Obsidian Knowledge Vault.
