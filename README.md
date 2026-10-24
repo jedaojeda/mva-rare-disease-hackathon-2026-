@@ -1,5 +1,6 @@
 # Precision Genomics, Trimodal Foundation AI Modeling, and De Novo Multiaxial Pharmacology in Mosaic Variegated Aneuploidy (MVA) Syndrome
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23624308.svg)](https://doi.org/10.5281/zenodo.23624308)
 [![Obsidian Vault: Digital Brain](https://img.shields.io/badge/Knowledge_Base-Obsidian_Digital_Brain-7C3AED.svg?logo=obsidian)](#-digital-brain--obsidian-knowledge-base)
 [![License: CC-BY 4.0](https://img.shields.io/badge/License-CC--BY--4.0-blue.svg)](LICENSE)
 [![Hackathon: Sage Bionetworks 2026](https://img.shields.io/badge/Hackathon-Sage_Bionetworks_2026-blueviolet.svg)](https://synapse.org)
@@ -237,3 +238,19 @@ In accordance with ICMJE recommendations and Hackathon rules: Google Antigravity
 
 ---
 *Mérida, Venezuela | Dr. Daniel Antonio Ojeda, MD*
+
+
+## 📚 Permanent Archive & Citation (Zenodo DOI)
+
+```bibtex
+@software{ojeda_2026_mva_zenodo,
+  author       = {Ojeda, Daniel Antonio},
+  title        = {{Precision Genomics, Trimodal Foundation AI Modeling, and De Novo Multiaxial Pharmacology in Mosaic Variegated Aneuploidy (MVA) Syndrome}},
+  month        = oct,
+  year         = 2026,
+  publisher    = {Zenodo},
+  version      = {v1.0.1},
+  doi          = {10.5281/zenodo.23624308},
+  url          = {https://doi.org/10.5281/zenodo.23624308}
+}
+```

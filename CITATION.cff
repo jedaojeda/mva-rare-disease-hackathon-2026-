@@ -6,8 +6,9 @@ authors:
     orcid: "https://orcid.org/0000-0003-3839-3703"
     affiliation: "Especialista en Medicina Interna, Instituto Autónomo Hospital Universitario de Los Andes (IAHULA) / Universidad de Los Andes (ULA), Mérida, Venezuela"
 title: "Precision Genomics, Trimodal Foundation AI Modeling, and De Novo Multiaxial Pharmacology in Mosaic Variegated Aneuploidy (MVA) Syndrome"
-version: 1.0.0
-date-released: 2026-10-18
+version: 1.0.1
+doi: "10.5281/zenodo.23624308"
+date-released: 2026-10-24
 repository-code: "https://github.com/jedaojeda/mva-rare-disease-hackathon-2026-"
 keywords:
   - "Mosaic Variegated Aneuploidy"
